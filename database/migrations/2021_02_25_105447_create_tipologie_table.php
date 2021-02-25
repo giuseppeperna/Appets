@@ -16,6 +16,7 @@ class CreateTipologieTable extends Migration
         Schema::create('tipologie', function (Blueprint $table) {
             $table->bigIncrements('tipologia_id');
             $table->string('tipologia_nome', 50);
+            $table->timestamps();
         });
     }
 

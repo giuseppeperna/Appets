@@ -17,7 +17,7 @@ class CreateOrdiniTable extends Migration
             $table->bigIncrements('ord_id');
             $table->string('ord_nome', 50);
             $table->string('ord_cognome', 50);
-            $table->string('ord_indirizzo', 50);
+            $table->string('ord_indirizzo', 100);
             $table->unsignedDecimal('ord_totale', 6, 2);
             $table->text('ord_commenti');
             $table->boolean('ord_stato');

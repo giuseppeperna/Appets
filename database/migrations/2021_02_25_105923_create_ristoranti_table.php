@@ -19,7 +19,7 @@ class CreateRistorantiTable extends Migration
             $table->string('rist_password', 50);
             $table->string('rist_nome', 50);
             $table->text('rist_descrizione');
-            $table->string('rist_indirizzo', 50);
+            $table->string('rist_indirizzo', 100);
             $table->string('rist_p_iva', 50);
             $table->timestamps();
         });
