@@ -12,6 +12,10 @@ class Ristorante extends Model
         'rist_email', 'rist_password', 'rist_nome', 'rist_descrizione', 'rist_indirizzo', 'rist_p_iva'
     ];
 
+    protected $hidden = [
+        'rist_password', 'remember_token',
+    ];
+
     public function tipologie() {
         return $this->belongsToMany("App\Tipologia", "tipologie_ristoranti", "rist_id", "tipologia_id");
     }

@@ -21,6 +21,7 @@ class CreateRistorantiTable extends Migration
             $table->text('rist_descrizione');
             $table->string('rist_indirizzo', 100);
             $table->string('rist_p_iva', 50);
+            $table->rememberToken();
             $table->timestamps();
         });
     }

@@ -4,6 +4,7 @@
 
 use App\Ristorante;
 use Faker\Generator as Faker;
+use Illuminate\Support\Str;
 
 $factory->define(Ristorante::class, function (Faker $faker) {
     return [
@@ -12,6 +13,7 @@ $factory->define(Ristorante::class, function (Faker $faker) {
         'rist_nome' => $faker->sentence(3, true),
         'rist_descrizione' => $faker->text,
         'rist_indirizzo' => $faker->address,
-        'rist_p_iva' => $faker->unique()->numerify('###########')
+        'rist_p_iva' => $faker->unique()->numerify('###########'),
+        'remember_token' => Str::random(10),
     ];
 });
