@@ -15,7 +15,9 @@ class DatabaseSeeder extends Seeder
             TipologiaSeeder::class,
             RistoranteSeeder::class,
             PiattoSeeder::class,
-            OrdineSeeder::class
+            OrdineSeeder::class,
+            TipologiaRistoranteSeeder::class,
+            PiattoOrdineSeeder::class,
         ]);
     }
 }

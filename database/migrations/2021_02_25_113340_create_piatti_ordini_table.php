@@ -21,6 +21,7 @@ class CreatePiattiOrdiniTable extends Migration
             $table->foreign('ord_id')->references('ord_id')->on('ordini');
             $table->tinyInteger('quantità');
             $table->unsignedDecimal('sub_totale', 6, 2);
+            $table->timestamps();
         });
     }
 
