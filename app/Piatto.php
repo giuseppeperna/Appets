@@ -8,6 +8,8 @@ class Piatto extends Model
 {
     protected $table = 'piatti';
 
+    protected $primaryKey = 'piatto_id';
+
     protected $fillable = [
         'piatto_nome', 'piatto_img', 'piatto_descrizione', 'piatto_prezzo', 'piatto_visibile'
     ];

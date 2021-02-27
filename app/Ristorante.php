@@ -8,6 +8,8 @@ class Ristorante extends Model
 {
     protected $table = 'ristoranti';
 
+    protected $primaryKey = 'rist_id';
+
     protected $fillable = [
         'rist_email', 'rist_password', 'rist_nome', 'rist_descrizione', 'rist_indirizzo', 'rist_p_iva'
     ];

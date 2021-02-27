@@ -8,6 +8,8 @@ class Ordine extends Model
 {
     protected $table = 'ordini';
 
+    protected $primaryKey = 'ord_id';
+
     protected $fillable = [
         'ord_nome', 'ord_cognome', 'ord_indirizzo', 'ord_totale', 'ord_commenti', 'ord_stato'
     ];

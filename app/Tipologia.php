@@ -8,6 +8,12 @@ class Tipologia extends Model
 {
     protected $table = 'tipologie';
 
+    protected $primaryKey = 'tipologia_id';
+
+    protected $hidden = [
+        'created_at', 'updated_at',
+    ];
+
     public function ristoranti() {
         return $this->belongsToMany("App\Ristorante", "tipologie_ristoranti", "tipologia_id", "rist_id");
     }
