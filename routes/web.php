@@ -13,9 +13,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('index');
+})->name('homepage');
+
+Route::get('/job-riders', function () {
+    return view('job.riders');
+})->name('riders');
 
 Auth::routes();
 
