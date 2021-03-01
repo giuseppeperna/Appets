@@ -17,13 +17,12 @@ class RistorantiController extends Controller
      */
     public function index()
     {
-        $ristoranti = Ristorante::all();
-        $piatti = Piatto::all();
-        $tipologie = Tipologia::all();
+        // $ristoranti = Ristorante::all();
+        // $piatti = Piatto::all();
+        // $tipologie = Tipologia::all();
 
-        return ['success' => true, 
-                'response' => compact(['tipologie', 'ristoranti', 'piatti'])];
-        // return dd($ristoranti->tipologie[1]['tipologia_nome']);
+        // return ['success' => true, 
+        //         'response' => compact(['tipologie', 'ristoranti', 'piatti'])];
     }
 
     /**

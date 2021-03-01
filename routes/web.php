@@ -17,9 +17,9 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
-Route::get('/', function () {
-    return view('index');
-})->name('homepage');
+// Route::get('/', function () {
+//     return view('index');
+// })->name('homepage');
 
 Route::get('/job-riders', function () {
     return view('job.riders');
@@ -27,4 +27,6 @@ Route::get('/job-riders', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'HomeController@index')->name('home');
+Route::get('/ristoranti/{ristoranti}', 'HomeController@show');
+
