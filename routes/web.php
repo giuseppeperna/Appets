@@ -13,14 +13,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
-
-// Route::get('/', function () {
-//     return view('index');
-// })->name('homepage');
-
 Route::get('/job-riders', function () {
     return view('job.riders');
 })->name('riders');
@@ -28,5 +20,15 @@ Route::get('/job-riders', function () {
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
-Route::get('/ristoranti/{ristoranti}', 'HomeController@show');
 
+// Route::get('/ristoranti/{ristoranti}', 'HomeController@show');
+
+Route::get('/dashboard', function() {
+    return view('dashboard');
+})->middleware('auth')->name('dashboard');
+
+Route::prefix('dashboard')
+->middleware('auth')
+->group(function () {
+    Route::resource('piatti', 'PiattiController');
+});

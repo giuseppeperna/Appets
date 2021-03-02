@@ -21,7 +21,7 @@ class CreatePiattiTable extends Migration
             $table->text('piatto_descrizione');
             $table->unsignedDecimal('piatto_prezzo', 6, 2);
             $table->boolean('piatto_visibile');
-            $table->foreign('rist_id')->references('rist_id')->on('ristoranti');
+            $table->foreign('rist_id')->references('rist_id')->on('users');
             $table->timestamps();
         });
     }

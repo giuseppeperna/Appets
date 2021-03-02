@@ -38,7 +38,7 @@
                      <li><a class="nav-link scrollto" href="#restaurants">Ristoranti</a></li>
                      <li><a class="nav-link scrollto" href="#events">Pacchetto Festa</a></li>
                      <li><a class="nav-link scrollto" href="#jobs">Lavora con Appets</a></li>
-                     <li><a class="nav-link" href="#">Area ristoranti</a></li>
+                     <li><a class="nav-link" href="{{route('dashboard')}}">Area ristoranti</a></li>
                   </ul>
                   <i class="bi bi-list mobile-nav-toggle"></i>
                </nav>

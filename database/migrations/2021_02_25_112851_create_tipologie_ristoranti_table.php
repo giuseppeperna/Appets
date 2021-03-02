@@ -18,7 +18,7 @@ class CreateTipologieRistorantiTable extends Migration
             $table->unsignedBigInteger('tipologia_id');
             $table->unsignedBigInteger('rist_id');
             $table->foreign('tipologia_id')->references('tipologia_id')->on('tipologie');
-            $table->foreign('rist_id')->references('rist_id')->on('ristoranti');
+            $table->foreign('rist_id')->references('rist_id')->on('users');
             $table->timestamps();
         });
     }

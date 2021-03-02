@@ -4,7 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Resources\RistoranteResource;
 use App\Http\Resources\PiattoResource;
-use App\Ristorante;
+use App\User;
 use App\Piatto;
 
 /*
@@ -22,12 +22,10 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-// Route::resource('ristoranti', API\RistorantiController::class)->middleware('api_token');
-
 Route::get('/ristoranti', function() {
     return ['success' => true, 
-            'response' => RistoranteResource::collection(Ristorante::all()),
-            'ristoranti_count' => RistoranteResource::collection(Ristorante::all())->count(),
+            'response' => RistoranteResource::collection(User::all()),
+            'ristoranti_count' => RistoranteResource::collection(User::all())->count(),
         ];
 })->middleware('api_token');
 

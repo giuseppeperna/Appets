@@ -15,8 +15,12 @@ class User extends Authenticatable
      *
      * @var array
      */
+    protected $table = 'users';
+
+    protected $primaryKey = 'rist_id';
+
     protected $fillable = [
-        'name', 'email', 'password',
+        'email', 'password', 'rist_nome', 'rist_descrizione', 'rist_indirizzo', 'rist_p_iva'
     ];
 
     /**
@@ -36,4 +40,12 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function tipologie() {
+        return $this->belongsToMany("App\Tipologia", "tipologie_ristoranti", "rist_id", "tipologia_id");
+    }
+
+    public function piatti() {
+        return $this->hasMany("App\Piatto", "rist_id", "piatto_id");
+    }
 }

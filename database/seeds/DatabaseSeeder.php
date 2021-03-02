@@ -13,7 +13,7 @@ class DatabaseSeeder extends Seeder
     {
         $this->call([
             TipologiaSeeder::class,
-            RistoranteSeeder::class,
+            UserSeeder::class,
             PiattoSeeder::class,
             OrdineSeeder::class,
             TipologiaRistoranteSeeder::class,

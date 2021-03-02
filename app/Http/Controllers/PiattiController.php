@@ -1,14 +1,14 @@
 <?php
 
-namespace App\Http\Controllers\API;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
-use App\Ristorante;
+use Illuminate\Support\Facades\Auth;
 use App\Piatto;
 use App\Tipologia;
+use App\User;
 
-class RistorantiController extends Controller
+class PiattiController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,12 +17,20 @@ class RistorantiController extends Controller
      */
     public function index()
     {
-        // $ristoranti = Ristorante::all();
-        // $piatti = Piatto::all();
-        // $tipologie = Tipologia::all();
+        $userId = Auth::id();
 
-        // return ['success' => true, 
-        //         'response' => compact(['tipologie', 'ristoranti', 'piatti'])];
+        $piatti = Piatto::Where(fn($query) => $query->where('rist_id', '=', $userId))->get();
+        return view('piatti.index', compact('piatti'));
+    }
+
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create()
+    {
+        //
     }
 
     /**
@@ -43,6 +51,19 @@ class RistorantiController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function show($id)
+    {
+        $piatto = Piatto::find($id);
+
+        return view('piatti.show', compact('piatto'));
+    }
+
+    /**
+     * Show the form for editing the specified resource.
+     *
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function edit($id)
     {
         //
     }

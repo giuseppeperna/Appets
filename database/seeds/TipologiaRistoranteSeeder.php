@@ -13,7 +13,7 @@ class TipologiaRistoranteSeeder extends Seeder
     public function run()
 
     {
-        $ristorantiIDs = DB::table('ristoranti')->pluck('rist_id');
+        $ristorantiIDs = DB::table('users')->pluck('rist_id');
 
         factory(App\TipologiaRistorante::class, 30)->create();
     }

@@ -7,7 +7,7 @@ use Faker\Generator as Faker;
 
 $factory->define(Piatto::class, function (Faker $faker) {
 
-    $ristorantiIDs = DB::table('ristoranti')->pluck('rist_id');
+    $ristorantiIDs = DB::table('users')->pluck('rist_id');
 
     return [
         'rist_id' => $faker->randomElement($ristorantiIDs),
