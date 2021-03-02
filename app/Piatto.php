@@ -11,7 +11,7 @@ class Piatto extends Model
     protected $primaryKey = 'piatto_id';
 
     protected $fillable = [
-        'piatto_nome', 'piatto_img', 'piatto_descrizione', 'piatto_prezzo', 'piatto_visibile'
+        'rist_id', 'piatto_nome', 'piatto_img', 'piatto_descrizione', 'piatto_prezzo', 'piatto_visibile'
     ];
 
     public function ristoranti() {

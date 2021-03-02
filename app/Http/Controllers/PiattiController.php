@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\PiattoFormRequest;
 use App\Piatto;
 use App\Tipologia;
 use App\User;
@@ -30,7 +31,7 @@ class PiattiController extends Controller
      */
     public function create()
     {
-        //
+        return view('piatti.create');
     }
 
     /**
@@ -39,9 +40,22 @@ class PiattiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(PiattoFormRequest $request)
     {
-        //
+        $userId = Auth::id();
+        $data = $request->validated();
+
+        $nuovoPiatto = Piatto::create([
+            "rist_id" => $userId,
+            "piatto_nome" => $data['piatto_nome'],
+            "piatto_img" => $data['piatto_img']->storePublicly('img'),
+            "piatto_descrizione" => $data['piatto_descrizione'],
+            "piatto_prezzo" => $data['piatto_prezzo'],
+            "piatto_visibile" => $data['piatto_visibile']
+        ]);
+        $nuovoPiatto->save();
+
+        return redirect()->route('dashboard');
     }
 
     /**

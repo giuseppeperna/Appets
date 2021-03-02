@@ -21,7 +21,6 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
-// Route::get('/ristoranti/{ristoranti}', 'HomeController@show');
 
 Route::get('/dashboard', function() {
     return view('dashboard');

@@ -89,6 +89,7 @@
                                 @enderror
                             </div>
                         </div>
+                        
 
                         <div class="form-group row">
                             <label for="rist_p_iva" class="col-md-4 col-form-label text-md-right">{{ __('Partita Iva') }}</label>
