@@ -48,7 +48,7 @@ class PiattiController extends Controller
         $nuovoPiatto = Piatto::create([
             "rist_id" => $userId,
             "piatto_nome" => $data['piatto_nome'],
-            "piatto_img" => $data['piatto_img']->storePublicly('img'),
+            "piatto_img" => $data['piatto_img']->storePublicly('storage'),
             "piatto_descrizione" => $data['piatto_descrizione'],
             "piatto_prezzo" => $data['piatto_prezzo'],
             "piatto_visibile" => $data['piatto_visibile']
