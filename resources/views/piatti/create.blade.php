@@ -19,6 +19,19 @@
             <p>{{ $message }}</p>
         @enderror
 
+        <label>Tipologia</label>
+        <div class="categories">
+            <select name="tipologia" id="tipologia">
+                <option>...</option>
+                @foreach ($tipologie as $tipologia)
+                <option value="{{ $tipologia->tipologia_id }}">{{$tipologia->tipologia_nome}}</option>
+                @endforeach
+            </select>
+            @error('tipologia')
+            <p>{{ $message }}</p>
+            @enderror
+        </div>
+
         <label for="piatto_descrizione">Descrizione</label>
         <input type="text" name="piatto_descrizione" class="form-control" id="piatto_descrizione" placeholder="Descrizione"
         value="{{ old('piatto_descrizione') }}">

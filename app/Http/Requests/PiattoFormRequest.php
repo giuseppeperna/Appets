@@ -27,8 +27,10 @@ class PiattoFormRequest extends FormRequest
             'piatto_nome' => 'bail|required|min:3',
             'piatto_descrizione' => 'required|string',
             'piatto_img' => 'mimes:jpeg,jpg,png|max:5120',
+            'tipologia' => 'required',
             'piatto_prezzo' => 'required',
             'piatto_visibile' => 'required'
+
         ];
     }
 }

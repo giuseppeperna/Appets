@@ -8,6 +8,7 @@ use App\Http\Requests\PiattoFormRequest;
 use App\Piatto;
 use App\Tipologia;
 use App\User;
+use App\TipologiaRistorante;
 
 class PiattiController extends Controller
 {
@@ -31,7 +32,9 @@ class PiattiController extends Controller
      */
     public function create()
     {
-        return view('piatti.create');
+        $tipologie = Tipologia::all();
+
+        return view('piatti.create', compact('tipologie'));
     }
 
     /**
@@ -54,6 +57,11 @@ class PiattiController extends Controller
             "piatto_visibile" => $data['piatto_visibile']
         ]);
         $nuovoPiatto->save();
+
+        $tipologia = TipologiaRistorante::create([
+            "tipologia_id" => $data['tipologia'],
+            "rist_id" => $userId,
+        ]);
 
         return redirect()->route('dashboard');
     }
