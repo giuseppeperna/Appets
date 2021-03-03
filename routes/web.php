@@ -20,15 +20,17 @@ Route::get('/job-riders', function () {
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
+Route::get('/dashboard', 'DashboardController@index')->middleware('auth')->name('dashboard');
 
-Route::get('/dashboard', function() {
-    return view('dashboard');
-})->middleware('auth')->name('dashboard');
+// Route::get('/dashboard', function() {
+//     return view('dashboard');
+// })->middleware('auth')->name('dashboard');
 
 Route::prefix('dashboard')
 ->middleware('auth')
 ->group(function () {
     Route::resource('piatti', 'PiattiController');
+    Route::get('utente', 'DashboardController@edit')->name('utente');
 });
 
 Route::get('/area-ristoranti', function() {

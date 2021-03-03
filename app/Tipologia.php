@@ -15,6 +15,6 @@ class Tipologia extends Model
     ];
 
     public function ristoranti() {
-        return $this->belongsToMany("App\Ristorante", "tipologie_ristoranti", "tipologia_id", "rist_id");
+        return $this->belongsToMany("App\User", "tipologie_ristoranti", "tipologia_id", "rist_id");
     }
 }

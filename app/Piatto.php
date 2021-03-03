@@ -15,7 +15,7 @@ class Piatto extends Model
     ];
 
     public function ristoranti() {
-        return $this->belongsTo("App\Ristorante", "rist_id", "piatto_id");
+        return $this->belongsTo("App\User", "rist_id", "piatto_id");
     }
 
     public function ordini() {

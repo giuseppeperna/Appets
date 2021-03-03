@@ -66,7 +66,7 @@ class PiattiController extends Controller
 
         $tipologia->save();
 
-        return redirect()->route('dashboard');
+        return redirect()->route('piatti.index');
     }
 
     /**
@@ -90,11 +90,10 @@ class PiattiController extends Controller
      */
     public function edit($id)
     {
-            $piatto = Piatto::find($id);
-            $tipologie = Tipologia::all();
+        $piatto = Piatto::find($id);
+        $tipologie = Tipologia::all();
 
         return view('piatti.edit', compact('piatto', 'tipologie'));
-        // return dd($piatto['piatto_id']);
     }
 
     /**

@@ -889,3 +889,13 @@ section {
 	justify-content: center;
 	align-items: center;
   }
+
+  .thumbnail-img{
+	  height: 100px;
+	  width: 150px;
+	  padding-right: 10px;
+  }
+
+  .detail-img{
+	  height: 300px;
+  }
