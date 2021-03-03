@@ -10,7 +10,7 @@
                    <div class="carousel-content" >
                       <div class="card" style="width: 50rem;">
                         <div class="card-body">
-                          <h5 class="card-title" style="margin-bottom: 30px; font-size: 30px;">Benvenuto nella tua area personale {{$user->rist_nome}}!</h5>
+                          <h5 class="card-title" style="margin-bottom: 30px; font-size: 30px;">Benvenuto nella tua area personale, {{$user->rist_nome}}!</h5>
                           <p class="card-text" style="color: black; text-align: none;">In quest'area potrai modificare i dati del tuo ristorante, personalizzare il tuo menù aggiungendo i piatti che desideri e visualizzare le statistiche relative ai tuoi ordini.</p>
                           <a href="{{route('piatti.index')}}"style="background-color: #ffb03b;
                        	    border-color: #ffb03b" class="btn btn-primary">Gestisci il mio menù</a>

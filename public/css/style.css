@@ -899,3 +899,24 @@ section {
   .detail-img{
 	  height: 300px;
   }
+
+  .form-container {
+	  padding: 150px 0;
+  }
+
+  .form-container .container-form * {
+	  margin: 5px 0;
+  }
+
+  .go-back {
+	  text-align: center;
+	  margin-top: 10px;
+  }
+
+  .image-form-container {
+	  width:100%;
+  }
+
+  .image-form-container img {
+	  width:100%;
+  }
