@@ -10,8 +10,8 @@
                             <div class="input-group mb-3 w-50">
                                 <input type="text" class="form-control" placeholder="Filtra piatti..." aria-label="Recipient's username" aria-describedby="button-addon2">
                                 <button class="btn btn-outline-secondary" type="button" id="button-addon2">Cerca</button>
-                                <a class="btn btn-success" href="{{ route('piatti.create') }}">Aggiungi piatto</a>
                             </div>
+                            <a class="btn btn-success" href="{{ route('piatti.create') }}">Aggiungi piatto</a>
                         </div>
                     </div>
                     <div class="row">
