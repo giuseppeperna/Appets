@@ -897,7 +897,7 @@ section {
   }
 
   .detail-img{
-	  height: 300px;
+	  width: 100%;
   }
 
   .form-container {
