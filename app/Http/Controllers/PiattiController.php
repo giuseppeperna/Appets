@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\PiattoFormRequest;
+use Storage;
 use App\Piatto;
 use App\Tipologia;
 use App\User;
@@ -58,10 +59,12 @@ class PiattiController extends Controller
         ]);
         $nuovoPiatto->save();
 
-        $tipologia = TipologiaRistorante::create([
+        $tipologia = TipologiaRistorante::firstorNew([
             "tipologia_id" => $data['tipologia'],
             "rist_id" => $userId,
         ]);
+
+        $tipologia->save();
 
         return redirect()->route('dashboard');
     }
@@ -87,7 +90,11 @@ class PiattiController extends Controller
      */
     public function edit($id)
     {
-        //
+            $piatto = Piatto::find($id);
+            $tipologie = Tipologia::all();
+
+        return view('piatti.edit', compact('piatto', 'tipologie'));
+        // return dd($piatto['piatto_id']);
     }
 
     /**
@@ -97,9 +104,18 @@ class PiattiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(PiattoFormRequest $request, $id)
     {
-        //
+        $data = $request->validated();
+        $piatto = Piatto::find($id);
+        $piatto->piatto_nome = $data['piatto_nome'];
+        $piatto->piatto_img = $data['piatto_img']->storePublicly('storage');
+        $piatto->piatto_descrizione = $data['piatto_descrizione'];
+        $piatto->piatto_prezzo = $data['piatto_prezzo'];
+        $piatto->piatto_visibile = $data['piatto_visibile'];
+        $piatto->save();
+
+        return view('dashboard');
     }
 
     /**
@@ -110,6 +126,13 @@ class PiattiController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $piatto = Piatto::find($id);
+        $piatto->delete();
+        if(Storage::exists($piatto->piatto_img)){
+            Storage::delete($piatto->piatto_img);
+        }else{
+            dd('File does not exists.');
+        }
+        return redirect()->route('piatti.index');
     }
 }
