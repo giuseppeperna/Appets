@@ -6,10 +6,10 @@
       </div>
       <nav id="navbar" class="navbar order-last order-lg-0">
          <ul>
-            <li><a class="nav-link scrollto" href="#about">Chi siamo</a></li>
-            <li><a class="nav-link scrollto" href="#restaurants">Ristoranti</a></li>
-            <li><a class="nav-link scrollto" href="#events">Pacchetto Festa</a></li>
-            <li><a class="nav-link scrollto" href="#jobs">Lavora con Appets</a></li>
+            <li><a class="nav-link scrollto" href="{{route('home')}}/#about">Chi siamo</a></li>
+            <li><a class="nav-link scrollto" href="{{route('home')}}/#restaurants">Ristoranti</a></li>
+            <li><a class="nav-link scrollto" href="{{route('home')}}/#events">Pacchetto Festa</a></li>
+            <li><a class="nav-link scrollto" href="{{route('home')}}/#jobs">Lavora con Appets</a></li>
             @if(Auth::check())
             <li><a class="nav-link" href="{{route('dashboard')}}">Dashboard</a></li>
             <li><a class="nav-link scrollto" href="{{ route('logout') }}"
