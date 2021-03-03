@@ -798,13 +798,13 @@ section {
 	background-color: #35322d;
 	color: #ffb03b;
   }
-  
+
   .requirements {
 	background: url(../img/requirements-bg.jpg) center center no-repeat;
 	background-size: cover;
 	position: relative
   }
-  
+
   .requirements::before {
 	content: '';
 	background-color: rgba(12, 11, 10, .8);
@@ -814,66 +814,78 @@ section {
 	left: 0;
 	bottom: 0
   }
-  
+
   .requirements .section-title h2 {
 	color: #fff
   }
-  
+
   .requirements .container {
 	position: relative
   }
-  
+
   .requirements img {
 	border-radius: 3px
   }
-  
+
   @media (min-width:1024px) {
 	.requirements {
 	  background-attachment: fixed
 	}
   }
-  
+
   .requirements .requirements-carousel {
 	background: rgba(255, 255, 255, .08);
 	padding: 30px
   }
-  
+
   .requirements .requirement-item {
 	color: #fff
   }
-  
+
   .requirements .requirement-item h3 {
 	font-weight: 600;
 	font-size: 26px;
 	color: #ffb03b
   }
-  
+
   .requirements .requirement-item .price {
 	font-size: 26px;
 	font-family: Poppins, sans-serif;
 	font-weight: 700;
 	margin-bottom: 15px
   }
-  
+
   .requirements .requirement-item .price span {
 	border-bottom: 2px solid #ffb03b
   }
-  
+
   .requirements .requirement-item ul {
 	list-style: none;
 	padding: 0
   }
-  
+
   .requirements .requirement-item ul li {
 	padding-bottom: 10px
   }
-  
+
   .requirements .requirement-item ul i {
 	font-size: 20px;
 	padding-right: 4px;
 	color: #ffb03b
   }
-  
+
   .requirements .requirement-item p:last-child {
 	margin-bottom: 0
+  }
+
+  /* ALESSANDRO */
+
+  .restourants-area{
+	margin-top: 70px;
+  }
+
+  .centering{
+	display: flex;
+	justify-content: center;
+	align-items: center;
   }

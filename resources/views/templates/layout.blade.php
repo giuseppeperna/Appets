@@ -26,25 +26,7 @@
    </head>
    <body>
       <div id="root">
-         <!-- ======= Header ======= -->
-         <header id="header" class="fixed-top d-flex align-items-center header-transparent">
-            <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
-               <div class="logo me-auto">
-                  <h1><a href="{{route('home')}}">Appets</a></h1>
-               </div>
-               <nav id="navbar" class="navbar order-last order-lg-0">
-                  <ul>
-                     <li><a class="nav-link scrollto" href="#about">Chi siamo</a></li>
-                     <li><a class="nav-link scrollto" href="#restaurants">Ristoranti</a></li>
-                     <li><a class="nav-link scrollto" href="#events">Pacchetto Festa</a></li>
-                     <li><a class="nav-link scrollto" href="#jobs">Lavora con Appets</a></li>
-                     <li><a class="nav-link" href="{{route('dashboard')}}">Area ristoranti</a></li>
-                  </ul>
-                  <i class="bi bi-list mobile-nav-toggle"></i>
-               </nav>
-               <!-- .navbar -->
-            </div>
-         </header>
+         @include('templates._header')
            <!-- End Header -->
         {{--  <!-- ======= Hero Section ======= -->
          <section id="hero">
@@ -74,26 +56,9 @@
          </section>
          <!-- End Hero --> --}}
          @yield('content')
-          <!-- ======= Footer ======= -->
-          <footer id="footer">
-            <div class="container">
-               <h3>Appets</h3>
-               <p>Solo a Milano, vicino a te</p>
-               <div class="social-links">
-                  <a href="#" class="twitter"><i class="bi bi-twitter"></i></a>
-                  <a href="#" class="facebook"><i class="bi bi-facebook"></i></a>
-                  <a href="#" class="instagram"><i class="bi bi-instagram"></i></a>
-                  <a href="#" class="linkedin"><i class="bi bi-linkedin"></i></a>
-               </div>
-               <div class="copyright">
-                  &copy; Copyright <strong><span>Appets</span></strong>. All Rights Reserved
-               </div>
-               <div class="credits">
-                  Designed Boolean Team 2
-               </div>
-            </div>
-         </footer>
-         <!-- End Footer -->
+
+         @include('templates._footer')
+
          <!-- Libreries/Frameworks JS Files -->
          <script  type="application/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
       </div>

@@ -21,7 +21,6 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 
-
 Route::get('/dashboard', function() {
     return view('dashboard');
 })->middleware('auth')->name('dashboard');
@@ -31,3 +30,14 @@ Route::prefix('dashboard')
 ->group(function () {
     Route::resource('piatti', 'PiattiController');
 });
+
+Route::get('/area-ristoranti', function() {
+    if(Auth::check()) {
+        return redirect()->route('dashboard');
+    }
+    return view('area-ristoranti.arearistoranti');
+})->name('accesso');
+
+Route::get('/sign-in', function() {
+    return view('auth.register');
+})->name('sign-in');
