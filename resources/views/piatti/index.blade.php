@@ -28,7 +28,7 @@
                                     </div>
                                     <div class="col-3 centering">
                                         <a href="{{ route('piatti.show', $piatto->piatto_id) }}" class="btn btn-warning" title="Dettagli"><i class="bi bi-three-dots centering"></i></a>
-                                        <button type="button" class="btn btn-primary me-2 ms-2" title="Modifica"><i class="bi bi-pencil-square centering"></i></button>
+                                        <a href="{{ route('piatti.edit', $piatto->piatto_id)}}" class="btn btn-primary me-2 ms-2" title="Modifica"><i class="bi bi-pencil-square centering"></i></a>
                                         <form action="{{ route("piatti.destroy",$piatto->piatto_id) }}" method="post">
                                             @csrf
                                             @method("delete")

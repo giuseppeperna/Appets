@@ -114,7 +114,7 @@ class PiattiController extends Controller
         $piatto->piatto_visibile = $data['piatto_visibile'];
         $piatto->save();
 
-        return view('dashboard');
+        return redirect()->route('piatti.index');
     }
 
     /**

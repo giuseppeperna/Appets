@@ -880,7 +880,7 @@ section {
 
   /* ALESSANDRO */
 
-  .restourants-area{
+  .restourants-area, .order-list, .single-order{
 	margin-top: 70px;
   }
 
