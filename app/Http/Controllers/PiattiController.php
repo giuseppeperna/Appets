@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Requests\PiattoFormRequest;
+use App\Http\Requests\PiattoUpdateRequest;
 use Storage;
 use App\Piatto;
 use App\Tipologia;
@@ -103,12 +104,14 @@ class PiattiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(PiattoFormRequest $request, $id)
+    public function update(PiattoUpdateRequest $request, $id)
     {
         $data = $request->validated();
         $piatto = Piatto::find($id);
         $piatto->piatto_nome = $data['piatto_nome'];
-        $piatto->piatto_img = $data['piatto_img']->storePublicly('storage');
+        if(isset($data['piatto_img'])){
+            $piatto->piatto_img = $data['piatto_img']->storePublicly('storage');
+        }
         $piatto->piatto_descrizione = $data['piatto_descrizione'];
         $piatto->piatto_prezzo = $data['piatto_prezzo'];
         $piatto->piatto_visibile = $data['piatto_visibile'];

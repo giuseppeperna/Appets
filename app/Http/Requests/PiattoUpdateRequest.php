@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class PiattoFormRequest extends FormRequest
+class PiattoUpdateRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -25,7 +25,7 @@ class PiattoFormRequest extends FormRequest
     {
         return [
             'piatto_nome' => 'bail|required|min:3',
-            'piatto_img' => 'required|mimes:jpeg,jpg,png|max:5120',
+            'piatto_img' => 'mimes:jpeg,jpg,png|max:5120',
             'tipologia' => 'required|not_in:...',
             'piatto_descrizione' => 'required|between:5,180',
             'piatto_prezzo' => 'required',

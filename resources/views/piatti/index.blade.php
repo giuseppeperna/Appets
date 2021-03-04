@@ -20,7 +20,7 @@
                             <div class="card mb-3">
                                 <div class="card-body d-flex">
                                     <div class="col-2">
-                                        <img src="{{asset($piatto->piatto_img)}}" alt="..." class="thumbnail-img">
+                                        <a href="{{ route('piatti.show', $piatto->piatto_id) }}"><img src="{{asset($piatto->piatto_img)}}" alt="..." class="thumbnail-img"></a>
                                     </div>
                                     <div class="col-7">
                                         <h5 class="card-title">{{$piatto->piatto_nome}}</h5>

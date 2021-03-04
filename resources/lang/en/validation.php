@@ -130,9 +130,29 @@ return [
     */
 
     'custom' => [
-        'attribute-name' => [
-            'rule-name' => 'custom-message',
+        'piatto_nome' => [
+            'required' => 'Inserire un :attribute.',
+            'min' => 'il :attribute deve essere di almeno :min caratteri.'
         ],
+        'piatto_img' => [
+            'required' => "Inserire un':attribute.",
+            'mimes' => "L':attribute deve essere un file di tipo: :values.",
+            'max' => "L' :attribute non può essere maggiore di :max kilobytes.",
+        ],
+        'tipologia' => [
+            'required' => "Inserire una :attribute.",
+            'not_in' => 'Selezionare una :attribute.'
+        ],
+        'piatto_descrizione' => [
+            'required' => "Inserire una :attribute.",
+            'between' => 'La :attribute deve essere compresa tra :min e :max caratteri.'
+        ],
+        'piatto_prezzo' => [
+            'required' => "Inserire un :attribute.",
+        ],
+        'piatto_visibile' => [
+            'required' => "Scegliere la :attribute.",
+        ]
     ],
 
     /*
@@ -146,6 +166,13 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'piatto_nome' => 'nome',
+        'tipologia' => 'tipologia',
+        'piatto_img' => 'immagine',
+        'piatto_descrizione' => 'descrizione',
+        'piatto_prezzo' => 'prezzo',
+        'piatto_visibile' => 'disponibilità',
+    ],
 
 ];
