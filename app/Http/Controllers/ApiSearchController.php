@@ -3,18 +3,21 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Resources\RistoranteResource;
 use App\Piatto;
 use App\User;
+use App\Tipologia;
 use Response;
 
 class ApiSearchController extends Controller
 {
+
     public function getRistorantiResults(Request $request) {
         $data = $request->get('data');
 
-        $ristoranti = User::where('rist_nome', 'like', "%{$data}%")
+        $ristoranti = RistoranteResource::collection(User::where('rist_nome', 'like', "%{$data}%")
                          ->orWhere('rist_id', 'like', "%{$data}%")
-                         ->get();
+                         ->get());
         
         return Response::json([
             'data' => $ristoranti
