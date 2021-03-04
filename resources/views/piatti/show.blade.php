@@ -20,7 +20,7 @@
                             @endif
                             <div class="d-flex justify-content-end">
                                 <a href="{{ route('piatti.edit', $piatto->piatto_id)}}" class="btn btn-primary me-2 ms-2" title="Modifica"><i class="bi bi-pencil-square centering"></i></a>
-                                <form action="{{ route("piatti.destroy",$piatto->piatto_id) }}" method="post">
+                                <form onsubmit="return confirm('Vuoi davvero cancellare il piatto?');" action="{{ route("piatti.destroy",$piatto->piatto_id) }}" method="post">
                                     @csrf
                                     @method("delete")
                                     <button type="submit" class="btn btn-danger" title="Rimuovi"><i class="bi bi-trash centering"></i></button>

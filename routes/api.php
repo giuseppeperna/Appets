@@ -27,11 +27,11 @@ Route::get('/ristoranti', function() {
             'response' => RistoranteResource::collection(User::all()),
             'ristoranti_count' => RistoranteResource::collection(User::all())->count(),
         ];
-})->middleware('api_token');
+})->middleware('cors')->middleware('api_token');
 
 Route::get('/piatti', function() {
     return ['success' => true, 
             'response' => PiattoResource::collection(Piatto::all()),
             'piatti_count' => PiattoResource::collection(Piatto::all())->count(),
         ];
-})->middleware('api_token');
+})->middleware('cors')->middleware('api_token');
