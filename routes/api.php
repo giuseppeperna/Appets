@@ -22,6 +22,14 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
 
+Route::get('/ristoranti/search', 'ApiSearchController@getRistorantiResults')
+->middleware('cors')
+->middleware('api_token');
+
+Route::get('/piatti/search', 'ApiSearchController@getPiattiResults')
+->middleware('cors')
+->middleware('api_token');
+
 Route::get('/ristoranti', function() {
     return ['success' => true, 
             'response' => RistoranteResource::collection(User::all()),
