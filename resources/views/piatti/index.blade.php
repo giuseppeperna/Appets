@@ -45,7 +45,7 @@
                                             <form onsubmit="return confirm('Vuoi davvero nascondere il piatto?');" action="{{ route("soft-destroy",$piatto->piatto_id) }}" method="post">
                                                 @csrf
                                                 @method("delete")
-                                                <button type="submit" class="btn btn-success" title="Nascondi">Nascondi</button>
+                                                <button type="submit" class="btn btn-success" title="Nascondi"><i class="bi bi-eye-slash-fill centering"></i></button>
                                             </form>  
                                         </div>
                                     </div>
