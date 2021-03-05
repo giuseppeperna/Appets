@@ -19,12 +19,18 @@ class PiattiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
         $userId = Auth::id();
+        $search = $request->search;
+        if($search) {
+            $piatti = Piatto::Where(fn($query) => $query->where('rist_id', '=', $userId))
+            ->where('piatto_nome', 'LIKE', "%$search%")->get();
+        }else{
+            $piatti = Piatto::Where(fn($query) => $query->where('rist_id', '=', $userId))->get();
+        }
 
-        $piatti = Piatto::Where(fn($query) => $query->where('rist_id', '=', $userId))->get();
-        return view('piatti.index', compact('piatti'));
+        return view('piatti.index', compact('piatti', 'search'));
     }
 
     /**
@@ -145,11 +151,20 @@ class PiattiController extends Controller
         return redirect()->route('piatti.index');
     }
 
-    public function HiddenPlates()
-    {
-        $piatti = Piatto::onlyTrashed()->get();
+    public function HiddenPlates(Request $request)
+    {   
+        $userId = Auth::id();
+        $search = $request->search;
+        if($search) {
+            $piatti = Piatto::onlyTrashed()->where(fn($query) => $query->where('rist_id', '=', $userId))
+            ->where('piatto_nome', 'LIKE', "%$search%")->get();
+        }else{
+            $piatti = Piatto::onlyTrashed()->where(fn($query) => $query->where('rist_id', '=', $userId))->get();
+        }
 
-        return view('piatti.hidden', compact('piatti'));
+        // $piatti = Piatto::onlyTrashed()->where(fn($query) => $query->where('rist_id', '=', $userId))->get();
+
+        return view('piatti.hidden', compact('piatti', 'search'));
     }
 
     public function restorePlates($id)
