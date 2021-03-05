@@ -4,6 +4,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Resources\RistoranteResource;
 use App\Http\Resources\PiattoResource;
+use App\Http\Resources\TipologiaResource;
 use App\User;
 use App\Piatto;
 
@@ -27,6 +28,10 @@ Route::get('/ristoranti/search', 'ApiSearchController@getRistorantiResults')
 ->middleware('api_token');
 
 Route::get('/piatti/search', 'ApiSearchController@getPiattiResults')
+->middleware('cors')
+->middleware('api_token');
+
+Route::get('/tipologie/search', 'ApiSearchController@getTipologieResults')
 ->middleware('cors')
 ->middleware('api_token');
 
