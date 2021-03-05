@@ -922,3 +922,11 @@ section {
 	  border-radius: 8px;
 	  cursor: pointer;
   }
+
+  .hidden-plates {
+	  margin: 0 15px;
+  }
+
+  .empty-plates {
+	  padding: 30px;
+  }

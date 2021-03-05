@@ -129,12 +129,33 @@ class PiattiController extends Controller
     public function destroy($id)
     {
         $piatto = Piatto::find($id);
-        $piatto->delete();
+        $piatto->forceDelete();;
         if(Storage::exists($piatto->piatto_img)){
             Storage::delete($piatto->piatto_img);
         }else{
             dd('File does not exists.');
         }
         return redirect()->route('piatti.index');
+    }
+
+    public function softDestroy($id)
+    {
+        $piatto = Piatto::find($id);
+        $piatto->delete();;
+        return redirect()->route('piatti.index');
+    }
+
+    public function HiddenPlates()
+    {
+        $piatti = Piatto::onlyTrashed()->get();
+
+        return view('piatti.hidden', compact('piatti'));
+    }
+
+    public function restorePlates($id)
+    {
+        Piatto::withTrashed()->find($id)->restore();
+
+        return redirect()->route('hidden');
     }
 }

@@ -26,9 +26,15 @@ Route::get('/dashboard', 'DashboardController@index')->middleware('auth')->name(
 //     return view('dashboard');
 // })->middleware('auth')->name('dashboard');
 
+
+
+
 Route::prefix('dashboard')
 ->middleware('auth')
 ->group(function () {
+    Route::delete('piatti/{piatti}/delete','PiattiController@softDestroy')->name('soft-destroy');
+    Route::get('piatti/nascosti', 'PiattiController@hiddenPlates')->name('hidden');
+    Route::get('piatti/aggiungi/{piatto}', 'PiattiController@restorePlates')->name('restore');
     Route::resource('piatti', 'PiattiController');
     Route::get('utente', 'DashboardController@edit')->name('utente');
 });

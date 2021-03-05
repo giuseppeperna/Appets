@@ -24,7 +24,7 @@
                                     @csrf
                                     @method("delete")
                                     <button type="submit" class="btn btn-danger" title="Rimuovi"><i class="bi bi-trash centering"></i></button>
-                                </form> 
+                                </form>
                             </div>
                         </div>
                     </div>

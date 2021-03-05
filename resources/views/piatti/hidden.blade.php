@@ -1,6 +1,6 @@
 @extends('piatti.layouts.layoutPiatti')
 
-@section('title', 'Lista piatti')
+@section('title', 'Piatti nascosti')
 
 @section('content')
     <section id="order-list" class="order-list">
@@ -11,8 +11,7 @@
                                 <input type="text" class="form-control" placeholder="Filtra piatti..." aria-label="Recipient's username" aria-describedby="button-addon2">
                                 <button class="btn btn-outline-secondary" type="button" id="button-addon2">Cerca</button>
                             </div>
-                            <a class="btn btn-success" href="{{ route('piatti.create') }}">Aggiungi piatto</a>
-                            <a class="btn btn-success" href="{{ route('hidden') }}">Piatti nascosti</a>
+                            <a class="btn btn-success" href="{{ route('piatti.index') }}">Lista Piatti</a>
                         </div>
                     </div>
                     <div class="row">
@@ -30,20 +29,7 @@
                                         <p class="card-text">{{$piatto->piatto_descrizione}}</p>
                                     </div>
                                     <div class="col-3 centering">
-                                        <a href="{{ route('piatti.show', $piatto->piatto_id) }}" class="btn btn-warning" title="Dettagli"><i class="bi bi-three-dots centering"></i></a>
-                                        <a href="{{ route('piatti.edit', $piatto->piatto_id)}}" class="btn btn-primary me-2 ms-2" title="Modifica"><i class="bi bi-pencil-square centering"></i></a>
-                                        <form onsubmit="return confirm('Vuoi davvero cancellare il piatto?');" action="{{ route("piatti.destroy",$piatto->piatto_id) }}" method="post">
-                                            @csrf
-                                            @method("delete")
-                                            <button type="submit" class="btn btn-danger" title="Rimuovi"><i class="bi bi-trash centering"></i></button>
-                                        </form>
-                                        <div class="hidden-plates">
-                                            <form onsubmit="return confirm('Vuoi davvero nascondere il piatto?');" action="{{ route("soft-destroy",$piatto->piatto_id) }}" method="post">
-                                                @csrf
-                                                @method("delete")
-                                                <button type="submit" class="btn btn-success" title="Nascondi">Nascondi</button>
-                                            </form>  
-                                        </div>
+                                        <a href="{{ route('restore', $piatto->piatto_id) }}" onclick="return confirm('Vuoi davvero rendere disponibile il piatto?');" class="btn btn-warning" title="Dettagli">Rendi disponibile</i></a>                              
                                     </div>
                                 </div>
                             </div>
@@ -58,3 +44,6 @@
         </div>
     </section>
 @endsection('content')
+
+
+
