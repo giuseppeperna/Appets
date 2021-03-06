@@ -17,16 +17,18 @@ Route::get('/job-riders', function () {
     return view('job.riders');
 })->name('riders');
 
+Route::get('/job-restaurants', function () {
+    return view('job.restaurants');
+})->name('restaurants');
+
+Route::get('/job-operations', function () {
+    return view('job.operations');
+})->name('operations');
+
 Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/dashboard', 'DashboardController@index')->middleware('auth')->name('dashboard');
-
-// Route::get('/dashboard', function() {
-//     return view('dashboard');
-// })->middleware('auth')->name('dashboard');
-
-
 
 
 Route::prefix('dashboard')

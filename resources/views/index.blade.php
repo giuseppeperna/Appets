@@ -12,14 +12,7 @@
                               <h2 class="animate__animated animate__fadeInDown">Appets</h2>
                               <h2 class="animate__animated animate__fadeInDown"><span>I piatti</span> della tua città</h2>
                               <p class="animate__animated animate__fadeInUp">Solo a Milano, vicino a te.</p>
-                              <form action="">
-                                 <div class="input-group input-group-sm mb-3 px-2">
-                                    <input type="text" class="form-control bg-dark border-light text-white" placeholder="Che tipo di cucina cerchi?" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-                                    <div class="input-group-append">
-                                       <button class="btn btn-light" id="basic-addon2">Cerca ristorante</button>
-                                    </div>
-                                 </div>
-                              </form>
+                              <a href="{{route('home')}}/#restaurants" class="btn btn-light" id="basic-addon2">Cerca ristorante</a>
                            </div>
                         </div>
                      </div>
@@ -62,96 +55,36 @@
                   <div class="row">
                      <div class="col-lg-12 d-flex justify-content-center">
                         <ul id="restaurants-flters">
-                           <li data-filter="*" class="filter-active">Tutti</li>
-                           <li data-filter=".filter-italian">Italiano</li>
-                           <li data-filter=".filter-chinese">Cinese</li>
-                           <li data-filter=".filter-japanese">Giapponese</li>
-                           <li data-filter=".filter-indian">Indiano</li>
-                           <li data-filter=".filter-mexican">Messicano</li>
+                           <li :class="userChoice == 'italiano' ? 'filter-active' : ''" @click="userChoice = 'italiano'; ;searchRestaurants()">Italiano</li>
+                           <li :class="userChoice == 'giapponese' ? 'filter-active' : ''" @click="userChoice = 'giapponese'; searchRestaurants()">Giapponese</li>
+                           <li :class="userChoice == 'cinese' ? 'filter-active' : ''" @click="userChoice = 'cinese'; searchRestaurants()">Cinese</li>
+                           <li :class="userChoice == 'libanese' ? 'filter-active' : ''" @click="userChoice = 'libanese'; searchRestaurants()">Libanese</li>
+                           <li :class="userChoice == 'ungherese' ? 'filter-active' : ''" @click="userChoice = 'ungherese'; searchRestaurants()">Ungherese</li>
+                           <li :class="userChoice == 'egiziano' ? 'filter-active' : ''" @click="userChoice = 'egiziano'; searchRestaurants()">Egiziano</li>
+                           <li :class="userChoice == 'coreano' ? 'filter-active' : ''" @click="userChoice = 'coreano'; searchRestaurants()">Coreano</li>
+                           <li :class="userChoice == 'thailandese' ? 'filter-active' : ''" @click="userChoice = 'thailandese'; searchRestaurants()">Thailandese</li>
+                           <li :class="userChoice == 'indiano' ? 'filter-active' : ''" @click="userChoice = 'indiano'; searchRestaurants()">Indiano</li>
+                           <li :class="userChoice == 'messicano' ? 'filter-active' : ''" @click="userChoice = 'messicano'; searchRestaurants()">Messicano</li>
                         </ul>
                      </div>
                   </div>
                   <br>
                   <div class="row restaurants-container">
-                     <div class="col-lg-6 restaurants-item filter-italian">
-                        <div class="">
-                           <a href="#">Ristorante</a> <span>NEW</span>
+                     <template v-for="type in filteredRestaurants">
+                     <div v-for="el in filteredRestaurants[0].ristoranti" class="col-lg-6 restaurants-item">
+                        <div>
+                           <a href="#">@{{el.rist_nome}}</a>
                         </div>
                         <div class="restaurants-description">
-                           Descrizione
-                        </div>
-                     </div>
-                     <div class="col-lg-6 restaurants-item filter-italian">
-                        <div class="">
-                           <a href="#">Ristorante</a> <span>NEW</span>
+                           Tipologia: @{{type.nome}}
                         </div>
                         <div class="restaurants-description">
-                           Descrizione
+                           @{{el.rist_descrizione}}
                         </div>
-                     </div>
-                     <div class="col-lg-6 restaurants-item filter-italian">
-                        <div class="">
-                           <a href="#">Ristorante</a> <span>NEW</span>
+                        <div class="restaurants-description" >
+                           @{{el.rist_indirizzo}}
                         </div>
-                        <div class="restaurants-description">
-                           Descrizione
-                        </div>
-                     </div>
-                     <div class="col-lg-6 restaurants-item filter-italian">
-                        <div class="">
-                           <a href="#">Ristorante</a> <span>NEW</span>
-                        </div>
-                        <div class="restaurants-description">
-                           Descrizione
-                        </div>
-                     </div>
-                     <div class="col-lg-6 restaurants-item filter-italian">
-                        <div class="">
-                           <a href="#">Ristorante</a> <span></span>
-                        </div>
-                        <div class="restaurants-description">
-                           Descrizione
-                        </div>
-                     </div>
-                     <div class="col-lg-6 restaurants-item filter-italian">
-                        <div class="">
-                           <a href="#">Ristorante</a> <span></span>
-                        </div>
-                        <div class="restaurants-description">
-                           Descrizione
-                        </div>
-                     </div>
-                     <div class="col-lg-6 restaurants-item filter-italian">
-                        <div class="">
-                           <a href="#">Ristorante</a> <span></span>
-                        </div>
-                        <div class="restaurants-description">
-                           Descrizione
-                        </div>
-                     </div>
-                     <div class="col-lg-6 restaurants-item filter-italian">
-                        <div class="">
-                           <a href="#">Ristorante</a> <span></span>
-                        </div>
-                        <div class="restaurants-description">
-                           Descrizione
-                        </div>
-                     </div>
-                     <div class="col-lg-6 restaurants-item filter-italian">
-                        <div class="">
-                           <a href="#">Ristorante</a> <span></span>
-                        </div>
-                        <div class="restaurants-description">
-                           Descrizione
-                        </div>
-                     </div>
-                     <div class="col-lg-6 restaurants-item filter-italian">
-                        <div class="">
-                           <a href="#">Ristorante</a> <span></span>
-                        </div>
-                        <div class="restaurants-description">
-                           Descrizione
-                        </div>
+                     </template>
                      </div>
                   </div>
                </div>
@@ -211,7 +144,7 @@
                      </div>
                      <div class="col-lg-4 col-md-6">
                         <div class="member">
-                           <div class="pic"><img src="img/jobs/jobs-2.jpg" class="img-fluid" alt=""></div>
+                           <div class="pic"><a href="{{route('restaurants')}}"><img src="img/jobs/jobs-2.jpg" class="img-fluid" alt=""></a></div>
                            <div class="member-info">
                               <h4>Ristoranti</h4>
                               <span>Diventa partner di Appets e raggiungi sempre più clienti. Ci occupiamo noi della consegna, così che la tua unica preoccupazione sia continuare a preparare il miglior cibo.</span>
@@ -226,7 +159,7 @@
                      </div>
                      <div class="col-lg-4 col-md-6">
                         <div class="member">
-                           <div class="pic"><img src="img/jobs/jobs-3.jpg" class="img-fluid" alt=""></div>
+                           <div class="pic"><a href="{{route('operations')}}"><img src="img/jobs/jobs-3.jpg" class="img-fluid" alt=""></a></div>
                            <div class="member-info">
                               <h4>Personale in sede</h4>
                               <span>La nostra missione è trasformare il modo in cui le persone mangiano. È un obiettivo ambizioso, come noi, e ci servono persone che ci aiutino a raggiungerlo.</span>

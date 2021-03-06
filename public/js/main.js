@@ -19,9 +19,9 @@ const my_app = new Vue({
        },
        // Chiamata AJAX e gestione della ricerca
        searchRestaurants: function(){
-          axios.get('localhost:8000/api/ristoranti',
-             {params: {api_key: this.apiKey, query: this.userChoice}}).then(result => this.filteredRestaurants = result.data.results);
+          axios.get('http://localhost:8000/api/tipologie/search',
+             {params: {api_token: this.apiKey, data: this.userChoice}}).then(result => this.filteredRestaurants = result.data.data);
        },
-    },
+     }
 
  });

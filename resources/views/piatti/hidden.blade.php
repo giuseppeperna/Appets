@@ -33,15 +33,21 @@
                                         <p class="card-text">{{$piatto->piatto_descrizione}}</p>
                                     </div>
                                     <div class="col-3 centering">
-                                        <a href="{{ route('restore', $piatto->piatto_id) }}" onclick="return confirm('Vuoi davvero rendere disponibile il piatto?');" class="btn btn-warning" title="Dettagli">Rendi disponibile</i></a>                              
+                                        <a href="{{ route('restore', $piatto->piatto_id) }}" onclick="return confirm('Vuoi davvero rendere disponibile il piatto?');" class="btn btn-warning" title="Rendi disponibile">Rendi disponibile</i></a>                              
                                     </div>
                                 </div>
                             </div>
                         @endforeach
-                        @else 
+                        @else
+                        @if (isset($search))
+                        <div class="col-12 centering empty-plates">
+                            <h3>Nessun risultato!</h3>
+                        </div>
+                        @else  
                         <div class="col-12 centering empty-plates">
                             <h3>Non ci sono piatti nascosti!</h3>
                         </div> 
+                        @endif
                         @endif
                 </div>
             </div>
