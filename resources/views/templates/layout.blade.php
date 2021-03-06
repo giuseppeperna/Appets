@@ -28,34 +28,7 @@
    <body>
       <div id="root">
          @include('templates._header')
-           <!-- End Header -->
-        {{--  <!-- ======= Hero Section ======= -->
-         <section id="hero">
-            <div class="hero-container">
-               <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
-                  <div class="carousel-inner" role="listbox">
-                     <div class="carousel-item active" style="background: url(assets/img/slide/slide-1.jpg); background-size: cover;">
-                        <div class="carousel-container">
-                           <div class="carousel-content">
-                              <h2 class="animate__animated animate__fadeInDown">Appets</h2>
-                              <h2 class="animate__animated animate__fadeInDown"><span>I piatti</span> della tua città</h2>
-                              <p class="animate__animated animate__fadeInUp">Solo a Milano, vicino a te.</p>
-                              <form action="">
-                                 <div class="input-group input-group-sm mb-3 px-2">
-                                    <input type="text" class="form-control bg-dark border-light text-white" placeholder="Che tipo di cucina cerchi?" aria-label="Small" aria-describedby="inputGroup-sizing-sm">
-                                    <div class="input-group-append">
-                                       <button class="btn btn-light" id="basic-addon2">Cerca ristorante</button>
-                                    </div>
-                                 </div>
-                              </form>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
-         <!-- End Hero --> --}}
+   
          @yield('content')
 
          @include('templates._footer')

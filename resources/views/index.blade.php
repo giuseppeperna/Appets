@@ -69,25 +69,23 @@
                      </div>
                   </div>
                   <br>
-                  <div class="row restaurants-container">
-                     <template v-for="type in filteredRestaurants">
-                     <div v-for="el in filteredRestaurants[0].ristoranti" class="col-lg-6 restaurants-item">
-                        <div>
-                           <a href="#">@{{el.rist_nome}}</a>
-                        </div>
-                        <div class="restaurants-description">
-                           Tipologia: @{{type.nome}}
-                        </div>
-                        <div class="restaurants-description">
-                           @{{el.rist_descrizione}}
-                        </div>
-                        <div class="restaurants-description" >
-                           @{{el.rist_indirizzo}}
+                  <div class="row row-cols-1 row-cols-md-3 g-4">
+                    <template v-for="type in filteredRestaurants">
+                    <div style="margin: 30px 0;" v-for="el in filteredRestaurants[0].ristoranti" class="col">
+                       <div class="card-header text-center" style="background-color:#444;">
+                        <h5 style="color: #ffb03b; margin-bottom: 0em;">Appets!</h5>
+                       </div>
+                      <div class="card h-100" style="border-color:#444; border-radius: 0;">
+                          <a style="margin-top: 10px;" class="card-title text-center" href="#"><span>@{{el.rist_nome}}</span></a>
+                        <div class="card-body">
+                          <div class="card-text"><strong>Tipologia: </strong>@{{type.nome}}</div>
+                          <div class="card-text"><strong>Descrizione: </strong> @{{el.rist_descrizione}}</div >
+                          <div class="card-text"><strong>Indirizzo: </strong> @{{el.rist_indirizzo}}</div >
                         </div>
                      </template>
-                     </div>
+                      </div>
+                    </div>
                   </div>
-               </div>
             </section>
             <!-- End restaurants Section -->
             <!-- ======= Events Section ======= -->
@@ -129,7 +127,7 @@
                   <div class="row">
                      <div class="col-lg-4 col-md-6">
                         <div class="member">
-                           <div class="pic"><a href="{{route('riders')}}"><img src="img/jobs/jobs-1.jpg" class="img-fluid" alt="rider"></a></div>
+                           <div class="pic"><img src="img/jobs/jobs-1.jpg" class="img-fluid" alt="rider"></div>
                            <div class="member-info">
                               <h4>Rider</h4>
                               <span>Diventa un rider: flessibilità, ottimi guadagni e un mondo di vantaggi per te.</span>
@@ -144,7 +142,7 @@
                      </div>
                      <div class="col-lg-4 col-md-6">
                         <div class="member">
-                           <div class="pic"><a href="{{route('restaurants')}}"><img src="img/jobs/jobs-2.jpg" class="img-fluid" alt=""></a></div>
+                           <div class="pic"><img src="img/jobs/jobs-2.jpg" class="img-fluid" alt=""></div>
                            <div class="member-info">
                               <h4>Ristoranti</h4>
                               <span>Diventa partner di Appets e raggiungi sempre più clienti. Ci occupiamo noi della consegna, così che la tua unica preoccupazione sia continuare a preparare il miglior cibo.</span>
@@ -159,7 +157,7 @@
                      </div>
                      <div class="col-lg-4 col-md-6">
                         <div class="member">
-                           <div class="pic"><a href="{{route('operations')}}"><img src="img/jobs/jobs-3.jpg" class="img-fluid" alt=""></a></div>
+                           <div class="pic"><img src="img/jobs/jobs-3.jpg" class="img-fluid" alt=""></div>
                            <div class="member-info">
                               <h4>Personale in sede</h4>
                               <span>La nostra missione è trasformare il modo in cui le persone mangiano. È un obiettivo ambizioso, come noi, e ci servono persone che ci aiutino a raggiungerlo.</span>

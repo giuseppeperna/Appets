@@ -6,7 +6,7 @@
     <section id="order-list" class="order-list">
                 <div class="container">
                     <div class="row mb-3">
-                        <div class="col-12">
+                        <div class="col-12 plates-list-container">
                             <div class="input-group mb-3 w-50">
                                 <form class="input-group" method="get" action="{{ route('piatti.index')}}">
                                     @csrf
@@ -36,17 +36,63 @@
                                     <div class="col-3 centering">
                                         <a href="{{ route('piatti.show', $piatto->piatto_id) }}" class="btn btn-warning" title="Dettagli"><i class="bi bi-three-dots centering"></i></a>
                                         <a href="{{ route('piatti.edit', $piatto->piatto_id)}}" class="btn btn-primary me-2 ms-2" title="Modifica"><i class="bi bi-pencil-square centering"></i></a>
-                                        <form onsubmit="return confirm('Vuoi davvero cancellare il piatto?');" action="{{ route("piatti.destroy",$piatto->piatto_id) }}" method="post">
-                                            @csrf
-                                            @method("delete")
-                                            <button type="submit" class="btn btn-danger" title="Rimuovi"><i class="bi bi-trash centering"></i></button>
-                                        </form>
-                                        <div class="hidden-plates">
-                                            <form onsubmit="return confirm('Vuoi davvero nascondere il piatto?');" action="{{ route("soft-destroy",$piatto->piatto_id) }}" method="post">
-                                                @csrf
-                                                @method("delete")
-                                                <button type="submit" class="btn btn-success" title="Nascondi"><i class="bi bi-eye-slash-fill centering"></i></button>
-                                            </form>  
+
+
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#piatto{{$piatto->piatto_id}}delete">
+                                            <i class="bi bi-trash centering"></i>
+                                        </button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="piatto{{$piatto->piatto_id}}delete" tabindex="-1" aria-labelledby="piatto{{$piatto->piatto_id}}deleteLabel" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="piatto{{$piatto->piatto_id}}deleteLabel">{{$piatto->piatto_nome}}</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>Vuoi davvero cancellare il piatto?</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+                                                    <form action="{{ route("piatti.destroy",$piatto->piatto_id) }}" method="post">
+                                                        @csrf
+                                                        @method("delete")
+                                                        <button type="submit" class="btn btn-danger" title="Cancella">Cancella</button>
+                                                    </form>
+                                                </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        
+                                        <!-- Button trigger modal -->
+                                        <button type="button" class="btn btn-success hidden-plates" data-bs-toggle="modal" 
+                                        data-bs-target="#piatto{{$piatto->piatto_id}}">
+                                            <i class="bi bi-eye-slash-fill centering"></i>
+                                        </button>
+
+                                        <!-- Modal -->
+                                        <div class="modal fade" id="piatto{{$piatto->piatto_id}}" tabindex="-1" aria-labelledby="piatto{{$piatto->piatto_id}}Label" aria-hidden="true">
+                                            <div class="modal-dialog modal-dialog-centered">
+                                                <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="piatto{{$piatto->piatto_id}}Label">{{$piatto->piatto_nome}}</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p>Vuoi davvero nascondere il piatto?</p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+                                                    <form action="{{ route("soft-destroy",$piatto->piatto_id) }}" method="post">
+                                                        @csrf
+                                                        @method("delete")
+                                                        <button type="submit" class="btn btn-success" title="Nascondi">Nascondi</button>
+                                                    </form>  
+                                                </div>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>

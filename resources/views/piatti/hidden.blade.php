@@ -6,7 +6,7 @@
     <section id="order-list" class="order-list">
                 <div class="container">
                     <div class="row mb-3">
-                        <div class="col-12">
+                        <div class="col-12 plates-list-container">
                             <div class="input-group mb-3 w-50">
                                 <form class="input-group" method="get" action="{{ route('hidden')}}">
                                     @csrf
@@ -26,15 +26,37 @@
                             <div class="card mb-3">
                                 <div class="card-body d-flex">
                                     <div class="col-2">
-                                        <a href="{{ route('piatti.show', $piatto->piatto_id) }}"><img src="{{asset($piatto->piatto_img)}}" alt="..." class="thumbnail-img"></a>
+                                        <img src="{{asset($piatto->piatto_img)}}" alt="..." class="thumbnail-img">
                                     </div>
                                     <div class="col-7">
                                         <h5 class="card-title">{{$piatto->piatto_nome}}</h5>
                                         <p class="card-text">{{$piatto->piatto_descrizione}}</p>
                                     </div>
                                     <div class="col-3 centering">
-                                        <a href="{{ route('restore', $piatto->piatto_id) }}" onclick="return confirm('Vuoi davvero rendere disponibile il piatto?');" class="btn btn-warning" title="Rendi disponibile">Rendi disponibile</i></a>                              
+                                        <!-- Button trigger modal -->
+                                    <button type="button" class="btn btn-warning" data-bs-toggle="modal" data-bs-target="#piatto{{$piatto->piatto_id}}restore">
+                                        Rendi disponibile
+                                    </button>
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="piatto{{$piatto->piatto_id}}restore" tabindex="-1" aria-labelledby="piatto{{$piatto->piatto_id}}restoreLabel" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered">
+                                            <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="piatto{{$piatto->piatto_id}}restoreLabel">{{$piatto->piatto_nome}}</h5>
+                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                            </div>
+                                            <div class="modal-body">
+                                                <p>Vuoi davvero rendere disponibile il piatto?</p>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
+                                                <a href="{{ route('restore', $piatto->piatto_id) }}" class="btn btn-warning" title="Conferma">Conferma</a>
+                                            </div>
+                                            </div>
+                                        </div>
                                     </div>
+                                    </div>
+                                    
                                 </div>
                             </div>
                         @endforeach
