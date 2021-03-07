@@ -25,9 +25,9 @@ class PiattiController extends Controller
         $search = $request->search;
         if($search) {
             $piatti = Piatto::Where(fn($query) => $query->where('rist_id', '=', $userId))
-            ->where('piatto_nome', 'LIKE', "%$search%")->get();
+            ->where('piatto_nome', 'LIKE', "%$search%")->paginate(4);
         }else{
-            $piatti = Piatto::Where(fn($query) => $query->where('rist_id', '=', $userId))->get();
+            $piatti = Piatto::Where(fn($query) => $query->where('rist_id', '=', $userId))->paginate(4);
         }
 
         return view('piatti.index', compact('piatti', 'search'));
@@ -157,12 +157,10 @@ class PiattiController extends Controller
         $search = $request->search;
         if($search) {
             $piatti = Piatto::onlyTrashed()->where(fn($query) => $query->where('rist_id', '=', $userId))
-            ->where('piatto_nome', 'LIKE', "%$search%")->get();
+            ->where('piatto_nome', 'LIKE', "%$search%")->paginate(4);
         }else{
-            $piatti = Piatto::onlyTrashed()->where(fn($query) => $query->where('rist_id', '=', $userId))->get();
+            $piatti = Piatto::onlyTrashed()->where(fn($query) => $query->where('rist_id', '=', $userId))->paginate(4);
         }
-
-        // $piatti = Piatto::onlyTrashed()->where(fn($query) => $query->where('rist_id', '=', $userId))->get();
 
         return view('piatti.hidden', compact('piatti', 'search'));
     }

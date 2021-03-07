@@ -5,7 +5,7 @@ body {
 
 a {
 	text-decoration: none;
-	color: #92c24c
+	color: #ffb03b
 }
 
 a:hover {
@@ -19,10 +19,7 @@ h3,
 h4,
 h5,
 h6 {
-	/* font-family: Satisfy, sans-serif */
-	font-family: 'Lobster', cursive;
-	/* font-family: 'Dancing Script', cursive; */
-	font-weight: 700;
+	font-family: Satisfy, sans-serif
 }
 
 #header {
@@ -41,7 +38,8 @@ h6 {
 	letter-spacing: 3px
 }
 
-#header .logo h1 a {
+#header .logo h1 a,
+#header .logo h1 a:hover {
 	color: #fff;
 	text-decoration: none
 }
@@ -89,7 +87,7 @@ h6 {
 .navbar .active,
 .navbar a:hover,
 .navbar li:hover>a {
-	color: #92c24c
+	color: #ffb03b
 }
 
 .navbar a::after,
@@ -98,7 +96,7 @@ h6 {
 	width: 0;
 	height: 1px;
 	content: '';
-	background: #92c24c;
+	background: #ffb03b;
 	transition: all .5s
 }
 
@@ -176,7 +174,7 @@ h6 {
 .navbar-mobile .active,
 .navbar-mobile a:hover,
 .navbar-mobile li:hover>a {
-	color: #92c24c
+	color: #ffb03b
 }
 
 #hero {
@@ -228,7 +226,7 @@ h6 {
 }
 
 #hero h2 span {
-	color: #92c24c
+	color: #ffb03b
 }
 
 #hero p {
@@ -273,11 +271,11 @@ h6 {
 	-webkit-animation-delay: .8s;
 	animation-delay: .8s;
 	color: #fff;
-	border: 2px solid #92c24c
+	border: 2px solid #ffb03b
 }
 
 #hero .btn-restaurants:hover {
-	background: #92c24c;
+	background: #ffb03b;
 	color: #fff
 }
 
@@ -318,7 +316,7 @@ section {
 }
 
 .section-title h2 span {
-	color: #92c24c
+	color: #ffb03b
 }
 
 .section-title p {
@@ -374,7 +372,7 @@ section {
 
 .about .content ul i {
 	font-size: 20px;
-	color: #92c24c;
+	color: #ffb03b;
 	position: absolute;
 	left: 0;
 	top: 2px
@@ -455,14 +453,14 @@ section {
 	margin: 0 3px 10px 3px;
 	transition: all ease-in-out .3s;
 	background: #fff;
-	border: 2px solid #92c24c;
-	border-radius: 8px
+	border: 2px solid #ffb03b;
+	border-radius: 50px
 }
 
 .restaurants #restaurants-flters li.filter-active,
 .restaurants #restaurants-flters li:hover {
 	color: #fff;
-	background: #92c24c
+	background: #ffb03b
 }
 
 .restaurants #restaurants-flters li:last-child {
@@ -557,7 +555,7 @@ section {
 .events .event-item h3 {
 	font-weight: 600;
 	font-size: 26px;
-	color: #92c24c
+	color: #ffb03b
 }
 
 .events .event-item .price {
@@ -568,7 +566,7 @@ section {
 }
 
 .events .event-item .price span {
-	border-bottom: 2px solid #92c24c
+	border-bottom: 2px solid #ffb03b
 }
 
 .events .event-item ul {
@@ -583,7 +581,7 @@ section {
 .events .event-item ul i {
 	font-size: 20px;
 	padding-right: 4px;
-	color: #92c24c
+	color: #ffb03b
 }
 
 .events .event-item p:last-child {
@@ -636,8 +634,7 @@ section {
 	bottom: -80px;
 	left: 20px;
 	right: 20px;
-	background: #fdf8db;
-	border-radius: 10px;
+	background: #fff;
 	padding: 20px 0;
 	color: #433f39;
 	box-shadow: 0 2px 15px rgba(0, 0, 0, .1);
@@ -661,7 +658,7 @@ section {
 	display: block;
 	width: 50px;
 	height: 1px;
-	background: #92c24c;
+	background: #ffcf88;
 	bottom: 0;
 	left: calc(50% - 25px)
 }
@@ -683,7 +680,7 @@ section {
 }
 
 .jobs .member .social a:hover {
-	color: #92c24c
+	color: #ffb03b
 }
 
 .jobs .member .social i {
@@ -726,7 +723,7 @@ section {
 }
 
 #footer {
-	background: #232d23;
+	background: #35322d;
 	color: #fff;
 	font-size: 14px;
 	text-align: center;
@@ -736,7 +733,7 @@ section {
 #footer h3 {
 	font-size: 36px;
 	font-weight: 700;
-	color: #92c24c;
+	color: #ffb03b;
 	position: relative;
 	padding: 0;
 	margin: 0 0 15px 0
@@ -746,21 +743,22 @@ section {
 	font-size: 15;
 	font-style: italic;
 	padding: 0;
-	margin: 0 0 10px 0
+	margin: 0 0 40px 0
 }
 
 #footer .social-links {
-	margin: 0 0 20px 0
+	margin: 0 0 40px 0
 }
 
 #footer .social-links a {
-	font-size: 50px;
+	font-size: 18px;
 	display: inline-block;
+	background: #46423b;
 	color: #fff;
-	border-radius:50%;
 	line-height: 1;
 	padding: 8px 0;
 	margin-right: 4px;
+	border-radius: 50%;
 	text-align: center;
 	width: 36px;
 	height: 36px;
@@ -768,7 +766,7 @@ section {
 }
 
 #footer .social-links a:hover {
-	color: #92c24c
+	background: #ffb03b
 }
 
 #footer .copyright {
@@ -793,12 +791,12 @@ section {
 }
 
 .btn-appets {
-	background-color: #92c24c;
+	background-color: #ffb03b;
 	color: #35322d;
   }
   .btn-appets:hover {
 	background-color: #35322d;
-	color: #92c24c;
+	color: #ffb03b;
   }
 
   .requirements {
@@ -847,7 +845,7 @@ section {
   .requirements .requirement-item h3 {
 	font-weight: 600;
 	font-size: 26px;
-	color: #92c24c
+	color: #ffb03b
   }
 
   .requirements .requirement-item .price {
@@ -858,7 +856,7 @@ section {
   }
 
   .requirements .requirement-item .price span {
-	border-bottom: 2px solid #92c24c
+	border-bottom: 2px solid #ffb03b
   }
 
   .requirements .requirement-item ul {
@@ -873,7 +871,7 @@ section {
   .requirements .requirement-item ul i {
 	font-size: 20px;
 	padding-right: 4px;
-	color: #92c24c
+	color: #ffb03b
   }
 
   .requirements .requirement-item p:last-child {

@@ -22,6 +22,29 @@
          </section>
          <!-- End Hero -->
          <main id="main">
+            <!-- ======= About Section ======= -->
+            {{-- <section id="about" class="about">
+               <div class="container-fluid">
+                  <div class="row">
+                     <div class="col-lg-12 d-flex flex-column justify-content-center align-items-stretch">
+                        <div class="content">
+                           <h3>A casa tua con <strong>Appets</strong></h3>
+                           <br>
+                           <p class="about-text">
+                              Appets è l'app che ti permette di ricevere a domicilio i migliori piatti della tua città in pochi minuti. Mettiamo in contatto utenti, aziende e corrieri per renderlo possibile e operiamo esclusivamente a Milano. Il progetto nasce con l'obiettivo di trasformare il modo in cui i cittadini milanesi acquisiscono ciò di cui hanno bisogno rendendo le città più accessibili. In Appets vogliamo dare a tutti la possibilità di avere accesso a qualsiasi piatto cucinato dai migliori ristoranti della città, con un impatto sostenibile sull'economia, la società e l'ambiente: Siamo un'azienda tech-first responsabile.
+                           </p>
+                           <div class="about-image">
+                              <img src="img/bomba.jpg" alt="">
+                           </div>
+                        </div>
+                        <br>
+                        <p class="about-text"><strong>Marco Zong detto "Il Bomba"<br>CEO & Fondatore</strong></p>
+                     </div>
+                  </div>
+               </div>
+            </section> --}}
+            <!-- End About Section -->
+            <!-- ======= Restaurants Section ======= -->
             <section id="restaurants" class="restaurants">
                <div class="container">
                   <div class="section-title">
@@ -66,7 +89,7 @@
             </section>
             <!-- End restaurants Section -->
             <!-- ======= Events Section ======= -->
-            {{-- <section id="events" class="events">
+            <section id="events" class="events">
                <div class="container">
                   <div class="section-title">
                      <h2 v-observe-visibility="{ callback: (isVisible, entry) => animation_visibility(isVisible, entry, 'events') }" :class="{ 'visible animate__animated animate__fadeInLeft': animateSection.events, 'invisible': !animateSection.events }">Organizza il Tuo <span>Evento</span> con Appets</h2>
@@ -92,7 +115,7 @@
                      </div>
                   </div>
                </div>
-            </section> --}}
+            </section>
             <!-- End Events Section -->
             <!-- ======= Jobs Section ======= -->
             <section id="jobs" class="jobs">
@@ -108,6 +131,12 @@
                            <div class="member-info">
                               <h4>Rider</h4>
                               <span>Diventa un rider: flessibilità, ottimi guadagni e un mondo di vantaggi per te.</span>
+                              <div class="social">
+                                 <a href=""><i class="bi bi-twitter"></i></a>
+                                 <a href=""><i class="bi bi-facebook"></i></a>
+                                 <a href=""><i class="bi bi-instagram"></i></a>
+                                 <a href=""><i class="bi bi-linkedin"></i></a>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -117,6 +146,12 @@
                            <div class="member-info">
                               <h4>Ristoranti</h4>
                               <span>Diventa partner di Appets e raggiungi sempre più clienti. Ci occupiamo noi della consegna, così che la tua unica preoccupazione sia continuare a preparare il miglior cibo.</span>
+                              <div class="social">
+                                 <a href=""><i class="bi bi-twitter"></i></a>
+                                 <a href=""><i class="bi bi-facebook"></i></a>
+                                 <a href=""><i class="bi bi-instagram"></i></a>
+                                 <a href=""><i class="bi bi-linkedin"></i></a>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -126,6 +161,12 @@
                            <div class="member-info">
                               <h4>Personale in sede</h4>
                               <span>La nostra missione è trasformare il modo in cui le persone mangiano. È un obiettivo ambizioso, come noi, e ci servono persone che ci aiutino a raggiungerlo.</span>
+                              <div class="social">
+                                 <a href=""><i class="bi bi-twitter"></i></a>
+                                 <a href=""><i class="bi bi-facebook"></i></a>
+                                 <a href=""><i class="bi bi-instagram"></i></a>
+                                 <a href=""><i class="bi bi-linkedin"></i></a>
+                              </div>
                            </div>
                         </div>
                      </div>
@@ -133,6 +174,37 @@
                </div>
             </section>
             <!-- End Jobs Section -->
+            <!-- ======= Testimonials Section ======= -->
+            {{-- <section id="testimonials" class="testimonials">
+               <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel">
+                  <div class="section-title">
+                     <h2><span>Dicono di Noi</span></h2>
+                  </div>
+                  <div class="carousel-inner">
+                    <div class="carousel-item active text-center">
+                      <img class="testimonial-image" src="img/testimonials/slide-1.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item text-center">
+                      <img class="testimonial-image" src="img/testimonials/slide-2.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item text-center">
+                      <img class="testimonial-image" src="img/testimonials/slide-3.jpg" class="d-block w-100" alt="...">
+                    </div>
+                    <div class="carousel-item text-center">
+                     <img class="testimonial-image" src="img/testimonials/slide-4.jpg" class="d-block w-100" alt="...">
+                   </div>
+                  </div>
+                  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                  </button>
+                  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators"  data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                  </button>
+                </div>
+            </section> --}}
+            <!-- End testimonials Section -->
          </main>
          <!-- End #main -->
 @endsection

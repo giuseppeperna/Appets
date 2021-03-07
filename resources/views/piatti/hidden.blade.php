@@ -75,6 +75,9 @@
             </div>
         </div>
     </section>
+    <div class="pagination d-flex justify-content-center">
+        {{ $piatti->links() }}
+    </div>
 @endsection('content')
 
 
