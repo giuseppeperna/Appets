@@ -64,36 +64,6 @@
                     </div>
                   </div>
             </section>
-            <!-- End restaurants Section -->
-            <!-- ======= Events Section ======= -->
-            {{-- <section id="events" class="events">
-               <div class="container">
-                  <div class="section-title">
-                     <h2 v-observe-visibility="{ callback: (isVisible, entry) => animation_visibility(isVisible, entry, 'events') }" :class="{ 'visible animate__animated animate__fadeInLeft': animateSection.events, 'invisible': !animateSection.events }">Organizza il Tuo <span>Evento</span> con Appets</h2>
-                  </div>
-                  <div class="row event-item">
-                     <div class="col-lg-6">
-                        <img src="{{asset('img/buffet.jpg')}}" class="img-fluid" alt="Immagine buffet">
-                     </div>
-                     <div class="col-lg-6 pt-4 pt-lg-0 content">
-                        <h3>Pacchetto Festa</h3>
-                        <div class="price">
-                           <p><span>A partire da 80 euro</span></p>
-                        </div>
-                        <p class="font-italic">
-                           Vuoi organizzare un evento? Una festa di compleanno? Un buffet per festeggiare qualche ricorrenza?
-                        </p>
-                        <p>
-                           Con Appets Catering ti mettiamo a disposizione un team di organizzatori che si occuperà per te di tutto. Il nostro staff ti porterà tutto il necessario, dall'aperitivo al dessert, e vi servirà comodamente nella vostra location proprio come se fossi al ristorante!
-                        </p>
-                        <p>
-                           Con noi la tua festa renderà invidiosi i tuoi ospiti! Chiamaci per informazioni al numero 800505050!
-                        </p>
-                     </div>
-                  </div>
-               </div>
-            </section> --}}
-            <!-- End Events Section -->
             <!-- ======= Jobs Section ======= -->
             <section id="jobs" class="jobs">
                <div class="container">

@@ -1,31 +1,65 @@
 @extends('piatti.layouts.layoutPiatti')
 
-@section('title', 'Informazioni utente')
-@section('content')
+@section('title', 'Modifica piatto')
 
+@section('content')
 <div class="container">
     <div class="row justify-content-center form-container">
         <div class="col-md-8">
-            <h1 class="text-center">I miei dati</h1>
-            <div class="card justify-center" >
+            <div class="card">
                 <div class="card-body">
-                  <h5 class="card-title">{{$user['rist_nome']}}</h5>
-                  <p class="card-text">In questa sezione puoi trovare un riepilogo dei tuoi dati</p>
+                    <form method="POST" action="{{route('aggiorna-utente')}}">
+                        <div class="form-group container-form">
+                            @csrf
+                            @method('Put')
+                    
+                            <label for="rist_nome">Nome</label>
+                            <input type="text" name="rist_nome" class="form-control" id="rist_nome" placeholder="Nome" 
+                            value="{{ $user->rist_nome }}">
+                            @error('rist_nome')
+                                <p class="alert alert-danger">{{ $message }}</p>
+                            @enderror
+                    
+                            <label for="email">E-mail</label>
+                            <input type="text" name="email" class="form-control" id="email" placeholder="Email"
+                            value="{{ $user->email }}">
+                            @error('email')
+                                <p class="alert alert-danger">{{ $message }}</p>
+                            @enderror
+
+                            <label for="rist_indirizzo">Indirizzo</label>
+                            <input type="text" name="rist_indirizzo" class="form-control" id="rist_indirizzo" placeholder="Indirizzo"
+                            value="{{ $user->rist_indirizzo }}">
+                            @error('rist_indirizzo')
+                                <p class="alert alert-danger">{{ $message }}</p>
+                            @enderror
+
+                            <label for="rist_descrizione">Descrizione</label>
+                            <textarea name="rist_descrizione" id="rist_descrizione" cols="30" rows="10" class="form-control">{{ $user->rist_descrizione }}</textarea>
+                            @error('rist_descrizione')
+                            <p class="alert alert-danger">{{ $message }}</p>
+                            @enderror
+
+                            <label for="rist_p_iva">Partita Iva</label>
+                            <input type="text" name="rist_p_iva" class="form-control" id="rist_p_iva" placeholder="Partita Iva"
+                            value="{{ $user->rist_p_iva }}">
+                            @error('rist_p_iva')
+                                <p class="alert alert-danger">{{ $message }}</p>
+                            @enderror
+                            
+                        </div>
+                        <div class="submit-container">
+                            <button type="submit" class="btn btn-success register-btn" style="margin-top: 10px;">Modifica</button>
+                        </div>
+                        <div class="go-back">
+                            <a href="{{ route('utente')}}">Indietro</a>
+                        </div>
+                    </form>
                 </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item"><strong>Nome Ristorante:</strong> {{$user['rist_nome']}}</li>
-                  <li class="list-group-item"><strong>Email:</strong> {{$user['email']}}</li>
-                  <li class="list-group-item"><strong>Indirizzo:</strong> {{$user['rist_indirizzo']}}</li>
-                  <li class="list-group-item"><strong>Descrizione:</strong> {{$user['rist_descrizione']}}</li>
-                  <li class="list-group-item"><strong>Partita Iva:</strong> {{$user['rist_p_iva']}}</li>
-                </ul>
-                <div class="card-body">
-                  <a href="#" class="btn register-btn">Modifica</a>
-                  <a href="{{ route('dashboard')}}" class="btn btn-warning">Indietro</a>
-                </div>
-              </div>
+            </div>
         </div>
     </div>
 </div>
+
 
 @endsection

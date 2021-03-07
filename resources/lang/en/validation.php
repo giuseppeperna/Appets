@@ -152,7 +152,29 @@ return [
         ],
         'piatto_visibile' => [
             'required' => "Scegliere la :attribute.",
-        ]
+        ],
+        'rist_nome' => [
+            'required' => 'Inserire un :attribute.',
+            'string' => "L':attribute deve essere un formato valido.",
+            'max' => 'Il :attribute non può contenere più di :max caratteri.'
+        ],
+        'rist_descrizione' => [
+            'required' => 'Inserire una :attribute.',
+            'between' => 'La :attribute deve essere compresa tra :min e :max caratteri.'
+        ],
+        'email' => [
+            'required' => 'Inserire una :attribute.',
+            'email' => "L':attribute deve avere un indirizzo valido.",
+            'unique' => 'Esiste già un profile legato a questa :attribute.'
+        ],
+        'rist_indirizzo' => [
+            'required' => 'Inserire un :attribute.',
+            'string' => "L':attribute deve essere un formato valido.",
+        ],
+        'rist_p_iva' => [
+            'required' => 'Inserire una :attribute.',
+            'digits' => 'La :attribute deve essere di :digits cifre.',
+        ],
     ],
 
     /*
@@ -173,6 +195,12 @@ return [
         'piatto_descrizione' => 'descrizione',
         'piatto_prezzo' => 'prezzo',
         'piatto_visibile' => 'disponibilità',
+        'rist_nome' => 'nome',
+        'rist_descrizione' => 'descrizione',
+        'rist_indirizzo' => 'indirizzo',
+        'rist_email' => 'email',
+        'rist_p_iva' => 'partita iva',
+
     ],
 
 ];

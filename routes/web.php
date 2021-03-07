@@ -26,7 +26,9 @@ Route::prefix('dashboard')
     Route::get('piatti/nascosti', 'PiattiController@hiddenPlates')->name('hidden');
     Route::get('piatti/aggiungi/{piatto}', 'PiattiController@restorePlates')->name('restore');
     Route::resource('piatti', 'PiattiController');
-    Route::get('utente', 'DashboardController@edit')->name('utente');
+    Route::get('utente', 'DashboardController@show')->name('utente');
+    Route::get('utente/edit', 'DashboardController@edit')->name('modifica-utente');
+    Route::put('utente/update', 'DashboardController@update')->name('aggiorna-utente');
 });
 
 Route::get('/area-ristoranti', function() {

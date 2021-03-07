@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Requests\UserUpdateRequest;
 use App\User;
 use App\Tipologia;
 
@@ -20,7 +21,6 @@ class DashboardController extends Controller
         $user = User::find($userId);
 
         return view('dashboard', compact('user'));
-        // return dd($user->rist_nome);
     }
 
     /**
@@ -50,9 +50,13 @@ class DashboardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show()
     {
-        //
+        $userId = Auth::id();
+        $user = User::find($userId);
+        $tipologie = Tipologia::all();
+
+        return view('dashboard.show', compact('user', 'tipologie'));;
     }
 
     /**
@@ -67,8 +71,7 @@ class DashboardController extends Controller
         $user = User::find($userId);
         $tipologie = Tipologia::all();
 
-        return view('dashboard.edit', compact('user', 'tipologie'));
-        // return dd($user['rist_nome']);
+        return view('dashboard.edit', compact('user', 'tipologie'));;
     }
 
     /**
@@ -78,9 +81,25 @@ class DashboardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(UserUpdateRequest $request)
     {
-        //
+        $userId = Auth::id();
+        $user = User::find($userId);
+        $data = $request->validated();
+        $user->rist_nome = $data['rist_nome'];
+        if($data['email'] !== $user->email) {
+            $user->email = $request->validate([
+                'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
+            ]);
+        }
+        // $user->email = $$data['email'];
+        $user->rist_indirizzo = $data['rist_indirizzo'];
+        $user->rist_descrizione = $data['rist_descrizione'];
+        $user->rist_p_iva = $data['rist_p_iva'];
+        $user->save();
+
+        return redirect()->route('utente');
+
     }
 
     /**
