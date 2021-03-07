@@ -16,7 +16,7 @@
                         </form>
                     </div>
                     <a class="btn btn-success" href="{{ route('piatti.create') }}">Aggiungi piatto</a>
-                    <a class="btn btn-success" href="{{ route('hidden') }}">Piatti nascosti</a>
+                    <a class="btn btn-success" href="{{ route('hidden') }}">Fuori Menù</a>
                 </div>
             </div>
             <div class="row">
@@ -114,7 +114,7 @@
         </div>
     </section>
 
-    <div class="pagination d-flex justify-content-center">
+    <div class="pagination pagination-container d-flex justify-content-center">
         {{ $piatti->links() }}
     </div>
 @endsection('content')

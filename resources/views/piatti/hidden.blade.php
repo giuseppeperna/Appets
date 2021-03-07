@@ -67,7 +67,7 @@
                         </div>
                         @else  
                         <div class="col-12 centering empty-plates">
-                            <h3>Non ci sono piatti nascosti!</h3>
+                            <h3>Non ci sono piatti fuori menù!</h3>
                         </div> 
                         @endif
                         @endif

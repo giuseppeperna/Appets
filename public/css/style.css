@@ -936,3 +936,43 @@ section {
   .empty-plates {
 	  padding: 80px;
   }
+
+  .login-card {
+	  max-width: 700px;
+  }
+
+  .login-container {
+	  padding-top: 260px;
+	  height: 100vh;
+  }
+
+  .register-container {
+	  padding: 160px 0 110px 0;
+  }
+
+  .register-container .row, .login-container .row{
+	  margin-bottom: 10px;
+  }
+
+  .register-links {
+	  font-size: 13px;
+	  color: #44813e;
+  }
+
+  .register-links:hover{
+	  color: #44813e;
+  }
+
+  .register-btn {
+	  background-color: #92c24c;
+	  border: none
+  }
+
+  .register-btn:hover {
+	  background-color: #44813e;
+  }
+
+  .pagination-container{
+	  margin-bottom: 50px;
+  }
+

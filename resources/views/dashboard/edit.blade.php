@@ -3,25 +3,27 @@
 @section('title', 'Informazioni utente')
 @section('content')
 
-{{-- <h1>{{$user['rist_nome']}}</h1>
-<h1>{{$user['rist_email']}}</h1>
-<h1>{{$user['rist_indirizzo']}}</h1>
-<h1>{{$user['rist_descrizione']}}</h1>
-<h1>{{$user['rist_p_iva']}}</h1> --}}
 <div class="container">
     <div class="row justify-content-center form-container">
         <div class="col-md-8">
             <h1 class="text-center">I miei dati</h1>
-            <div class="card">
-                <div class="card-body text-center">
-                    <h5 class="card-title">{{$user['rist_nome']}}</h5>
-                    <h5 class="card-title">{{$user['email']}}</h5>
-                    <h5 class="card-title">{{$user['rist_indirizzo']}}</h5>
-                    <p class="card-text">{{$user['rist_descrizione']}}</p>
-                    <h5 class="card-title">{{$user['rist_p_iva']}}</h5>
-                    <a href="{{ route('dashboard')}}" class="btn btn-primary">Indietro</a>
+            <div class="card justify-center" >
+                <div class="card-body">
+                  <h5 class="card-title">{{$user['rist_nome']}}</h5>
+                  <p class="card-text">In questa sezione puoi trovare un riepilogo dei tuoi dati</p>
                 </div>
-            </div>
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item"><strong>Nome Ristorante:</strong> {{$user['rist_nome']}}</li>
+                  <li class="list-group-item"><strong>Email:</strong> {{$user['email']}}</li>
+                  <li class="list-group-item"><strong>Indirizzo:</strong> {{$user['rist_indirizzo']}}</li>
+                  <li class="list-group-item"><strong>Descrizione:</strong> {{$user['rist_descrizione']}}</li>
+                  <li class="list-group-item"><strong>Partita Iva:</strong> {{$user['rist_p_iva']}}</li>
+                </ul>
+                <div class="card-body">
+                  <a href="#" class="btn register-btn">Modifica</a>
+                  <a href="{{ route('dashboard')}}" class="btn btn-warning">Indietro</a>
+                </div>
+              </div>
         </div>
     </div>
 </div>
