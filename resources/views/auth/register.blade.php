@@ -3,6 +3,8 @@
 @section('title', 'Registrati')
 
 @section('content')
+<div class="carousel-item active" style="background: url(../../img/slide/slide-12.jpg); background-size: cover;">
+
 <div class="container register-container">
     <div class="row justify-content-center">
         <div class="col-md-8">

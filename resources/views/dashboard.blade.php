@@ -1,32 +1,60 @@
 @extends('templates.layout')
 @section('content')
- <!-- ======= Dashboard Section ======= -->
- <section id="hero" class="dashboard">
-    <div class="hero-container">
-       <div>
-          <div>
-             <div class="carousel-item active" style="background: url(img/slide/slide-3.jpg); background-size: cover;">
-                <div class="carousel-container">
-                   <div class="carousel-content" >
-                      <div class="card" style="width: 50rem;">
+<!-- ======= Dashboard Section ======= -->
+<section id="hero" class="dashboard">
+   <div class="hero-container">
+      <div class="carousel-item active" style="background: url(img/slide/slide-3.jpg); background-size: cover;">
+         <div class="carousel-container">
+            <div class="carousel-content">
+               <h5 class="card-title intro" style="color:white; font-size: 2.5rem; margin-bottom:25px;">Benvenuto nella tua area personale, {{$user->rist_nome}}!</h5>
+
+               <div class="card" style="background-color:transparent; border:none">
+                  <div class="card-body d-flex justify-content-space-around">
+                     <div class="card singleCard">
+                        {{-- <div class="card-header text-center greyCard">
+                           <h5>Appets!</h5>
+                        </div> --}}
                         <div class="card-body">
-                          <h5 class="card-title" style="margin-bottom: 30px; font-size: 30px;">Benvenuto nella tua area personale, {{$user->rist_nome}}!</h5>
-                          <p class="card-text" style="color: black; text-align: none;">In quest'area potrai modificare i dati del tuo ristorante, personalizzare il tuo menù aggiungendo i piatti che desideri e visualizzare le statistiche relative ai tuoi ordini.</p>
-                          <a href="{{route('piatti.index')}}"style="background-color: #ffb03b;
-                       	    border-color: #ffb03b" class="btn btn-primary">Gestisci il mio menù</a>
-                          <a href="#" style="background-color: #ffb03b;
-                       	    border-color: #ffb03b" class="btn btn-primary"class="btn btn-primary">Gestisci i miei ordini</a>
-                          <a href="{{route('utente')}}" style="background-color: #ffb03b;
-                         	    border-color: #ffb03b" class="btn btn-primary"class="btn btn-primary">Modifica la mia anagrafica</a>
+                           <h5 class="card-title">Menù</h5>
+                           <img src="img/dash_menu.jpg" style="max-width: 300px;"class="card-img-top" alt="...">
+                           <div class="card-text dashTitle">
+                              Aggiungi o modifica i piatti del tuo ristorante.
+                           </div>
+                           <a href="{{route('piatti.index')}}" class="btn">Gestisci il mio menù</a>
                         </div>
-                      </div>
-                   </div>
-                   </div>
-                </div>
-             </div>
-          </div>
-       </div>
-    </div>
- </section>
- <!-- End Dashboard -->
+                     </div>
+                     <div class="card singleCard">
+                        {{-- <div class="card-header text-center greyCard">
+                           <h5>Appets!</h5>
+                        </div> --}}
+                        <div class="card-body" >
+                           <h5 class="card-title">Ordini</h5>
+                           <img src="img/dash_stat.jpg" style="max-width: 300px;"class="card-img-top" alt="...">
+                           <div class="card-text dashTitle">
+                              Visualizza le statistiche relative ai tuoi ordini.
+                           </div>
+                           <a href="#" class="btn">Visualizza ordini</a>
+                        </div>
+                     </div>
+                     <div class="card singleCard">
+                        {{-- <div class="card-header text-center greyCard">
+                           <h5>Appets!</h5>
+                        </div> --}}
+                        <div class="card-body" >
+                           <h5 class="card-title">Anagrafica</h5>
+                           <img src="img/dash_anag.jpg" style="max-width: 300px;"class="card-img-top" alt="...">
+                           <div class="card-text dashTitle">
+                              Visualizza e modifica i dati del tuo ristorante.
+                           </div>
+                           <a href="{{route('utente')}}" class="btn">Gestione anagrafica</a>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</section>
+<!-- End Dashboard -->
 @endsection

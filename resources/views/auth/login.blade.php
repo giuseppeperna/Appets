@@ -3,6 +3,8 @@
 @section('title', 'Accedi')
 
 @section('content')
+<div class="carousel-item active" style="background: url(../../img/slide/slide-11.jpg); background-size: cover;">
+
 <div class="container login-container">
     <div class="row justify-content-center">
         <div class="col-md-8 login-card">

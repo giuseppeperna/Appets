@@ -165,7 +165,7 @@ return [
         'email' => [
             'required' => 'Inserire una :attribute.',
             'email' => "L':attribute deve avere un indirizzo valido.",
-            'unique' => 'Esiste già un profile legato a questa :attribute.'
+            'unique' => 'Esiste già un profilo legato a questa :attribute.'
         ],
         'rist_indirizzo' => [
             'required' => 'Inserire un :attribute.',

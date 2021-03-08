@@ -3,6 +3,8 @@
 @section('title', 'Modifica piatto')
 
 @section('content')
+<div class="carousel-item active" style="background: url(../../img/slide/slide-7.jpg); background-size: cover;">
+
 <div class="container">
     <div class="row justify-content-center form-container">
         <div class="col-md-8">

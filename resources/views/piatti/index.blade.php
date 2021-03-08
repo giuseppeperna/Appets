@@ -3,6 +3,8 @@
 @section('title', 'Lista piatti')
 
 @section('content')
+<div class="carousel-item active" style="background: url(../img/slide/slide-8.jpg); background-size: cover;">
+
     <section id="order-list" class="order-list">
         <div class="container">
             <div class="row mb-3">

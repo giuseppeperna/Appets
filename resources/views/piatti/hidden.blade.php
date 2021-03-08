@@ -3,6 +3,7 @@
 @section('title', 'Piatti nascosti')
 
 @section('content')
+<div class="carousel-item active" style="background: url(../../img/slide/slide-10.jpg); background-size: cover;">
     <section id="order-list" class="order-list">
                 <div class="container">
                     <div class="row mb-3">

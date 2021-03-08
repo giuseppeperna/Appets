@@ -6,7 +6,7 @@
             <div class="hero-container">
                <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
                   <div class="carousel-inner" role="listbox">
-                     <div class="carousel-item active" style="background: url(img/slide/slide-1.jpg); background-size: cover;">
+                     <div class="carousel-item active" style="background: url(img/jobs-bg.jpg); background-size: cover;">
                         <div class="carousel-container">
                            <div class="carousel-content">
                               <h2 class="animate__animated animate__fadeInDown">Appets</h2>
@@ -48,12 +48,12 @@
                   <br>
                   <div class="row row-cols-1 row-cols-md-3 g-4">
                     <template v-for="type in filteredRestaurants">
-                    <div style="margin: 30px 0;" v-for="el in filteredRestaurants[0].ristoranti" class="col">
-                       <div class="card-header text-center" style="background-color:#444;">
-                        <h5 style="color: #ffb03b; margin-bottom: 0em;">Appets!</h5>
+                    <div v-for="el in filteredRestaurants[0].ristoranti" class="col renderCard">
+                       <div class="card-header text-center greyCard">
+                        <h5>Appets!</h5>
                        </div>
-                      <div class="card h-100" style="border-color:#444; border-radius: 0;">
-                          <a style="margin-top: 10px;" class="card-title text-center" href="#"><span>@{{el.rist_nome}}</span></a>
+                      <div class="card h-100 renderCardSub">
+                          <a class="card-title text-center" href="#"><span>@{{el.rist_nome}}</span></a>
                         <div class="card-body">
                           <div class="card-text"><strong>Tipologia: </strong>@{{type.nome}}</div>
                           <div class="card-text"><strong>Descrizione: </strong> @{{el.rist_descrizione}}</div >

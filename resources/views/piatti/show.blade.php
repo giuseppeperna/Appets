@@ -3,6 +3,8 @@
 @section('title', 'Dettaglio piatto')
 
 @section('content')
+<div class="carousel-item active" style="background: url(../../img/slide/slide-8.jpg); background-size: cover;">
+
     <section id="single-order" class="single-order">
         <div class="container">
             <div class="row">
@@ -49,8 +51,8 @@
                                 </div>
                             </div>
                         </div>
+                        <a href="{{route('piatti.index')}}" class="mt-3 text-center"><p>Torna alla lista piatti</p></a>
                     </div>
-                    <a href="{{route('piatti.index')}}" class="mt-3"><p>Torna alla lista piatti</p></a>
                 </div>
             </div>
         </div>

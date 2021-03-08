@@ -10,7 +10,7 @@ const my_app = new Vue({
       // Chiamata AJAX e gestione della ricerca
       apiKey: 'f40d9398-9488-464e-8d4c-8fb353472d49',
       filteredRestaurants: [],
-      userChoice: '',
+      userChoice: 'italiano',
     },
       // Animazioni Homepage
     methods: {
@@ -22,6 +22,9 @@ const my_app = new Vue({
           axios.get('http://localhost:8000/api/tipologie/search',
              {params: {api_token: this.apiKey, data: this.userChoice}}).then(result => this.filteredRestaurants = result.data.data);
        },
-     }
-
+    },
+    mounted: function(){
+      axios.get('http://localhost:8000/api/tipologie/search',
+        {params: {api_token: this.apiKey, data: 'italiano'}}).then(result => this.filteredRestaurants = result.data.data);
+   }
  });
