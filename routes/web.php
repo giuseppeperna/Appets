@@ -29,6 +29,7 @@ Route::prefix('dashboard')
     Route::get('utente', 'DashboardController@show')->name('utente');
     Route::get('utente/edit', 'DashboardController@edit')->name('modifica-utente');
     Route::put('utente/update', 'DashboardController@update')->name('aggiorna-utente');
+    Route::get('ordini', 'OrdiniController@index')->name('ordini');
 });
 
 Route::get('/area-ristoranti', function() {

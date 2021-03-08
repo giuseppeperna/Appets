@@ -27,7 +27,7 @@
                            <div class="card-text dashTitle">
                               Visualizza le statistiche relative ai tuoi ordini.
                            </div>
-                           <a href="#" class="btn">Visualizza ordini</a>
+                           <a href="{{route('ordini')}}" class="btn">Visualizza ordini</a>
                         </div>
                      </div>
                      <div class="card singleCard">

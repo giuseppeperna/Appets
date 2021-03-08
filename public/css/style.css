@@ -1088,3 +1088,9 @@ section {
 	background-color: #91c14b;
 	border-color:  #91c14b; 
 }
+
+/* Ordini */
+
+.order-padding {
+	padding:15px;
+}
