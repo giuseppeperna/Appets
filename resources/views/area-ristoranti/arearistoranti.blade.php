@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- ======= Dashboard Section ======= -->
-<section id="hero" class="dashboard">
+<section id="hero">
     <div class="hero-container">
         <div class="carousel-item active" style="background: url({{asset('img/area-ristoranti-wp.png')}}); background-size: cover;">
             <div class="carousel-container">
