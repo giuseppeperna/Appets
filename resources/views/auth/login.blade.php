@@ -3,7 +3,7 @@
 @section('title', 'Accedi')
 
 @section('content')
-<div class="carousel-item active" style="background: url(../../img/slide/slide-11.jpg); background-size: cover;">
+<div class="carousel-item active" style="background: url(../../img/slide/slide-14.jpg); background-size: cover;">
 
 <div class="container login-container">
     <div class="row justify-content-center">

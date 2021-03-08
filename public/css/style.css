@@ -9,7 +9,7 @@ a {
 }
 
 a:hover {
-	color: #ffc56e;
+	color: #44813e;
 	text-decoration: none
 }
 
@@ -884,7 +884,7 @@ section {
 
   .restourants-area, .order-list, .single-order{
 	margin-top: 60px;
-	padding:60px 0 200px 0;
+	padding:60px 0 130px 0;
   }
 
   .plates-list-container {
@@ -977,6 +977,46 @@ section {
 	  margin-bottom: 50px;
   }
 
+  .btn-register, .btn-access {
+    margin: 20px 0;
+    padding: 10px 50px;
+    min-width: 100px;
+    min-height: 50px;
+    border-radius: 500px;
+    background-color: #92c24c;
+    color:white;
+  }
+
+  .btn-register:hover, .btn-access:hover {
+    transform: scale(1.1);
+    transition: 1s;
+    background-color: #44813e;
+    color:white;
+  }
+
+  .bg-card{
+    background-color: rgba(255, 255, 255, 0);
+    border: none;
+  }
+
+  .round{
+    height: 250px;
+    width: 250px;
+    border-radius: 50%;
+    border: 2px solid #92c24c;
+  }
+
+  @media screen and (max-width: 768px){
+    .register img, .register div, .access img, .access div {
+        display: none;
+    }
+
+    .btn-register, .btn-access {
+        width: 200px;
+    }
+  }
+
+
   /* Fabrizio */
 
 .renderCard{
@@ -999,6 +1039,8 @@ section {
 
 .renderCardSub a{
 	margin-top: 10px;
+	font-size: 1.1rem;
+	font-weight: 600;
 }
 
 .greenStyle{
@@ -1032,4 +1074,17 @@ section {
 	color: white;
 }
 
+/* Pagination */
 
+.page-link {
+	color: #91c14b;
+}
+
+.page-link:hover {
+	color: #44813e;
+}
+
+.page-item.active .page-link {
+	background-color: #91c14b;
+	border-color:  #91c14b; 
+}

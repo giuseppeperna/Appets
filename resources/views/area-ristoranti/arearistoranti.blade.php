@@ -1,34 +1,40 @@
 @extends('templates.layout')
 
 @section('content')
-
-<section id="restourants-area" class="restourants-area container">
-    <div class="row">
-        <div class="col-6">
-            <div class="card mx-auto" style="width: 20rem;">
-                <a href="{{route('sign-in')}}">
-                    <img src="img/jobs/jobs-3.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Registrati</h5>
-                        <p class="card-text">Registra il tuo ristorante su Appets, in pochi click potrai creare la tua pagina personale e connetterti con tutti i clienti della tua zona!</p>
+<!-- ======= Dashboard Section ======= -->
+<section id="hero" class="dashboard">
+    <div class="hero-container">
+        <div class="carousel-item active" style="background: url({{asset('img/area-ristoranti-wp.png')}}); background-size: cover;">
+            <div class="carousel-container">
+                <div class="carousel-content container">
+                    <div class="row">
+                        <div class="col-xs-12 col-md-6">
+                            <div class="card mx-auto bg-card" style="width: 20rem;">
+                                <div class="card-body register">
+                                    <img src="{{asset('img/join.jpg')}}" class="card-img-top round" alt="...">
+                                    <a href="{{route('sign-in')}}" class="btn btn-register">
+                                        Registrati
+                                    </a>
+                                    <div class="card-text" style="color: white;">Entra a far parte di Appets</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-xs-12 col-md-6">
+                            <div class="card mx-auto bg-card"  style="width: 20rem;">
+                                <div class="card-body access">
+                                    <img src="{{asset('img/private.jpg')}}" class="card-img-top round" alt="...">
+                                    <a href="{{route('dashboard')}}" class="btn btn-register">
+                                        Accedi
+                                    </a>
+                                    <div class="card-text" style="color: white;">Accedi alla tua area personale</div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
-                </a>
-            </div>
-        </div>
-
-        <div class="col-6">
-            <div class="card mx-auto" style="width: 20rem;">
-                <a href="{{route('dashboard')}}">{{--TODO: da collegare alla dashboard del rist con il controllo dell'autenticazione --}}
-                    <img src="img/jobs/jobs-3.jpg" class="card-img-top" alt="...">
-                    <div class="card-body">
-                        <h5 class="card-title">Accedi</h5>
-                        <p class="card-text">Accedi alla tua pagina personale per gestire ordini, modificare i dati del tuo ristorante ed aggiornare il tuo menù.</p>
-                    </div>
-                </a>
+                </div>
             </div>
         </div>
     </div>
-
 </section>
 
 @endsection

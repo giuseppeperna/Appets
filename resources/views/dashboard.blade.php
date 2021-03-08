@@ -11,9 +11,6 @@
                <div class="card" style="background-color:transparent; border:none">
                   <div class="card-body d-flex justify-content-space-around">
                      <div class="card singleCard">
-                        {{-- <div class="card-header text-center greyCard">
-                           <h5>Appets!</h5>
-                        </div> --}}
                         <div class="card-body">
                            <h5 class="card-title">Menù</h5>
                            <img src="img/dash_menu.jpg" style="max-width: 300px;"class="card-img-top" alt="...">
@@ -24,9 +21,6 @@
                         </div>
                      </div>
                      <div class="card singleCard">
-                        {{-- <div class="card-header text-center greyCard">
-                           <h5>Appets!</h5>
-                        </div> --}}
                         <div class="card-body" >
                            <h5 class="card-title">Ordini</h5>
                            <img src="img/dash_stat.jpg" style="max-width: 300px;"class="card-img-top" alt="...">
@@ -37,9 +31,6 @@
                         </div>
                      </div>
                      <div class="card singleCard">
-                        {{-- <div class="card-header text-center greyCard">
-                           <h5>Appets!</h5>
-                        </div> --}}
                         <div class="card-body" >
                            <h5 class="card-title">Anagrafica</h5>
                            <img src="img/dash_anag.jpg" style="max-width: 300px;"class="card-img-top" alt="...">

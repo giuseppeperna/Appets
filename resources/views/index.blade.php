@@ -59,8 +59,10 @@
                           <div class="card-text"><strong>Descrizione: </strong> @{{el.rist_descrizione}}</div >
                           <div class="card-text"><strong>Indirizzo: </strong> @{{el.rist_indirizzo}}</div >
                         </div>
+                        </div>
+                     </div>
                      </template>
-                      </div>
+                     </div>
                     </div>
                   </div>
             </section>

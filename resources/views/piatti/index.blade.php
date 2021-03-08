@@ -13,12 +13,12 @@
                         <form class="input-group" method="get" action="{{ route('piatti.index')}}">
                             @csrf
                             <input type="text" name="search" class="form-control" placeholder="Cerca piatti..." aria-label="Recipient's username" aria-describedby="button-addon2">
-                            <button class="btn btn-outline-secondary" type="submit" id="button-addon2">Cerca</button>
-                            <a class="btn btn-danger clear-search" href="{{ route('piatti.index')}}">Cancella</a>
+                            <button class="btn register-btn" type="submit" id="button-addon2">Cerca</button>
+                            {{-- <a class="btn btn-danger clear-search" href="{{ route('piatti.index')}}">Cancella</a> --}}
                         </form>
                     </div>
-                    <a class="btn btn-success" href="{{ route('piatti.create') }}">Aggiungi piatto</a>
-                    <a class="btn btn-success" href="{{ route('hidden') }}">Fuori Menù</a>
+                    <a class="btn register-btn" href="{{ route('piatti.create') }}">Aggiungi piatto</a>
+                    <a class="btn btn-warning" href="{{ route('hidden') }}">Fuori Menù</a>
                 </div>
             </div>
             <div class="row">
