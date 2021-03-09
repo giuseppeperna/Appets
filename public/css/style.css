@@ -1175,6 +1175,8 @@ section {
     font-style: italic;
     text-decoration: underline;
     font-size: 0.8rem;
+	border: none;
+	background-color: transparent;
 }
 
 .line {

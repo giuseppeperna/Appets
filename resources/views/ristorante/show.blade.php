@@ -19,25 +19,20 @@
                     <div class="order-container">
                         <h4 class="mb-3 text-center">Il tuo ordine: </h4>
                         <ul class="order-recap">
-                            <li>
-                                <p>Pizza margherita 7€ <a href="#" class="remove">Rimuovi</a></p>
-                            </li>
-                            <li>
-                                <p>Pizza 7€ <a href="#" class="remove">Rimuovi</a></p>
-                            </li>
-                            <li>
-                                <p>Pasta 7€ <a href="#" class="remove">Rimuovi</a></p>
-                            </li>
-                            <li>
-                                <p>Riso 7€ <a href="#" class="remove">Rimuovi</a></p>
-                            </li>
-                            <li>
-                                <p>Carne 7€ <a href="#" class="remove">Rimuovi</a></p>
-                            </li>
+                            @if(\Cart::getTotalQuantity()>0)
+                            @foreach ($cartCollection as $item)
+                            <li>{{$item->name}} x {{$item->quantity}}
+                            <form action="{{ route('cart.remove') }}" method="POST" style="display: inline">
+                                {{ csrf_field() }}
+                                <input type="hidden" value="{{ $item->id }}" id="id" name="id">
+                                <button class="remove" style="margin-right: 10px;">Rimuovi</button>
+                            </form></li>
+                            @endforeach
+                            <div class="line"></div>
+                            <p class="sub-total text-center mt-2">Totale ordine: {{ \Cart::getTotal() }}€</p>
+                            @endif
                         </ul>
-                        <div class="line"></div>
-                        <p class="sub-total text-center mt-2">Totale ordine: 45 €</p>
-                        <a href="#" class="btn btn-order centering">Riepilogo Ordine</a>
+                        <a href="{{route('cart.index')}}" class="btn btn-order centering">Riepilogo Ordine</a>
 
                     </div>
                 </div>
@@ -56,35 +51,29 @@
                             </div>
                             <div class="col-3 ps-2">
                                 <p>Prezzo: <strong>{{$piatto->piatto_prezzo}} €</strong></p>
-                                <div class="input-group">
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option disabled>Quantità</option>
-                                        <option selected value="1">1</option>
-                                        <option value="2">2</option>
-                                        <option value="4">4</option>
-                                        <option value="5">5</option>
-                                        <option value="6">6</option>
-                                        <option value="7">7</option>
-                                        <option value="8">8</option>
-                                        <option value="9">9</option>
-                                    </select>
-                                    <form action="{{ route('cart.store') }}" method="POST">
-                                        {{ csrf_field() }}
+                                <form action="{{ route('cart.store') }}" method="POST">
+                                    {{ csrf_field() }}
+                                    <div class="input-group">
                                         <input type="hidden" value="{{ $piatto->piatto_id }}" id="id" name="id">
                                         <input type="hidden" value="{{ $piatto->piatto_nome }}" id="name" name="name">
                                         <input type="hidden" value="{{ $piatto->piatto_prezzo }}" id="price" name="price">
                                         <input type="hidden" value="{{ $piatto->piatto_img }}" id="img" name="img">
                                         <input type="hidden" value="{{ $ristorante->rist_id }}" id="slug" name="slug">
-                                        <input type="hidden" value="1" id="quantity" name="quantity">
+                                        <select class="form-select" aria-label="Default select example" id="quantity" name="quantity">
+                                            <option disabled>Quantità</option>
+                                            @for ($i = 1; $i <= 10; $i++)
+                                            <option value="{{$i}}">{{$i}}</option>
+                                            @endfor
+                                        </select>
                                         <div class="card-footer" style="background-color: white;">
-                                              <div class="row">
-                                                <button class="btn btn-warning centering" class="tooltip-test" title="Aggiungi a ordine">
+                                            <div class="row">
+                                                <button class="btn btn-warning centering" class="tooltip-test" id="button-addon2" title="Aggiungi a ordine">
                                                     <i class="bi bi-cart-plus"></i>
                                                 </button>
                                             </div>
                                         </div>
-                                    </form>
-                                </div>
+                                    </div>
+                                </form>
                             </div>
                         </div>
                         @endif
@@ -95,49 +84,3 @@
         </div>
     </section>
 @endsection
-
-
-
-{{-- @extends('templates.layout')
-
-@section('title', 'Ristorante')
-
-@section('content')
-<div class="container-fluid piatti-container">
-    <h1 class="text-center">{{$ristorante->rist_nome}}</h1>
-    <div class="row">
-        @foreach ($piatti as $piatto)
-        <div class="col-xs-18 col-sm-6 col-md-3">
-            <div class="thumbnail">
-                <img src="{{asset($piatto->piatto_img)}}" alt="...">
-                <div class="caption">
-                    <h4>{{$piatto->piatto_nome}}</h4>
-                    <p>{{$piatto->piatto_descrizione}}</p>
-                    <div>
-                        <p><strong>Prezzo: </strong> {{$piatto->piatto_prezzo}} Euro</p>
-                    </div>
-                    
-                    <form action="{{ route('cart.store') }}" method="POST">
-                        {{ csrf_field() }}
-                        <input type="hidden" value="{{ $piatto->piatto_id }}" id="id" name="id">
-                        <input type="hidden" value="{{ $piatto->piatto_nome }}" id="name" name="name">
-                        <input type="hidden" value="{{ $piatto->piatto_prezzo }}" id="price" name="price">
-                        <input type="hidden" value="{{ $piatto->piatto_img }}" id="img" name="img">
-                        <input type="hidden" value="{{ $ristorante->rist_id }}" id="slug" name="slug">
-                        <input type="hidden" value="1" id="quantity" name="quantity">
-                        <div class="card-footer" style="background-color: white;">
-                              <div class="row">
-                                <button class="btn btn-secondary btn-sm" class="tooltip-test" title="add to cart">
-                                    <i class="fa fa-shopping-cart"></i> add to cart
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-                </div>
-            </div>
-        </div>
-        @endforeach
-    </div>
-    
-</div>
-@endsection('content') --}}

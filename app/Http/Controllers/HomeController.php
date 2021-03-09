@@ -30,10 +30,11 @@ class HomeController extends Controller
     public function show($id) {
        
         $ristorante = User::find($id);
+        $cartCollection = \Cart::getContent();
         $piatti = Piatto::where(fn($query) => $query->where('rist_id', '=', $id))->get();
         
 
-        return view('ristorante.show', compact('ristorante', 'piatti'));
+        return view('ristorante.show', compact('ristorante', 'piatti', 'cartCollection'));
     }
 
     public function cart()  {
@@ -58,7 +59,7 @@ class HomeController extends Controller
 
     public function remove(Request $request){
         \Cart::remove($request->id);
-        return redirect()->route('cart.index')->with('success_msg', 'Item is removed!');
+        return redirect()->back()->with('success_msg', 'Item is removed!');
     }
 
     public function update(Request $request){
