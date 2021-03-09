@@ -10,7 +10,7 @@ const my_app = new Vue({
       // Chiamata AJAX e gestione della ricerca
       apiKey: 'f40d9398-9488-464e-8d4c-8fb353472d49',
       filteredRestaurants: [],
-      userChoice: 'italiano',
+      userChoices: ['italiano'],
     },
       // Animazioni Homepage
     methods: {
@@ -19,12 +19,29 @@ const my_app = new Vue({
        },
        // Chiamata AJAX e gestione della ricerca
        searchRestaurants: function(){
-          axios.get('http://localhost:8000/api/tipologie/search',
-             {params: {api_token: this.apiKey, data: this.userChoice}}).then(result => this.filteredRestaurants = result.data.data);
+          const myResult = [];
+          this.userChoices.forEach(userChoice => { axios.get('http://localhost:8000/api/tipologie/search',
+             {params: {api_token: this.apiKey, data: userChoice}}).then(result => myResult.push(result.data.data))})
+             this.filteredRestaurants = myResult;
        },
+       toggleChoice: function(value){
+          if (this.userChoices.includes(value)){
+             const index = this.userChoices.indexOf(value);
+             this.userChoices.splice(index, 1);
+          } else {
+             this.userChoices.push(value);
+          }
+       },
+       getClass: function(value){
+          if (this.userChoices.includes(value)){
+             return 'filter-active';
+          } else {
+             return '';
+          }
+       }
     },
     mounted: function(){
       axios.get('http://localhost:8000/api/tipologie/search',
-        {params: {api_token: this.apiKey, data: 'italiano'}}).then(result => this.filteredRestaurants = result.data.data);
+        {params: {api_token: this.apiKey, data: 'italiano'}}).then(result => this.filteredRestaurants.push(result.data.data));
    }
  });

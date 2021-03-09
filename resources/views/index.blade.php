@@ -32,41 +32,41 @@
                   <div class="row">
                      <div class="col-lg-12 d-flex justify-content-center">
                         <ul id="restaurants-flters">
-                           <li :class="userChoice == 'italiano' ? 'filter-active' : ''" @click="userChoice = 'italiano'; ;searchRestaurants()">Italiano</li>
-                           <li :class="userChoice == 'giapponese' ? 'filter-active' : ''" @click="userChoice = 'giapponese'; searchRestaurants()">Giapponese</li>
-                           <li :class="userChoice == 'cinese' ? 'filter-active' : ''" @click="userChoice = 'cinese'; searchRestaurants()">Cinese</li>
-                           <li :class="userChoice == 'libanese' ? 'filter-active' : ''" @click="userChoice = 'libanese'; searchRestaurants()">Libanese</li>
-                           <li :class="userChoice == 'ungherese' ? 'filter-active' : ''" @click="userChoice = 'ungherese'; searchRestaurants()">Ungherese</li>
-                           <li :class="userChoice == 'egiziano' ? 'filter-active' : ''" @click="userChoice = 'egiziano'; searchRestaurants()">Egiziano</li>
-                           <li :class="userChoice == 'coreano' ? 'filter-active' : ''" @click="userChoice = 'coreano'; searchRestaurants()">Coreano</li>
-                           <li :class="userChoice == 'thailandese' ? 'filter-active' : ''" @click="userChoice = 'thailandese'; searchRestaurants()">Thailandese</li>
-                           <li :class="userChoice == 'indiano' ? 'filter-active' : ''" @click="userChoice = 'indiano'; searchRestaurants()">Indiano</li>
-                           <li :class="userChoice == 'messicano' ? 'filter-active' : ''" @click="userChoice = 'messicano'; searchRestaurants()">Messicano</li>
+                           <li :class="getClass('italiano')" @click= "toggleChoice('italiano'); searchRestaurants();">Italiano</li>
+                           <li :class="getClass('giapponese')" @click= "toggleChoice('giapponese'); searchRestaurants()">Giapponese</li>
+                           <li :class="getClass('cinese')" @click= "toggleChoice('cinese'); searchRestaurants()">Cinese</li>
+                           <li :class="getClass('libanese')" @click= "toggleChoice('libanese'); searchRestaurants()">Libanese</li>
+                           <li :class="getClass('ungherese')" @click= "toggleChoice('ungherese'); searchRestaurants()">Ungherese</li>
+                           <li :class="getClass('egiziano')" @click= "toggleChoice('egiziano'); searchRestaurants()">Egiziano</li>
+                           <li :class="getClass('coreano')" @click= "toggleChoice('coreano'); searchRestaurants()">Coreano</li>
+                           <li :class="getClass('thailandese')" @click= "toggleChoice('thailandese');searchRestaurants()">Thailandese</li>
+                           <li :class="getClass('indiano')" @click= "toggleChoice('indiano'); searchRestaurants()">Indiano</li>
+                           <li :class="getClass('messicano')" @click= "toggleChoice('messicano'); searchRestaurants()">Messicano</li>
                         </ul>
                      </div>
                   </div>
                   <br>
                   <div class="row row-cols-1 row-cols-md-3 g-4">
-                    <template v-for="type in filteredRestaurants">
-                    <div v-for="el in filteredRestaurants[0].ristoranti" class="col renderCard" :key='el.id'>
-                       <div class="card-header text-center greyCard">
-                        <h5>Appets!</h5>
-                       </div>
-                      <div class="card h-100 renderCardSub">
-                          <a class="card-title text-center" 
-                          v-bind:href="'ristorante/'+el.rist_id+''">
-                          <span>@{{el.rist_nome}}</span></a>
-                        <div class="card-body">
-                          <div class="card-text"><strong>Tipologia: </strong>@{{type.nome}}</div>
-                          <div class="card-text"><strong>Descrizione: </strong> @{{el.rist_descrizione}}</div >
-                          <div class="card-text"><strong>Indirizzo: </strong> @{{el.rist_indirizzo}}</div >
-                        </div>
-                        </div>
+                     <template v-for="tipologia in filteredRestaurants" >
+                        <div class="col renderCard" v-for="el in tipologia[0].ristoranti">
+                           <div class="card-header text-center greyCard">
+                              <h5>Appets!</h5>
+                           </div>
+                           <div class="card h-100 renderCardSub">
+                              <div class="card h-100 renderCardSub">
+                                 <a class="card-title text-center" 
+                                 v-bind:href="'ristorante/'+el.rist_id+''">
+                                 <span>@{{el.rist_nome}}</span></a>
+                              <div class="card-body">
+                                 <div class="card-text"><strong>Tipologia: </strong>@{{tipologia[0].nome}}</div>
+                                 <div class="card-text"><strong>Descrizione: </strong> @{{el.rist_descrizione}}</div>
+                                 <div class="card-text"><strong>Indirizzo: </strong> @{{el.rist_indirizzo}}</div>
+                              </div>
+                           </div>
                      </div>
-                     </template>
-                     </div>
-                    </div>
+                  </template>
                   </div>
+               </div>
             </section>
             <!-- ======= Jobs Section ======= -->
             <section id="jobs" class="jobs">
