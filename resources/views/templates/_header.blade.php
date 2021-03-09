@@ -21,7 +21,8 @@
             </form>
             @else 
             <li><a class="nav-link" href="{{route('accesso')}}">Area ristoranti</a></li>
-            @endif           
+            @endif
+            <li><a class="nav-link" href="{{route('cart.index')}}">Carrello</a></li>
          </ul>
          <i class="bi bi-list mobile-nav-toggle"></i>
       </nav>

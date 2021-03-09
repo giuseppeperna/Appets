@@ -18,6 +18,11 @@ Auth::routes();
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/dashboard', 'DashboardController@index')->middleware('auth')->name('dashboard');
 Route::get('/ristorante/{ristorante}', 'HomeController@show')->name('ristorante');
+Route::get('/cart', 'HomeController@cart')->name('cart.index');
+Route::post('/add', 'HomeController@add')->name('cart.store');
+Route::post('/update', 'HomeController@update')->name('cart.update');
+Route::post('/remove', 'HomeController@remove')->name('cart.remove');
+Route::post('/clear', 'HomeController@clear')->name('cart.clear');
 
 Route::prefix('dashboard')
 ->middleware('auth')

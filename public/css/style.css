@@ -882,7 +882,7 @@ section {
 
   /* ALESSANDRO */
 
-  .restourants-area, .order-list, .single-order{
+  .restourants-area, .order-list, .single-order, .single-restaurant{
 	margin-top: 60px;
 	padding:60px 0 130px 0;
   }
@@ -1120,3 +1120,77 @@ section {
 .piatti-container h1 {
 	margin-bottom: 50px;
 }
+
+/* Single Restaurant */
+
+.center-justify{
+    display:flex;
+    align-items: center;
+}
+
+.card-container{
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, .9);
+    padding: 35px 0;
+}
+
+.order-container{
+    border-radius: 10px;
+    width: 100%;
+    background-color: rgba(255, 255, 255, .9);
+    padding: 25px 5px;
+}
+
+.info-container{
+    border-radius: 5px;
+    height: 100px;
+    width: 400px;
+    background-color: rgba(255, 255, 255, .9);
+}
+
+.card-dish{
+    max-height: 130px;
+    width: 95%;
+    border-bottom: 1px solid #92c24c;
+    margin-bottom: 10px;
+    overflow-y: auto;
+}
+.input-group{
+    max-width: 150px;
+}
+
+.thumbnail-img-dish{
+    width: 75%;
+}
+
+.order-recap{
+    padding-left: 25px;
+    max-height: 500px;
+    overflow-y: auto;
+}
+
+.remove {
+    color: red;
+    font-style: italic;
+    text-decoration: underline;
+    font-size: 0.8rem;
+}
+
+.line {
+    width:90%;
+    margin:auto;
+    height: 1px;
+    background-color: black;
+}
+
+.btn-order {
+    margin-top: 40px;
+    width: 170px;
+    min-height: 50px;
+    border-radius: 500px;
+    background-color: #92c24c;
+    color:white;
+    margin:auto;
+}
+
