@@ -41,7 +41,7 @@
 
 
                                 <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#piatto{{$piatto->piatto_id}}delete">
+                                <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#piatto{{$piatto->piatto_id}}delete" title="Elimina">
                                     <i class="bi bi-trash centering"></i>
                                 </button>
 
@@ -70,7 +70,7 @@
                                 
                                 <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-success hidden-plates" data-bs-toggle="modal" 
-                                data-bs-target="#piatto{{$piatto->piatto_id}}">
+                                data-bs-target="#piatto{{$piatto->piatto_id}}" title="Nascondi">
                                     <i class="bi bi-eye-slash-fill centering"></i>
                                 </button>
 

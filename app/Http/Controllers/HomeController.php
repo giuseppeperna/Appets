@@ -3,7 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Ristorante;
+use App\Piatto;
+use App\Tipologia;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -20,12 +22,18 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $ristoranti = User::all();
+
+        return view('index', compact('ristoranti'));
+        // return dd($ristoranti->rist_id);
     }
 
     public function show($id) {
-        $ristoranti = Ristorante::find($id);
+       
+        $ristorante = User::find($id);
+        $piatti = Piatto::where(fn($query) => $query->where('rist_id', '=', $id))->get();
 
-        return dd($ristoranti);
+        return view('ristorante.show', compact('ristorante', 'piatti'));
+        // return dd($piatti);
     }
 }

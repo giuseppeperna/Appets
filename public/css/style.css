@@ -1094,3 +1094,29 @@ section {
 .order-padding {
 	padding:15px;
 }
+
+.quantity-product {
+	width:60px;
+	text-align: center;
+	margin-left: 15px;
+	height: 30px;
+}
+
+.thumbnail {
+    position: relative;
+    padding: 0px;
+    margin-bottom: 20px;
+}
+.thumbnail img {
+    width: 100%;
+}
+
+
+.piatti-container {
+	padding: 125px 0;
+	width: 80%;
+}
+
+.piatti-container h1 {
+	margin-bottom: 50px;
+}

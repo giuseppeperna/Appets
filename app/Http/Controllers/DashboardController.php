@@ -92,7 +92,6 @@ class DashboardController extends Controller
                 'email' => ['required', 'string', 'email', 'max:255', 'unique:users'],
             ]);
         }
-        // $user->email = $$data['email'];
         $user->rist_indirizzo = $data['rist_indirizzo'];
         $user->rist_descrizione = $data['rist_descrizione'];
         $user->rist_p_iva = $data['rist_p_iva'];

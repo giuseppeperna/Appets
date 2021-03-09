@@ -48,12 +48,14 @@
                   <br>
                   <div class="row row-cols-1 row-cols-md-3 g-4">
                     <template v-for="type in filteredRestaurants">
-                    <div v-for="el in filteredRestaurants[0].ristoranti" class="col renderCard">
+                    <div v-for="el in filteredRestaurants[0].ristoranti" class="col renderCard" :key='el.id'>
                        <div class="card-header text-center greyCard">
                         <h5>Appets!</h5>
                        </div>
                       <div class="card h-100 renderCardSub">
-                          <a class="card-title text-center" href="#"><span>@{{el.rist_nome}}</span></a>
+                          <a class="card-title text-center" 
+                          v-bind:href="'ristorante/'+el.rist_id+''">
+                          <span>@{{el.rist_nome}}</span></a>
                         <div class="card-body">
                           <div class="card-text"><strong>Tipologia: </strong>@{{type.nome}}</div>
                           <div class="card-text"><strong>Descrizione: </strong> @{{el.rist_descrizione}}</div >
