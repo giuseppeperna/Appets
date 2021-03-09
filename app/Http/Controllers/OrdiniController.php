@@ -14,12 +14,7 @@ class OrdiniController extends Controller
     {
         $userId = Auth::id();
         $search = $request->search;
-        // if($search) {
-        //     $ordini = Ordine::Where(fn($query) => $query->where('rist_id', '=', $userId))
-        //     ->where('piatto_nome', 'LIKE', "%$search%")->paginate(4);
-        // }else{
-        //     $ordini = Ordine::Where(fn($query) => $query->where('rist_id', '=', $userId))->paginate(4);
-        // }
+     
         
         $ordini = DB::table('ordini')
         ->join('piatti_ordini', 'ordini.ord_id', '=', 'piatti_ordini.ord_id')

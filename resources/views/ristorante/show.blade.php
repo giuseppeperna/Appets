@@ -17,7 +17,7 @@
                         <p><strong>Prezzo: </strong> {{$piatto->piatto_prezzo}} Euro</p>
                     </div>
                     <div class="d-flex justify-content-start align-items-center">
-                        <a href="#" class="btn btn-warning btn-block text-center" role="button">Add to cart</a>
+                        <a href="{{route('aggiungi-carrello', $piatto->piatto_id)}}" class="btn btn-warning btn-block text-center" role="button">Add to cart</a>
                         <input class="quantity-product"type="number" id="quantità" name="quantità" min="1" max="10">
                     </div>
                 </div>
@@ -25,5 +25,6 @@
         </div>
         @endforeach
     </div>
+    
 </div>
 @endsection('content')

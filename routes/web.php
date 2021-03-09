@@ -19,7 +19,6 @@ Route::get('/', 'HomeController@index')->name('home');
 Route::get('/dashboard', 'DashboardController@index')->middleware('auth')->name('dashboard');
 Route::get('/ristorante/{ristorante}', 'HomeController@show')->name('ristorante');
 
-
 Route::prefix('dashboard')
 ->middleware('auth')
 ->group(function () {
