@@ -12,7 +12,7 @@
                               <h2 class="animate__animated animate__fadeInDown">Appets</h2>
                               <h2 class="animate__animated animate__fadeInDown"><span>I piatti</span> della tua città</h2>
                               <p class="animate__animated animate__fadeInUp">Solo a Milano, vicino a te.</p>
-                              <a href="{{route('home')}}/#restaurants" class="btn btn-light" id="basic-addon2">Cerca ristorante</a>
+                              <a href="{{route('home')}}/#restaurants" class="btn-register" id="basic-addon2">Cerca ristorante</a>
                            </div>
                         </div>
                      </div>

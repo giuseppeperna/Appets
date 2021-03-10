@@ -1196,3 +1196,160 @@ section {
     margin:auto;
 }
 
+/* Emanuel */
+
+.shopping-body {
+	min-height: 100vh;
+	vertical-align: middle;
+	display: flex;
+	font-family: Poppins, sans-serif;
+	color: #444;
+	font-size: .8rem;
+	font-weight: 700
+}
+
+.shopping-cart__title {
+	margin-bottom: 5vh
+}
+
+.shopping-cart__card {
+	margin: auto;
+	max-width: 950px;
+	width: 90%;
+	box-shadow: 0 6px 20px 0 rgba(0, 0, 0, .19);
+	border-radius: 1rem;
+	border: transparent
+}
+
+@media (max-width:767px) {
+	.shopping-cart__card {
+		margin: 3vh auto
+	}
+}
+
+.shopping-cart__cart {
+	background-color: #fff;
+	padding: 4vh 5vh;
+	border-radius: 1rem;
+}
+
+@media (max-width:767px) {
+	.shopping-cart__cart {
+		padding: 4vh;
+		border-bottom-left-radius: unset;
+		border-top-right-radius: 1rem
+	}
+}
+
+.shopping-cart__summary {
+	background-color: #92c24c;
+	border-top-right-radius: 1rem;
+	border-bottom-right-radius: 1rem;
+	padding: 4vh;
+	color: #414141
+}
+
+@media (max-width:767px) {
+	.shopping-cart__summary {
+		border-top-right-radius: unset;
+		border-bottom-left-radius: 1rem
+	}
+}
+
+.shopping-cart__row {
+	margin: 0
+}
+
+.shopping-cart__title b {
+	font-size: 1.5rem
+}
+
+.shopping-cart__main {
+	margin: 0;
+	padding: 2vh 0;
+	width: 100%
+}
+
+.shopping-cart__col,
+.shopping-cart__col-2 {
+	padding: 0 1vh
+}
+
+.shopping-cart__a {
+	padding: 0 1vh;
+    text-decoration: none;
+}
+
+.shopping-cart__close {
+	margin-left: auto;
+	font-size: .7rem
+}
+
+.back-to-shop {
+	margin-top: 4.5rem
+}
+
+.shopping-cart__h5 {
+	margin-top: 1vh
+}
+
+.shopping-cart__hr {
+	margin-top: 1.25rem
+}
+
+.shopping-cart__form {
+	padding: 2vh 0
+}
+
+.shopping-cart__input {
+	border: 1px solid rgba(0, 0, 0, .137);
+	padding: 1vh;
+	margin-bottom: 4vh;
+	outline: 0;
+	width: 100%;
+	background-color: #f7f7f7
+}
+
+.shopping-cart__input:focus::-webkit-input-placeholder {
+	color: transparent
+}
+
+.shopping-cart__a:hover {
+	color: #000;
+	text-decoration: none
+}
+
+.shopping-btn {
+	display: inline;
+	outline: 0;
+	background-color: #fff;
+	margin: 0 .25rem;
+	border-radius: 5px;
+	border: none;
+	text-align: center
+}
+
+.shopping-input {
+	display: inline;
+	margin: 0 .25rem;
+	border-radius: 5px;
+	outline: 0;
+	padding: 0;
+	max-width: 2rem;
+	text-align: center
+}
+
+@media screen and (max-width:803px) {
+	.shopping-btn {
+		display: block
+	}
+}
+
+.shopping-cart__icon {
+    font-size: 16px;
+}
+
+.shopping-cart-update {
+	display: inline;
+}
+
