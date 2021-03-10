@@ -53,7 +53,7 @@
                                 <p>Prezzo: <strong>{{$piatto->piatto_prezzo}} €</strong></p>
                                 <form action="{{ route('cart.store') }}" method="POST">
                                     {{ csrf_field() }}
-                                    <div class="input-group">
+                                    <div class="input-group input-group-order">
                                         <input type="hidden" value="{{ $piatto->piatto_id }}" id="id" name="id">
                                         <input type="hidden" value="{{ $piatto->piatto_nome }}" id="name" name="name">
                                         <input type="hidden" value="{{ $piatto->piatto_prezzo }}" id="price" name="price">
