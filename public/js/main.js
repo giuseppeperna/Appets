@@ -20,8 +20,8 @@ const my_app = new Vue({
        // Chiamata AJAX e gestione della ricerca
        searchRestaurants: function(){
           const myResult = [];
-          this.userChoices.forEach(userChoice => { axios.get('http://localhost:8000/api/tipologie/search',
-             {params: {api_token: this.apiKey, data: userChoice}}).then(result => myResult.push(result.data.data))})
+          axios.get('http://localhost:8000/api/ristoranti/search',
+             {params: {api_token: this.apiKey, 'nome[]': this.userChoices}}).then(result =>console.log(result.data));
              this.filteredRestaurants = myResult;
        },
        toggleChoice: function(value){
@@ -42,6 +42,6 @@ const my_app = new Vue({
     },
     mounted: function(){
       axios.get('http://localhost:8000/api/tipologie/search',
-        {params: {api_token: this.apiKey, data: 'italiano'}}).then(result => this.filteredRestaurants.push(result.data.data));
+        {params: {api_token: this.apiKey, 'nome[]': 'italiano'}}).then(result => this.filteredRestaurants.push(result.data.data));
    }
  });
