@@ -43,6 +43,5 @@ const my_app = new Vue({
     mounted: function(){
       axios.get('http://localhost:8000/api/tipologie/search',
         {params: {api_token: this.apiKey, data: 'italiano'}}).then(result => this.filteredRestaurants.push(result.data.data));
-   },
-
+   }
  });

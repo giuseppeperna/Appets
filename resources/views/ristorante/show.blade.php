@@ -2,7 +2,7 @@
 
 @section('content')
 <!-- ======= Hero Section ======= -->
-<div class="carousel-item active" style="background: url({{asset('img/bg-menu.jpeg')}}); background-size: cover;">
+<div class="carousel-item active" style="background: linear-gradient(90deg, rgba(68,129,62,1) 0%, rgba(146,194,76,1) 50%, rgba(99,172,76,1) 100%);">
     <section id="single-restaurant" class="single-restaurant">
         <div class="container">
             <div class="row mb-4">

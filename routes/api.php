@@ -35,10 +35,13 @@ Route::get('/tipologie/search', 'ApiSearchController@getTipologieResults')
 ->middleware('cors')
 ->middleware('api_token');
 
+
 Route::get('/ristoranti', function() {
+    $name = request('nome');
     return ['success' => true, 
             'response' => RistoranteResource::collection(User::all()),
             'ristoranti_count' => RistoranteResource::collection(User::all())->count(),
+            'nome' => $name
         ];
 })->middleware('cors')->middleware('api_token');
 

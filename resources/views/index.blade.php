@@ -39,7 +39,7 @@
                            <li :class="getClass('ungherese')" @click= "toggleChoice('ungherese'); searchRestaurants()">Ungherese</li>
                            <li :class="getClass('egiziano')" @click= "toggleChoice('egiziano'); searchRestaurants()">Egiziano</li>
                            <li :class="getClass('coreano')" @click= "toggleChoice('coreano'); searchRestaurants()">Coreano</li>
-                           <li :class="getClass('thailandese')" @click= "toggleChoice('thailandese');searchRestaurants()">Thailandese</li>
+                           <li :class="getClass('thailandese')" @click= "toggleChoice('thailandese'); searchRestaurants()">Thailandese</li>
                            <li :class="getClass('indiano')" @click= "toggleChoice('indiano'); searchRestaurants()">Indiano</li>
                            <li :class="getClass('messicano')" @click= "toggleChoice('messicano'); searchRestaurants()">Messicano</li>
                         </ul>

@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Resources\RistoranteResource;
 use App\Http\Resources\TipologiaResource;
+use Illuminate\Support\Facades\DB;
 use App\Piatto;
 use App\User;
 use App\Tipologia;
@@ -14,14 +15,14 @@ class ApiSearchController extends Controller
 {
 
     public function getRistorantiResults(Request $request) {
-        $data = $request->get('data');
+        $data = request('nome');
+        $dataId = request('id');
 
-        $ristoranti = RistoranteResource::collection(User::where('rist_nome', 'like', "%{$data}%")
-                         ->orWhere('rist_id', 'like', "%{$data}%")
-                         ->get());
-        
+        $ristoranti = RistoranteResource::collection(User::where('rist_nome', 'like', "%{$data}%")->where('rist_id', 'like', "%{$dataId}%")          
+        ->get());
+    
         return Response::json([
-            'data' => $ristoranti
+            'data' => $ristoranti,
         ]);
     }
 
@@ -38,6 +39,29 @@ class ApiSearchController extends Controller
     }
 
     public function getTipologieResults(Request $request) {
+        // $data = request('nome');
+        // $dataId = request('id');
+        // $dataRist = request('ristorante');
+
+        // $tipologie = DB::table('tipologie')
+        // ->join('tipologie_ristoranti', 'tipologie.tipologia_id', '=', 'tipologie_ristoranti.tipologia_id')
+        // ->join('users', 'tipologie_ristoranti.rist_id', '=', 'users.rist_id')
+        // ->where('tipologia_nome', 'like', explode(",", "%{$data}%"))
+        // ->where('rist_nome', 'like', "%{$dataRist}%")
+        // ->where('users.rist_id', 'like', "%{$dataId}%" )
+        // ->get();
+
+        // // $data = $request->get('data');
+        // // $tipologie = TipologiaResource::collection(Tipologia::where('tipologia_nome', 'like', "%{$data}%")
+        // //                  ->where('tipologia_id', 'like', "%{$data}%")
+        // //                  ->get());
+        
+        // return Response::json([
+        //     'data' => $tipologie
+        // ]);
+
+        // return dd($data);
+
         $data = $request->get('data');
 
         $tipologie = TipologiaResource::collection(Tipologia::where('tipologia_nome', 'like', "%{$data}%")
@@ -48,4 +72,5 @@ class ApiSearchController extends Controller
             'data' => $tipologie
         ]);
     }
+
 }
