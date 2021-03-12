@@ -9,16 +9,7 @@
         <div class="container">
             <div class="row mb-3">
                 <div class="col-12 plates-list-container">
-                    {{-- <div class="input-group mb-3 w-50">
-                        <form class="input-group" method="get" action="{{ route('ordini.index')}}">
-                            @csrf
-                            <input type="text" name="search" class="form-control" placeholder="Cerca ordini..." aria-label="Recipient's username" aria-describedby="button-addon2">
-                            <button class="btn register-btn" type="submit" id="button-addon2">Cerca</button>
-                            <a class="btn btn-danger clear-search" href="{{ route('ordini.index')}}">Cancella</a>
-                        </form>
-                    </div> --}}
-                    {{-- <a class="btn register-btn" href="{{ route('ordini.create') }}">Aggiungi ordine</a>
-                    <a class="btn btn-warning" href="{{ route('hidden') }}">Fuori Menù</a> --}}
+                <a class="btn register-btn" href="{{ route('statistiche') }}">Statistiche</a>
                 </div>
             </div>
             <div class="row">
