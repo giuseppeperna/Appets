@@ -23,6 +23,7 @@ Route::post('/add', 'HomeController@add')->name('cart.store');
 Route::post('/update', 'HomeController@update')->name('cart.update');
 Route::post('/remove', 'HomeController@remove')->name('cart.remove');
 Route::post('/clear', 'HomeController@clear')->name('cart.clear');
+Route::post('/checkout', 'HomeController@createOrderWithPayment')->name('checkout');
 
 Route::prefix('dashboard')
 ->middleware('auth')

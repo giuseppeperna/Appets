@@ -883,7 +883,7 @@ section {
 
   /* ALESSANDRO */
 
-  .restourants-area, .order-list, .single-order, .single-restaurant, .statistiche{
+  .restourants-area, .order-list, .single-order, .single-restaurant, .statistiche, .shopping-body{
 	margin-top: 60px;
 	padding:60px 0 130px 0;
   }
