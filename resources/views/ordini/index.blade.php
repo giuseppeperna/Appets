@@ -18,36 +18,38 @@
 
                     @foreach ($ordini as $ordine)
                     <div class="card mb-3">
-                        <div class="card-body d-flex">
-                            <div class="col-2 order-padding">
-                                <h5 class="card-title">Dati</h5>
-                                <p class="card-text">{{$ordine->ord_nome}} {{$ordine->ord_cognome}}</p>
-                                <p class="card-text">{{$ordine->ord_indirizzo}}</p>
-                            </div>
-                            <div class="col-7 order-padding">
-                                <h5 class="card-title">Ordine</h5>
-                                <p class="card-text">{{$ordine->piatto_nome}}</p>
-                                <h5 class="card-title">Commenti</h5>
-                                <p class="card-text">{{$ordine->ord_commenti}}</p>
-                            </div>
-                            <div class="col-3 justify-center order-padding">
-                                <div>
-                                    <h5 class="card-title text-center">Totale</h5>
-                                    <p class="card-title text-center">{{$ordine->ord_totale}} Euro</p>
+                        <div class="container">
+                            <div class="row d-flex card-body">
+                                <div class="col-lg-3 order-padding">
+                                    <h5 class="card-title">Dati</h5>
+                                    <p class="card-text">{{$ordine->ord_nome}} {{$ordine->ord_cognome}}</p>
+                                    <p class="card-text">{{$ordine->ord_indirizzo}}</p>
                                 </div>
-                                <div>
-                                    <h5 class="card-title text-center">Stato</h5>
-                                    <p class="card-title text-center">
-                                    @if ($ordine->ord_stato)
-                                    Pagato
-                                    @else
-                                    In attesa
-                                    @endif</p>    
-                                    </p>
+                                <div class="col-lg-7 order-padding">
+                                    <h5 class="card-title">Ordine</h5>
+                                    <p class="card-text">{{$ordine->piatto_nome}}</p>
+                                    <h5 class="card-title">Commenti</h5>
+                                    <p class="card-text">{{$ordine->ord_commenti}}</p>
+                                </div>
+                                <div class="col-lg-2 justify-center order-padding">
+                                    <div>
+                                        <h5 class="card-title">Totale</h5>
+                                        <p class="card-title">{{$ordine->ord_totale}} Euro</p>
+                                    
+                                        <h5 class="card-title">Stato</h5>
+                                        <p class="card-title">
+                                        @if ($ordine->ord_stato)
+                                        Pagato
+                                        @else
+                                        In attesa
+                                        @endif</p>    
+                                        </p>
+                                    </div>                               
                                 </div>
                             </div>
                         </div>
                     </div>
+                    
                 @endforeach
                 @else
                 @if (isset($search))

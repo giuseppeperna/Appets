@@ -67,6 +67,9 @@
             </div>
             <!-- </template> -->
          </div>
+         <div class="section-title empty-category">
+            <h3 v-if="filteredRestaurants.length == 0" class="text-center">Nessun ristorante trovato</h3>
+         </div>
       </section>
       <!-- ======= Jobs Section ======= -->
       <section id="jobs" class="jobs">

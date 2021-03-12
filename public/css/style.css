@@ -308,7 +308,7 @@ section {
 	padding-bottom: 30px
 }
 
-.section-title h2 {
+.section-title h2, .section-title h3 {
 	margin: 15px 0 0 0;
 	font-size: 32px;
 	font-weight: 700;
@@ -507,6 +507,10 @@ section {
 	font-size: 14px;
 	font-family: "Comic Neue", sans-serif;
 	color: #948c81
+}
+
+.empty-category {
+	margin-top: 60px;
 }
 
 .events {
