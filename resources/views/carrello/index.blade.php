@@ -21,11 +21,12 @@
       <!-- Main CSS File -->
       <link href="{{ asset('/css/style.css') }}" rel="stylesheet">
       <!-- Libreria animazioni -->
-      <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+      <link  rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
       <!-- Vue.js -->
       <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
-      <script src="https://unpkg.com/vue-observe-visibility/dist/vue-observe-visibility.min.js"></script>
-      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+      <script type="application/javascript" src="https://unpkg.com/vue-observe-visibility/dist/vue-observe-visibility.min.js"></script>
+      <script type="application/javascript" src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+      <script type="application/javascript" src="https://js.braintreegateway.com/web/dropin/1.26.1/js/dropin.min.js"></script>
    </head>
    <body>
       <div id="root">
@@ -152,21 +153,24 @@
                     </div>
                 </div>
             </div>
-
-         @include('../templates._footer')
-
+            @include('../templates._footer')
+        </div>
+         
+        </div>
+        
          <!-- Libreries/Frameworks JS Files -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-        {{-- Script pagamento --}}
-        <script src="https://js.braintreegateway.com/web/dropin/1.26.1/js/dropin.min.js"></script>
+        <script type="application/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+        <script type="application/javascript" src="{{ asset('/js/main.js') }}" charset="utf-8"></script>
 
+        {{-- Script pagamento --}}
+        
         <script>
             var form = document.querySelector('#payment-form');
             var client_token = "{{ $token }}";
             braintree.dropin.create({
             authorization: client_token,
             selector: '#bt-dropin',
-/*             paypal: {
+             /*paypal: {
                 flow: 'vault'
             } */
             }, function (createErr, instance) {
@@ -188,6 +192,5 @@
             });
             });
         </script>
-      </div>
    </body>
 </html>

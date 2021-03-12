@@ -23,6 +23,8 @@
       <!-- Libreria animazioni -->
       <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
       <!-- Vue.js -->
+      <script type="application/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
+      <script type="application/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
       <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
       <script src="https://unpkg.com/vue-observe-visibility/dist/vue-observe-visibility.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
@@ -55,10 +57,8 @@
         @include('../templates._footer')
 
          <!-- Libreries/Frameworks JS Files -->
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
         {{-- Script statistiche --}}
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.3/Chart.min.js"></script>
-        <script>
+        <script type="application/javascript">
             var year = <?php echo $year; ?>;
             var $prev_year = <?php echo $prev_year; ?>;
             var current_year = <?php echo $current_year; ?>;
@@ -102,5 +102,6 @@
             };
         </script>
       </div>
+      <script type="application/javascript" src="{{ asset('/js/main.js') }}" charset="utf-8"></script>
    </body>
 </html>
