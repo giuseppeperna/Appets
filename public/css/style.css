@@ -642,7 +642,8 @@ section {
 	color: #433f39;
 	box-shadow: 0 2px 15px rgba(0, 0, 0, .1);
 	overflow: hidden;
-	transition: max-height .5s ease-in-out
+	transition: max-height .5s ease-in-out;
+	height: 150px;
 }
 
 .jobs .member h4 {
@@ -1131,22 +1132,27 @@ section {
 .card-container{
     border-radius: 10px;
     width: 100%;
-    background-color: rgba(255, 255, 255, .9);
+    background-color: rgba(255, 255, 255, .7);
     padding: 35px 0;
 }
 
 .order-container{
     border-radius: 10px;
     width: 100%;
-    background-color: rgba(255, 255, 255, .9);
+    background-color: rgba(255, 255, 255, .7);
     padding: 25px 5px;
 }
 
 .info-container{
     border-radius: 5px;
-    height: 100px;
+    /* height: 100px; */
     width: 400px;
-    background-color: rgba(255, 255, 255, .9);
+	padding-bottom: 2px;
+    background-color: rgba(255, 255, 255, .7);
+}
+
+.info-container p{
+    padding: 5px;
 }
 
 .card-dish{

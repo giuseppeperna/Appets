@@ -47,24 +47,24 @@
                   </div>
                   <br>
                   <div class="row row-cols-1 row-cols-md-3 g-4">
-                     <template v-for="tipologia in filteredRestaurants" >
-                        <div class="col renderCard" v-for="el in tipologia[0].ristoranti">
-                           <div class="card-header text-center greyCard">
-                              <h5>Appets!</h5>
-                           </div>
+                     <!-- <template v-for="el in filteredRestaurants"> -->
+                     <div class="col renderCard"v-for="el in filteredRestaurants">
+                        <div class="card-header text-center greyCard">
+                           <h5>Appets!</h5>
+                        </div>
+                        <div class="card h-100 renderCardSub">
                            <div class="card h-100 renderCardSub">
-                              <div class="card h-100 renderCardSub">
-                                 <a class="card-title text-center" 
-                                 v-bind:href="'ristorante/'+el.rist_id+''">
-                                 <span>@{{el.rist_nome}}</span></a>
-                              <div class="card-body">
-                                 <div class="card-text"><strong>Tipologia: </strong>@{{tipologia[0].nome}}</div>
-                                 <div class="card-text"><strong>Descrizione: </strong> @{{el.rist_descrizione}}</div>
-                                 <div class="card-text"><strong>Indirizzo: </strong> @{{el.rist_indirizzo}}</div>
+                              <a class="card-title text-center" v-bind:href="'ristorante/'+el.id+''">
+                                 <span>@{{el.nome}}</span></a>
+                                 <div class="card-body">
+                                    <div class="card-text"><strong>Tipologia: </strong>@{{userChoices.join(', ')}}</div>
+                                    <div class="card-text"><strong>Descrizione: </strong>@{{el.descrizione}}</div>
+                                    <div class="card-text"><strong>Indirizzo: </strong>@{{el.indirizzo}}</div>
+                                 </div>
                               </div>
-                           </div>
+                        </div>
                      </div>
-                  </template>
+                     <!-- </template> -->
                   </div>
                </div>
             </section>

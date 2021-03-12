@@ -18,21 +18,33 @@ class ApiSearchController extends Controller
         $data = request('nome');
         $dataId = request('id');
 
-         $ristoranti = DB::table('users')
-        ->join('tipologie_ristoranti', 'users.rist_id', '=', 'tipologie_ristoranti.rist_id')
-        ->join('tipologie', 'tipologie_ristoranti.tipologia_id', '=', 'tipologie.tipologia_id')
-        ->whereIn('tipologia_nome', $data)
-    
-        ->get()->groupBy('rist_nome');
+        //  $ristoranti = DB::table('users')
+        // ->join('tipologie_ristoranti', 'users.rist_id', '=', 'tipologie_ristoranti.rist_id')
+        // ->join('tipologie', 'tipologie_ristoranti.tipologia_id', '=', 'tipologie.tipologia_id')
+        // ->whereIn('tipologia_nome', $data)
+        
+        // // ->whereIn('tipologia_nome', $data)
+        // // ->where('rist_nome', 'like', "%{$dataRist}%")
+        // // ->where('users.rist_id', 'like', "%{$dataId}%" )
+        // ->get()->groupBy('rist_nome');
+
+        $ristoranti = RistoranteResource::collection(
+            User::whereHas('tipologie', function($q) {
+                $data = request('nome');
+            $q->whereIn('tipologia_nome', $data);
+        })
+        ->get())->groupBy('rist_nome');
 
     
         return Response::json([
             'data' => $ristoranti,
         ]);
+        return dd(explode(',', $data));
     }
+        
 
     public function getPiattiResults(Request $request) {
-    
+        // $data = $request->get('data');
 
         $data = request('nome');
         $id = request('id');
@@ -64,38 +76,38 @@ class ApiSearchController extends Controller
     }
 
     public function getTipologieResults(Request $request) {
-        $data = request('nome');
-        $dataId = request('id');
-        $dataRist = request('ristorante');
+        // $data = request('nome');
+        // $dataId = request('id');
+        // $dataRist = request('ristorante');
 
-        $tipologie = DB::table('tipologie')
-        ->join('tipologie_ristoranti', 'tipologie.tipologia_id', '=', 'tipologie_ristoranti.tipologia_id')
-        ->join('users', 'tipologie_ristoranti.rist_id', '=', 'users.rist_id')
-        ->whereIn('tipologia_nome', $data)
-        // ->where('rist_nome', 'like', "%{$dataRist}%")
-        // ->where('users.rist_id', 'like', "%{$dataId}%" )
-        ->get();
+        // $tipologie = DB::table('tipologie')
+        // ->join('tipologie_ristoranti', 'tipologie.tipologia_id', '=', 'tipologie_ristoranti.tipologia_id')
+        // ->join('users', 'tipologie_ristoranti.rist_id', '=', 'users.rist_id')
+        // ->whereIn('tipologia_nome', $data)
+        // // ->where('rist_nome', 'like', "%{$dataRist}%")
+        // // ->where('users.rist_id', 'like', "%{$dataId}%" )
+        // ->get();
 
-        // $data = $request->get('data');
-        // $tipologie = TipologiaResource::collection(Tipologia::where('tipologia_nome', 'like', "%{$data}%")
-        //                  ->where('tipologia_id', 'like', "%{$data}%")
-        //                  ->get());
-        
-        return Response::json([
-            'data' => $tipologie
-        ]);
-
-        return dd($data);
-
-        // $data = $request->get('data');
-
-        // $tipologie = TipologiaResource::collection(Tipologia::where('tipologia_nome', 'like', "%{$data}%")
-        //                  ->orWhere('tipologia_id', 'like', "%{$data}%")
-        //                  ->get());
+        // // $data = $request->get('data');
+        // // $tipologie = TipologiaResource::collection(Tipologia::where('tipologia_nome', 'like', "%{$data}%")
+        // //                  ->where('tipologia_id', 'like', "%{$data}%")
+        // //                  ->get());
         
         // return Response::json([
         //     'data' => $tipologie
         // ]);
+
+        // return dd($data);
+
+        $data = $request->get('data');
+
+        $tipologie = TipologiaResource::collection(Tipologia::where('tipologia_nome', 'like', "%{$data}%")
+                         ->orWhere('tipologia_id', 'like', "%{$data}%")
+                         ->get());
+        
+        return Response::json([
+            'data' => $tipologie
+        ]);
     }
 
 }
