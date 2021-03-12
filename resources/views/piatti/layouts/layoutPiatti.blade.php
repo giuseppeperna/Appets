@@ -25,6 +25,7 @@
       <!-- Vue.js -->
       <script src="https://cdn.jsdelivr.net/npm/vue@2.6.12/dist/vue.js"></script>
       <script src="https://unpkg.com/vue-observe-visibility/dist/vue-observe-visibility.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
    </head>
    <body>
         <div id="root">
@@ -35,7 +36,7 @@
                     <h1><a href="{{route('home')}}">Appets</a></h1>
                 </div>
 
-                <nav id="navbar" class="navbar order-last order-lg-0">
+                <nav id="navbar" class="navbar order-last order-lg-0" :class="{'navbar-mobile': showMenu}">
                     <ul>
                         @if(Auth::check())
                         <li>
@@ -57,7 +58,7 @@
                         </li>
                         @endif
                     </ul>
-                    <i class="bi bi-list mobile-nav-toggle"></i>
+                    <i class="bi bi-list mobile-nav-toggle" @click="showMenuMobile()" :class="{'bi-list': !showMenu, 'bi-toggle': showMenu}"></i>
                 </nav>
                 <!-- .navbar -->
                 </div>
@@ -68,9 +69,9 @@
 
             @include('templates._footer')
 
-            <!-- Libreries/Frameworks JS Files -->
-            <script  type="application/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-         </div>
-         <script type="application/javascript" src="{{ asset('/js/main.js') }}" charset="utf-8"></script>
+         <!-- Libreries/Frameworks JS Files -->
+        </div>
+        <script  type="application/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
+        <script type="application/javascript" src="{{ asset('/js/main.js') }}" charset="utf-8"></script>
       </body>
    </html>

@@ -11,6 +11,7 @@ const my_app = new Vue({
      apiKey: 'f40d9398-9488-464e-8d4c-8fb353472d49',
      filteredRestaurants: [],
      userChoices: [],
+     showMenu: false,
    },
      // Animazioni Homepage
    methods: {
@@ -48,7 +49,10 @@ const my_app = new Vue({
          } else {
             return '';
          }
-      }
+      },
+      showMenuMobile() {
+         this.showMenu = !this.showMenu;
+      },
    },
    mounted: function(){
      this.userChoices = ['italiano'];

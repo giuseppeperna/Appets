@@ -136,42 +136,40 @@ h6 {
 }
 
 .navbar-mobile {
-	position: fixed;
-	overflow: hidden;
-	top: 0;
-	right: 0;
-	left: 0;
-	bottom: 0;
-	background: rgba(39, 37, 34, .9);
-	transition: .3s;
-	z-index: 0
+    position: fixed;
+    overflow: hidden;
+    top: 0;
+    right: 0;
+    left: 0;
+    height:320px;
+    transition: .3s;
 }
 
 .navbar-mobile .mobile-nav-toggle {
-	position: absolute;
-	top: 15px;
-	right: 15px
+    position: absolute;
+    top: 21px;
+    right: 12px;
 }
 
 .navbar-mobile ul {
-	display: block;
-	position: absolute;
-	top: 55px;
-	right: 15px;
-	bottom: 15px;
-	left: 15px;
-	padding: 10px 0;
-	border-radius: 8px;
-	background-color: #fff;
-	overflow-y: auto;
-	transition: .3s
+    display: block;
+    width: 200px;
+    position: absolute;
+    top: 70px;
+    right: 0px;
+    bottom: 0px;
+    padding: 10px 0;
+    border-bottom-left-radius: 8px;
+    background: rgba(26, 24, 22, .85);
+    overflow-y: auto;
+    transition: .3s;
 }
 
 .navbar-mobile a {
-	padding: 10px 20px;
-	font-size: 15px;
-	color: #433f39
+    padding: 10px 20px;
+    font-size: 15px;
 }
+
 
 .navbar-mobile .active,
 .navbar-mobile a:hover,
@@ -1243,7 +1241,7 @@ section {
 	.shopping-cart__cart {
 		padding: 4vh;
 		border-bottom-left-radius: unset;
-		border-top-right-radius: 1rem
+		border-radius: 1rem;
 	}
 }
 
