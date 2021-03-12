@@ -26,7 +26,7 @@
                             </div>
                             <div class="col-7 order-padding">
                                 <h5 class="card-title">Ordine</h5>
-                                <p class="card-text">{{$ordine->piatto_nome}} X{{$ordine->quantità}}</p>
+                                <p class="card-text">{{$ordine->piatto_nome}}</p>
                                 <h5 class="card-title">Commenti</h5>
                                 <p class="card-text">{{$ordine->ord_commenti}}</p>
                             </div>
