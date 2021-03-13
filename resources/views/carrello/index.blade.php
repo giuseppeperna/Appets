@@ -124,15 +124,15 @@
                                 @csrf
                                 <div class="mb-3">
                                     <label for="Nome" class="form-label">Nome</label>
-                                    <input type="text" class="form-control" name="nome" aria-describedby="Nome">
+                                    <input type="text" class="form-control" name="nome" aria-describedby="Nome" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="Cognome" class="form-label">Cognome</label>
-                                    <input type="text" class="form-control" name="nognome" aria-describedby="Cognome">
+                                    <input type="text" class="form-control" name="nognome" aria-describedby="Cognome" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="Indirizzo" class="form-label">Indirizzo</label>
-                                    <input type="text" class="form-control" name="indirizzo" aria-describedby="Indirizzo">
+                                    <input type="text" class="form-control" name="indirizzo" aria-describedby="Indirizzo" required>
                                 </div>
                                 <div class="mb-3">
                                     <label for="Commenti" class="form-label">Note per il ristorante</label>
@@ -155,15 +155,15 @@
             </div>
             @include('../templates._footer')
         </div>
-         
+
         </div>
-        
+
          <!-- Libreries/Frameworks JS Files -->
         <script type="application/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
         <script type="application/javascript" src="{{ asset('/js/main.js') }}" charset="utf-8"></script>
 
         {{-- Script pagamento --}}
-        
+
         <script>
             var form = document.querySelector('#payment-form');
             var client_token = "{{ $token }}";

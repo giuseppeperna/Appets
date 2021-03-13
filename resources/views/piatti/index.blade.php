@@ -26,15 +26,15 @@
 
                     @foreach ($piatti as $piatto)
                     <div class="card mb-3">
-                        <div class="card-body d-flex">
-                            <div class="col-2">
+                        <div class="card-body d-flex flex-wrap">
+                            <div class="col-4 col-lg-2">
                                 <a href="{{ route('piatti.show', $piatto->piatto_id) }}"><img src="{{asset($piatto->piatto_img)}}" alt="..." class="thumbnail-img"></a>
                             </div>
-                            <div class="col-7">
+                            <div class="col-8 col-lg-7 ps-3">
                                 <h5 class="card-title">{{$piatto->piatto_nome}}</h5>
                                 <p class="card-text">{{$piatto->piatto_descrizione}}</p>
                             </div>
-                            <div class="col-3 centering">
+                            <div class="col-12 col-lg-3 centering mt-3">
                                 <a href="{{ route('piatti.show', $piatto->piatto_id) }}" class="btn btn-warning" title="Dettagli"><i class="bi bi-three-dots centering"></i></a>
                                 <a href="{{ route('piatti.edit', $piatto->piatto_id)}}" class="btn btn-primary me-2 ms-2" title="Modifica"><i class="bi bi-pencil-square centering"></i></a>
 
@@ -66,9 +66,9 @@
                                         </div>
                                     </div>
                                 </div>
-                                
+
                                 <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-success hidden-plates" data-bs-toggle="modal" 
+                                <button type="button" class="btn btn-success hidden-plates" data-bs-toggle="modal"
                                 data-bs-target="#piatto{{$piatto->piatto_id}}" title="Nascondi">
                                     <i class="bi bi-eye-slash-fill centering"></i>
                                 </button>
@@ -90,7 +90,7 @@
                                                 @csrf
                                                 @method("delete")
                                                 <button type="submit" class="btn btn-success" title="Nascondi">Nascondi</button>
-                                            </form>  
+                                            </form>
                                         </div>
                                         </div>
                                     </div>
@@ -103,8 +103,8 @@
                 @if (isset($search))
                 <div class="col-12 centering empty-plates">
                     <h3>Nessun risultato!</h3>
-                </div> 
-                @else 
+                </div>
+                @else
                 <div class="col-12 centering empty-plates">
                     <h3>La tua lista piatti è vuota!</h3>
                 </div>

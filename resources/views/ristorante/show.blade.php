@@ -28,10 +28,10 @@
                                 <button class="remove" style="margin-right: 10px;">Rimuovi</button>
                             </form></li>
                             @endforeach
-                            <div class="line"></div>
-                            <p class="sub-total text-center mt-2">Totale ordine: {{ \Cart::getTotal() }}€</p>
                             @endif
                         </ul>
+                        <div class="line"></div>
+                        <p class="sub-total text-center mt-2">Totale ordine: {{ \Cart::getTotal() }}€</p>
                         <a href="{{route('cart.index')}}" class="btn btn-order centering">Riepilogo Ordine</a>
 
                     </div>
@@ -65,13 +65,9 @@
                                             <option value="{{$i}}">{{$i}}</option>
                                             @endfor
                                         </select>
-                                        <div class="card-footer" style="background-color: white;">
-                                            <div class="row">
-                                                <button class="btn btn-warning centering" class="tooltip-test" id="button-addon2" title="Aggiungi a ordine">
-                                                    <i class="bi bi-cart-plus"></i>
-                                                </button>
-                                            </div>
-                                        </div>
+                                        <button class="btn btn-warning centering" class="tooltip-test" id="button-addon2" title="Aggiungi a ordine">
+                                            <i class="bi bi-cart-plus"></i>
+                                        </button>
                                     </div>
                                 </form>
                             </div>

@@ -46,7 +46,7 @@
             </div>
          </div>
          <br>
-         <div class="row row-cols-1 row-cols-md-3 g-4">
+         <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
             <!-- <template v-for="el in filteredRestaurants"> -->
             <div class="col renderCard"v-for="el in filteredRestaurants">
                <div class="card-header text-center greyCard">

@@ -1104,7 +1104,7 @@ section {
 
 .page-item.active .page-link {
 	background-color: #91c14b;
-	border-color:  #91c14b; 
+	border-color:  #91c14b;
 }
 
 /* Ordini */
@@ -1173,18 +1173,18 @@ section {
 }
 
 .card-dish{
-    max-height: 130px;
+    height: 130px;
     width: 95%;
     border-bottom: 1px solid #92c24c;
     margin-bottom: 10px;
-    overflow-y: auto;
+    overflow: hidden;
 }
 .input-group-order{
     max-width: 150px;
 }
 
 .thumbnail-img-dish{
-    width: 75%;
+    width: 100%;
 }
 
 .order-recap{
@@ -1204,7 +1204,7 @@ section {
 
 .line {
     width:90%;
-    margin:auto;
+	margin:auto;
     height: 1px;
     background-color: black;
 }
@@ -1375,4 +1375,3 @@ section {
 .shopping-cart-update {
 	display: inline;
 }
-
