@@ -36,7 +36,7 @@
                     <h1><a href="{{route('home')}}">Appets</a></h1>
                 </div>
 
-                <nav id="navbar" class="navbar order-last order-lg-0" :class="{'navbar-mobile': showMenu}">
+                <nav id="navbar" class="navbar order-last order-lg-0">
                     <ul>
                         @if(Auth::check())
                         <li>
@@ -58,9 +58,34 @@
                         </li>
                         @endif
                     </ul>
-                    <i class="bi bi-list mobile-nav-toggle" @click="showMenuMobile()" :class="{'bi-list': !showMenu, 'bi-toggle': showMenu}"></i>
                 </nav>
                 <!-- .navbar -->
+
+                {{-- Navbar dropdown con links Mobile --}}
+                <div class="dropdown hamburger-dropdown">
+                    <i class="bi bi-list mobile-nav-toggle" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false"></i>
+                    <ul class="dropdown-menu hamburger-dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                        @if(Auth::check())
+                        <li>
+                            <a class="nav-link" href="{{route('dashboard')}}">Dashboard</a>
+                        </li>
+                        <li>
+                            <a class="nav-link" href="{{ route('logout') }}"
+                                onclick="event.preventDefault();
+                                    document.getElementById('logout-form').submit();">
+                        {{ __('Logout') }}
+                            </a>
+                        </li>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                        @csrf
+                        </form>
+                        @else
+                        <li>
+                            <a class="nav-link" href="{{route('accesso')}}">Area ristoranti</a>
+                        </li>
+                        @endif
+                    </ul>
+                </div>
                 </div>
             </header>
 
@@ -72,6 +97,5 @@
          <!-- Libreries/Frameworks JS Files -->
         </div>
         <script  type="application/javascript" src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js" integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0" crossorigin="anonymous"></script>
-        <script type="application/javascript" src="{{ asset('/js/main.js') }}" charset="utf-8"></script>
       </body>
    </html>
