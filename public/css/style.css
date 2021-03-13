@@ -126,12 +126,27 @@ h6 {
 	transition: .5s
 }
 
+.hamburger-dropdown {
+	display: none;
+}
+
 @media (max-width:991px) {
 	.mobile-nav-toggle {
 		display: block
 	}
 	.navbar ul {
 		display: none
+	}
+
+	.hamburger-dropdown {
+		display: block;
+	}
+
+	.hamburger-dropdown-menu {
+		background: rgba(26, 24, 22, .85);
+		width: 220px;
+		padding: 20px 0;
+		overflow-y: auto;
 	}
 }
 
