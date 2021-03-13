@@ -6,7 +6,7 @@
       </div>
 
       {{-- Navbar con links Desktop  --}}
-      <nav id="navbar" class="navbar order-last order-lg-0" :class="{'navbar-mobile': showMenu}">
+      <nav id="navbar" class="navbar order-last order-lg-0" >
          <ul>
             <li><a class="nav-link scrollto" href="{{route('home')}}/#restaurants">Ristoranti</a></li>
             <li><a class="nav-link scrollto" href="{{route('home')}}/#jobs">Lavora con Appets</a></li>

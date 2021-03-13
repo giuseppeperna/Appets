@@ -25,7 +25,7 @@ class OrdiniController extends Controller
             ->where(fn($query) => $query->where('users.rist_id', '=', $userId))
             ->where('ordini.ord_nome', 'LIKE', "%$search%")
             ->orWhere('ordini.ord_cognome', 'LIKE', "%$search%")
-            ->orWhere('ordini.ord_id', 'LIKE', "%$search%")
+            ->orWhere('ordini.ord_id', $search)
             ->orWhere('piatti.piatto_nome', 'LIKE', "%$search%")
             ->orderBy('ordini.created_at', 'DESC')
             ->paginate(4);
