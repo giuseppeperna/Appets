@@ -19,6 +19,8 @@ class PiattiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    // Mostra la lista dei piatti del ristorante nella sua area privata.
     public function index(Request $request)
     {
         $userId = Auth::id();
@@ -38,6 +40,8 @@ class PiattiController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    //  Form di aggiunta di un nuovo piatto
     public function create()
     {
         $tipologie = Tipologia::all();
@@ -51,6 +55,8 @@ class PiattiController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
+
+    // Creazione di un nuovo piatto
     public function store(PiattoFormRequest $request)
     {
         $userId = Auth::id();
@@ -82,6 +88,8 @@ class PiattiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    // Mostra il dettaglio del singolo piatto
     public function show($id)
     {
         $piatto = Piatto::find($id);
@@ -95,6 +103,8 @@ class PiattiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    //  Form di modifica del piatto
     public function edit($id)
     {
         $piatto = Piatto::find($id);
@@ -110,6 +120,8 @@ class PiattiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    // Aggiornamento delle informazioni relative al piatto
     public function update(PiattoUpdateRequest $request, $id)
     {
         $data = $request->validated();
@@ -132,6 +144,8 @@ class PiattiController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    // Eliminazione permanente del piatto
     public function destroy($id)
     {
         $piatto = Piatto::find($id);
@@ -144,6 +158,7 @@ class PiattiController extends Controller
         return redirect()->route('piatti.index');
     }
 
+    // Eliminazione non distruttiva del piatto. Il record si trova ancora nel DB
     public function softDestroy($id)
     {
         $piatto = Piatto::find($id);
@@ -151,6 +166,7 @@ class PiattiController extends Controller
         return redirect()->route('piatti.index');
     }
 
+    // Mostra la lista dei piatti momentaneamente eliminati dal menù
     public function HiddenPlates(Request $request)
     {   
         $userId = Auth::id();
@@ -165,6 +181,7 @@ class PiattiController extends Controller
         return view('piatti.hidden', compact('piatti', 'search'));
     }
 
+    // Sposta i piatti momentaneamente eliminati nella menù del ristorante.
     public function restorePlates($id)
     {
         Piatto::withTrashed()->find($id)->restore();

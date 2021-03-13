@@ -15,6 +15,8 @@ class DashboardController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+
+    //  Mostra la dashboard del ristoratore registrato
     public function index()
     {
         $userId = Auth::id();
@@ -50,6 +52,8 @@ class DashboardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    // Mostr i dati relativi al ristoratore
     public function show()
     {
         $userId = Auth::id();
@@ -65,6 +69,8 @@ class DashboardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    // Form di modifica dei dati del ristoratore
     public function edit()
     {
         $userId = Auth::id();
@@ -81,6 +87,8 @@ class DashboardController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
+
+    // Aggiornamento dei dati del ristoratore
     public function update(UserUpdateRequest $request)
     {
         $userId = Auth::id();

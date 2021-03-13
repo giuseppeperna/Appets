@@ -9,7 +9,14 @@
         <div class="container">
             <div class="row mb-3">
                 <div class="col-12 plates-list-container">
-                <a class="btn register-btn" href="{{ route('statistiche') }}">Statistiche</a>
+                    <div class="input-group mb-3 w-50">
+                        <form class="input-group" method="get" action="{{ route('ordini')}}">
+                            @csrf
+                            <input type="text" name="search" class="form-control" placeholder="Cerca ordini..." aria-label="Recipient's username" aria-describedby="button-addon2">
+                            <button class="btn register-btn" type="submit" id="button-addon2">Cerca</button>
+                        </form>
+                    </div>
+                    <a class="btn btn-warning" href="{{ route('statistiche') }}">Statistiche</a>
                 </div>
             </div>
             <div class="row">
@@ -22,8 +29,9 @@
                             <div class="row d-flex card-body">
                                 <div class="col-lg-3 order-padding">
                                     <h5 class="card-title">Dati</h5>
-                                    <p class="card-text">{{$ordine->ord_nome}} {{$ordine->ord_cognome}}</p>
-                                    <p class="card-text">{{$ordine->ord_indirizzo}}</p>
+                                    <p class="card-text"><strong>ID ordine:</strong> {{$ordine->ord_id}}</p>
+                                    <p class="card-text"><strong>Nome:</strong> {{$ordine->ord_nome}} {{$ordine->ord_cognome}}</p>
+                                    <p class="card-text"><strong>Indirizzo:</strong> {{$ordine->ord_indirizzo}}</p>
                                 </div>
                                 <div class="col-lg-7 order-padding">
                                     <h5 class="card-title">Ordine</h5>

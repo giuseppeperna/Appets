@@ -21,6 +21,8 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
+
+    //  Hompage con lista dei ristoranti
     public function index()
     {
         $ristoranti = User::all();
@@ -28,6 +30,7 @@ class HomeController extends Controller
         return view('index', compact('ristoranti'));
     }
 
+    // Mostra la pagina del singolo ristorante
     public function show($id) {
        
         $ristorante = User::find($id);
@@ -122,10 +125,7 @@ class HomeController extends Controller
         }
     }
 
-
-
-
-
+    // Aggiunge un prodotto al carrello
     public function add(Request $request){
         \Cart::add(array(
             'id' => $request->id,
@@ -140,11 +140,13 @@ class HomeController extends Controller
         return redirect()->back()->with('success_msg', 'Item is Added to Cart!');
     }
 
+    // Rimuove un prodotto dal carrello
     public function remove(Request $request){
         \Cart::remove($request->id);
         return redirect()->back()->with('success_msg', 'Item is removed!');
     }
 
+    // Aggiorna un prodotto nel carrello
     public function update(Request $request){
         \Cart::update($request->id,
             array(
@@ -156,6 +158,7 @@ class HomeController extends Controller
         return redirect()->route('cart.index')->with('success_msg', 'Cart is Updated!');
     }
 
+    // Svuota il carrello
     public function clear(){
         \Cart::clear();
         return redirect()->route('cart.index')->with('success_msg', 'Car is cleared!');

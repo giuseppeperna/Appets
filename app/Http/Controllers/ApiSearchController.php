@@ -13,7 +13,7 @@ use Response;
 
 class ApiSearchController extends Controller
 {
-
+    // Ricerca ristoranti per tipologia
     public function getRistorantiResults(Request $request) {
         $data = request('nome');
         $dataId = request('id');
@@ -29,26 +29,23 @@ class ApiSearchController extends Controller
         return Response::json([
             'data' => $ristoranti,
         ]);
-        return dd(explode(',', $data));
     }
         
-
+    // Ricerca piatti per nome
     public function getPiattiResults(Request $request) {
 
         $data = request('nome');
-        $id = request('id');
-        $data_p = explode(",", $id);
 
-
-        $piatti = Piatto::where('piatto_nome', explode(",",$id))->get();
+        $piatti = Piatto::where('piatto_nome', $data)->get();
         
         return Response::json([
             'data' => $piatti
         ]);
 
-        return dd($data_p);
+
     }
 
+    // Ricerca tipologia per nome
     public function getTipologieResults(Request $request) {
 
         $data = $request->get('data');
