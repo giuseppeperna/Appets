@@ -32,16 +32,16 @@
          <div class="row">
             <div class="col-lg-12 d-flex justify-content-center">
                <ul id="restaurants-flters">
-                  <li :class="getClass('italiano')" @click= "toggleChoice('italiano'); searchRestaurants();">Italiano</li>
-                  <li :class="getClass('giapponese')" @click= "toggleChoice('giapponese'); searchRestaurants()">Giapponese</li>
-                  <li :class="getClass('cinese')" @click= "toggleChoice('cinese'); searchRestaurants()">Cinese</li>
-                  <li :class="getClass('libanese')" @click= "toggleChoice('libanese'); searchRestaurants()">Libanese</li>
-                  <li :class="getClass('ungherese')" @click= "toggleChoice('ungherese'); searchRestaurants()">Ungherese</li>
-                  <li :class="getClass('egiziano')" @click= "toggleChoice('egiziano'); searchRestaurants()">Egiziano</li>
-                  <li :class="getClass('coreano')" @click= "toggleChoice('coreano'); searchRestaurants()">Coreano</li>
-                  <li :class="getClass('thailandese')" @click= "toggleChoice('thailandese'); searchRestaurants()">Thailandese</li>
-                  <li :class="getClass('indiano')" @click= "toggleChoice('indiano'); searchRestaurants()">Indiano</li>
-                  <li :class="getClass('messicano')" @click= "toggleChoice('messicano'); searchRestaurants()">Messicano</li>
+                  <li :class="getClass('Italiano')" @click= "toggleChoice('Italiano'); searchRestaurants();">Italiano</li>
+                  <li :class="getClass('Giapponese')" @click= "toggleChoice('Giapponese'); searchRestaurants()">Giapponese</li>
+                  <li :class="getClass('Cinese')" @click= "toggleChoice('Cinese'); searchRestaurants()">Cinese</li>
+                  <li :class="getClass('Libanese')" @click= "toggleChoice('Libanese'); searchRestaurants()">Libanese</li>
+                  <li :class="getClass('Ungherese')" @click= "toggleChoice('Ungherese'); searchRestaurants()">Ungherese</li>
+                  <li :class="getClass('Egiziano')" @click= "toggleChoice('Egiziano'); searchRestaurants()">Egiziano</li>
+                  <li :class="getClass('Coreano')" @click= "toggleChoice('Coreano'); searchRestaurants()">Coreano</li>
+                  <li :class="getClass('Thailandese')" @click= "toggleChoice('Thailandese'); searchRestaurants()">Thailandese</li>
+                  <li :class="getClass('Indiano')" @click= "toggleChoice('Indiano'); searchRestaurants()">Indiano</li>
+                  <li :class="getClass('Messicano')" @click= "toggleChoice('Messicano'); searchRestaurants()">Messicano</li>
                </ul>
             </div>
          </div>

@@ -50,7 +50,7 @@ const my_app = new Vue({
       },
    },
    mounted: function(){
-     this.userChoices = ['italiano'];
+     this.userChoices = ['Italiano'];
      this.searchRestaurants();
   }
 });
