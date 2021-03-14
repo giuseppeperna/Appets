@@ -4,7 +4,6 @@ const my_app = new Vue({
      // Animazioni Homepage
     animateSection: {
          restaurants: false,
-         events: false,
          jobs: false,
       },
      // Chiamata AJAX e gestione della ricerca

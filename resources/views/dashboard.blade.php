@@ -13,31 +13,31 @@
                      <div class="card singleCard">
                         <div class="card-body">
                            <h5 class="card-title">Menù</h5>
-                           <img src="img/dash_menu.jpg" style="max-width: 300px;"class="card-img-top" alt="...">
+                           <img src="img/dash_menu.jpg" class="card-img-top" alt="Immagine menu">
                            <div class="card-text dashTitle">
                               Aggiungi o modifica i piatti del tuo ristorante.
                            </div>
-                           <a href="{{route('piatti.index')}}" class="btn">Gestisci il mio menù</a>
+                           <a href="{{route('piatti.index')}}"><div class="mytext">Gestisci il mio menù</div></a>
                         </div>
                      </div>
                      <div class="card singleCard">
-                        <div class="card-body" >
+                        <div class="card-body">
                            <h5 class="card-title">Ordini</h5>
-                           <img src="img/dash_stat.jpg" style="max-width: 300px;"class="card-img-top" alt="...">
+                           <img src="img/dash_stat.jpg"class="card-img-top" alt="Immagine statistiche">
                            <div class="card-text dashTitle">
                               Visualizza le statistiche relative ai tuoi ordini.
                            </div>
-                           <a href="{{route('ordini')}}" class="btn">Visualizza ordini</a>
+                           <a href="{{route('ordini')}}"><div class="mytext">Visualizza ordini</div></a>
                         </div>
                      </div>
                      <div class="card singleCard">
                         <div class="card-body" >
                            <h5 class="card-title">Anagrafica</h5>
-                           <img src="img/dash_anag.jpg" style="max-width: 300px;"class="card-img-top" alt="...">
+                           <img src="img/dash_anag.jpg"class="card-img-top" alt="Immagine anagrafica">
                            <div class="card-text dashTitle">
                               Visualizza e modifica i dati del tuo ristorante.
                            </div>
-                           <a href="{{route('utente')}}" class="btn">Gestione anagrafica</a>
+                           <a href="{{route('utente')}}"><div class="mytext">Gestione anagrafica</div></a>
                         </div>
                      </div>
                   </div>

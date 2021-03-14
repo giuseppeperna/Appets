@@ -32,29 +32,38 @@
    <body>
       <div id="root">
         @include('../templates._header')
-
-        <div class="container statistiche">
-            <div class="row">
-                <div class="col-md-10 offset-md-1">
-                    <div class="panel panel-default">
-                        <div class="panel-heading"></div>
-                        <div class="panel-body">
-                            <canvas id="canvas" height="280" width="600"></canvas>
-                        </div>
-                        <div>
-                            <h1>Totale ordini {{$this_year-1}}: {{$prevYearSum}}</h1>
-                            <h1>Incasso ordini {{$this_year-1}}: {{$prevYearTotalOrder}} Euro</h1>
-                        </div>
-                        <div>
-                            <h1>Totale ordini {{$this_year}}: {{$currentYearSum}}</h1>
-                            <h1>Incasso ordini {{$this_year}}: {{$currentYearTotalOrder}} Euro</h1>
-                        </div>
-                        <a class="btn register-btn" href="{{ route('ordini') }}">Indietro</a>
-                    </div>
+        <div class="carousel-item active" style="background: url({{asset('img/slide/slide-15.jpg')}}); background-size: cover;">
+           <div class="container statistiche">
+               <div class="row">
+                   <div class="col-md-10 offset-md-1">
+                      <div class="card">
+                        <div class="card-body">
+                       <div class="panel panel-default">
+                           <div class="panel-heading"></div>
+                           <div class="panel-body">
+                               <canvas id="canvas" height="280" width="600"></canvas>
+                           </div>
+                           <div class="card statsYear" >
+                             <div class="card-body">
+                               <div class="card-text">Totale ordini {{$this_year-1}}: <strong>{{$prevYearSum}} </strong></div>
+                               <div class="card-text">Incasso ordini {{$this_year-1}}: <strong>{{$prevYearTotalOrder}}  Euro </strong></div>
+                             </div>
+                           </div>
+                           <div class="card statsYear" >
+                             <div class="card-body">
+                              <div class="card-text">Totale ordini {{$this_year}}: <strong> {{$currentYearSum}}</strong></div>
+                              <div class="card-text">Incasso ordini {{$this_year}}: <strong> {{$currentYearTotalOrder}}  Euro</strong></div>
+                             </div>
+                           </div>
+                           <a class="btn register-btn" href="{{ route('ordini') }}">Indietro</a>
+                       </div>
+                   </div>
                 </div>
-            </div>
+             </div>
+               </div>
+           </div>
+           @include('../templates._footer')
         </div>
-        @include('../templates._footer')
 
          <!-- Libreries/Frameworks JS Files -->
         {{-- Script statistiche --}}
@@ -94,7 +103,7 @@
                         responsive: true,
                         title: {
                             display: true,
-                            text: 'Statistiche ordini mese/anno',
+                            text: 'Le statistiche dei tuoi ordini',
                             fontSize: 30
                         }
                     }

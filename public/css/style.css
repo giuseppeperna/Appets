@@ -1065,14 +1065,18 @@ section {
 	background-color:#92c24c
 }
 
-.singleCard{
+.singleCard:not(:last-child){
 	margin-right: 20px;
 }
 
 .dashboard .card-body a{
 	background-color:  #92c24c;
+	border-radius: 5px;
 	color: white;
+	padding: 10px;
 	margin-top: 10px;
+	position:relative;
+	display: inline-block;
 }
 
 .dashboard .intro{
@@ -1086,10 +1090,31 @@ section {
 .dashboard img{
 	margin-top: 20px;
 	border-radius: 2px;
+	max-width: 300px;
 }
 
 .editInfo h1{
 	color: white;
+}
+
+@media (max-width:747px) {
+	.dashboard .card-body a {
+		height: 62px;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+	}
+   .dashTitle {
+		height: 85px;
+	}
+}
+
+.statistiche .statsYear{
+	margin-top: 20px;
+}
+
+.statistiche a {
+	margin-top: 20px;
 }
 
 /* Pagination */
