@@ -47,7 +47,7 @@ class ChartjsController extends Controller
 
         // Incasso totale per gli ordini dello scorso anno
         $prevYearTotalOrder = DB::table('ordini')
-            ->join('piatti_ordini', 'ordini.ord_id', '=', 'piatti_ordini.ord_id')
+            ->join('piatti_ordini', 'ordini.ord_id', '=', 'piatti_ordini.ord_id')->distinct()
             ->join('piatti', 'piatti_ordini.piatto_id', '=', 'piatti.piatto_id')
             ->join('users', 'piatti.rist_id', '=', 'users.rist_id')
             ->where(fn($query) => $query->where('users.rist_id', '=', $userId))
@@ -55,7 +55,7 @@ class ChartjsController extends Controller
 
         // Incasso totale per gli ordini dell'anno corrente
         $currentYearTotalOrder = DB::table('ordini')
-            ->join('piatti_ordini', 'ordini.ord_id', '=', 'piatti_ordini.ord_id')
+            ->join('piatti_ordini', 'ordini.ord_id', '=', 'piatti_ordini.ord_id')->distinct()
             ->join('piatti', 'piatti_ordini.piatto_id', '=', 'piatti.piatto_id')
             ->join('users', 'piatti.rist_id', '=', 'users.rist_id')
             ->where(fn($query) => $query->where('users.rist_id', '=', $userId))
