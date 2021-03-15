@@ -22,7 +22,7 @@
                             @endif
                             <div class="d-flex justify-content-end">
                                 <a href="{{ route('piatti.edit', $piatto->piatto_id)}}" class="btn btn-primary me-2 ms-2" title="Modifica"><i class="bi bi-pencil-square centering"></i></a>
-                                {{-- <!-- Button trigger modal -->
+                                <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#piatto{{$piatto->piatto_id}}delete" title="Elimina">
                                     <i class="bi bi-trash centering"></i>
                                 </button>
@@ -48,7 +48,7 @@
                                         </div>
                                         </div>
                                     </div>
-                                </div> --}}
+                                </div>
                             </div>
                         </div>
                         <a href="{{route('piatti.index')}}" class="mt-3 text-center"><p>Torna alla lista piatti</p></a>

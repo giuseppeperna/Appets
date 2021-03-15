@@ -149,12 +149,14 @@ class PiattiController extends Controller
     public function destroy($id)
     {
         $piatto = Piatto::find($id);
-        $piatto->forceDelete();
-        if(Storage::exists($piatto->piatto_img)){
-            Storage::delete($piatto->piatto_img);
-        }else{
-            dd('File does not exists.');
-        }
+        $piatto->piatto_visibile = 0;
+        $piatto->save();
+        $piatto->delete();
+        // if(Storage::exists($piatto->piatto_img)){
+        //     Storage::delete($piatto->piatto_img);
+        // }else{
+        //     dd('File does not exists.');
+        // }
         return redirect()->route('piatti.index');
     }
 
@@ -173,9 +175,13 @@ class PiattiController extends Controller
         $search = $request->search;
         if($search) {
             $piatti = Piatto::onlyTrashed()->where(fn($query) => $query->where('rist_id', '=', $userId))
-            ->where('piatto_nome', 'LIKE', "%$search%")->paginate(4);
+            ->where('piatto_nome', 'LIKE', "%$search%")
+            ->where('piatto_visibile', 1)
+            ->paginate(4);
         }else{
-            $piatti = Piatto::onlyTrashed()->where(fn($query) => $query->where('rist_id', '=', $userId))->paginate(4);
+            $piatti = Piatto::onlyTrashed()->where(fn($query) => $query->where('rist_id', '=', $userId))
+            ->where('piatto_visibile', 1)
+            ->paginate(4);
         }
 
         return view('piatti.hidden', compact('piatti', 'search'));
