@@ -101,7 +101,7 @@ class HomeController extends Controller
 
             \Cart::clear();
 
-            return back()->with('success_message', 'Transazione effettuata. Il codice del pagamento è: ' . $transaction->id);
+            return back()->with('success_message', "L'ordine è andato a buon fine. Il codice del pagamento è: " . $transaction->id);
         } else {
         //Se il pagamento NON va a buon fine, salva l'ordine con lo stato di "NON pagato"
             $errorString = "";

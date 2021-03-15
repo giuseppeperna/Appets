@@ -149,7 +149,7 @@ class PiattiController extends Controller
     public function destroy($id)
     {
         $piatto = Piatto::find($id);
-        $piatto->forceDelete();;
+        $piatto->forceDelete();
         if(Storage::exists($piatto->piatto_img)){
             Storage::delete($piatto->piatto_img);
         }else{

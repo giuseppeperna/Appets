@@ -948,9 +948,9 @@ section {
 	  cursor: pointer;
   }
 
-  .hidden-plates {
+  /* .hidden-plates {
 	  margin: 0 8px;
-  }
+  } */
 
   .empty-plates {
 	  padding: 80px;

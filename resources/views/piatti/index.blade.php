@@ -39,7 +39,7 @@
                                 <a href="{{ route('piatti.edit', $piatto->piatto_id)}}" class="btn btn-primary me-2 ms-2" title="Modifica"><i class="bi bi-pencil-square centering"></i></a>
 
 
-                                <!-- Button trigger modal -->
+                                {{-- <!-- Button trigger modal -->
                                 <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#piatto{{$piatto->piatto_id}}delete" title="Elimina">
                                     <i class="bi bi-trash centering"></i>
                                 </button>
@@ -65,12 +65,12 @@
                                         </div>
                                         </div>
                                     </div>
-                                </div>
+                                </div> --}}
 
                                 <!-- Button trigger modal -->
-                                <button type="button" class="btn btn-success hidden-plates" data-bs-toggle="modal"
-                                data-bs-target="#piatto{{$piatto->piatto_id}}" title="Nascondi">
-                                    <i class="bi bi-eye-slash-fill centering"></i>
+                                <button type="button" class="btn btn-danger hidden-plates" data-bs-toggle="modal"
+                                data-bs-target="#piatto{{$piatto->piatto_id}}" title="Elimina dal menù">
+                                    <i class="bi bi-trash centering"></i>
                                 </button>
 
                                 <!-- Modal -->
@@ -82,14 +82,14 @@
                                             <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                         </div>
                                         <div class="modal-body">
-                                            <p>Vuoi davvero nascondere il piatto?</p>
+                                            <p>Vuoi davvero cancellare il piatto?</p>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Annulla</button>
                                             <form action="{{ route("soft-destroy",$piatto->piatto_id) }}" method="post">
                                                 @csrf
                                                 @method("delete")
-                                                <button type="submit" class="btn btn-success" title="Nascondi">Nascondi</button>
+                                                <button type="submit" class="btn btn-danger" title="Cancella">Cancella</button>
                                             </form>
                                         </div>
                                         </div>

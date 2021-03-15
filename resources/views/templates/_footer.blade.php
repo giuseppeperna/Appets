@@ -10,7 +10,7 @@
         &copy; Copyright <strong><span>Appets</span></strong>. All Rights Reserved
      </div>
      <div class="credits">
-        Designed Boolean Team 2
+        Designed By Boolean Team 2
      </div>
   </div>
 </footer>
