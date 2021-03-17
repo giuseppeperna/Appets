@@ -1,61 +1,68 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/71637754/111457771-e7a13a00-8718-11eb-8db4-6a9dee5b5ca3.png"></p>
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## About Appets
+Appets è un progetto per una web app di food delivery che permette di ordinare cibo a domicilio nella città di Milano. <br>
+Per effettuare un ordine sulla piattaforma non è richiesta la registrazione. Inoltre, grazie ad un filtro avanzato di ricerca, ogni utente può scegliere il ristorante più adatto alle proprie esigenze.<br>
+<br>
+Ai ristoranti che decidono di entrare a far parte del network di Appets viene messa a disposizione un'area privata, nella quale l'utente può gestire in maniera semplice ed immediata il menù, gli ordini, le statistiche sulle vendite ed i dati relativi al ristorante.
 
-## About Laravel
+Per il lato front-end il progetto ha utilizzato le seguenti tecnologie:
+- HTML, CSS
+- Bootstrap
+- Vue.js
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+La parte di back-end è stata sviluppata con:
+- Laravel
+- MySql
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+Per la gestione dei pagementi è stato utilizzato [Braintree](https://www.braintreepayments.com/).<br>
+Le statistiche sono state implementate con [ChartJs](https://www.chartjs.org/).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Contributors
+Team 2 - Classe #20 [Boolean](https://www.boolean.careers/):
+- [Alessandro Mancinelli](https://github.com/AleMancio89).<br>
+- [Fabrizio Nicolosi](https://github.com/fabnico).<br>
+- [Enrico Olivieri](https://github.com/EnricoOlivieri).<br>
+- [Giuseppe Perna](https://github.com/giuseppeperna).<br>
 
-## Learning Laravel
+## Percorso utente interessato
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+Di seguito le schermate che accompagnano l'utente non registrato alla scelta del ristorante, dei piatti da ordinare ed infine alla conferma dell'ordine.
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+<h3> Landing page </h3>
+<p align="center"><img src="https://user-images.githubusercontent.com/71637754/111463906-69e12c80-8720-11eb-949f-dc2e15037a4c.png"></p>
 
-## Laravel Sponsors
+<h3> Scelta del ristorante </h3>
+<p align="center"><img src="https://user-images.githubusercontent.com/71637754/111464190-bcbae400-8720-11eb-9b32-64337fd92aee.png"></p>
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
+<h3> Menù ristorante </h3>
+<p align="center"><img src="https://user-images.githubusercontent.com/71637754/111464310-e4aa4780-8720-11eb-8f8b-cc956a67724f.png"></p>
 
-### Premium Partners
+<h3> Carrello </h3>
+<p align="center"><img src="https://user-images.githubusercontent.com/71637754/111464449-13c0b900-8721-11eb-9e79-072479cf8b12.png"></p>
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[OP.GG](https://op.gg)**
+## Percorso utente registrato
 
-## Contributing
+Di seguito, è possibile avere una panoramica delle diverse sezioni messe a disposizione del ristoratore che decide di iscriversi ad Appets.
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+<h3> Area ristoranti </h3>
+<p align="center"><img src="https://user-images.githubusercontent.com/71637754/111464972-cabd3480-8721-11eb-9a26-da51ecd859f7.png"></p>
 
-## Code of Conduct
+<h3> Registrazione </h3>
+<p align="center"><img src="https://user-images.githubusercontent.com/71637754/111465367-4e772100-8722-11eb-8b4b-c14433f45541.png"></p>
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+<h3> Login </h3>
+<p align="center"><img src="https://user-images.githubusercontent.com/71637754/111465500-7cf4fc00-8722-11eb-8f4b-f97fcbeeef0a.png"></p>
 
-## Security Vulnerabilities
+<h3> Dashboard </h3>
+<p align="center"><img src="https://user-images.githubusercontent.com/71637754/111465732-b9c0f300-8722-11eb-9438-e5ad39543fd9.png"></p>
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+<h3> Gestione Menù </h3>
+<p align="center"><img src="https://user-images.githubusercontent.com/71637754/111465961-f856ad80-8722-11eb-9fb5-0b2c62b4bedc.png"></p>
 
-## License
+<h3> Ordini e statistiche </h3>
+<p align="center"><img src="https://user-images.githubusercontent.com/71637754/111466110-29cf7900-8723-11eb-8507-9ee069e0b865.png"></p>
+<p align="center"><img src="https://user-images.githubusercontent.com/71637754/111466241-508daf80-8723-11eb-8959-41adfd0f2d0e.png"></p>
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<h3> Anagrafica </h3>
+<p align="center"><img src="https://user-images.githubusercontent.com/71637754/111466414-8df23d00-8723-11eb-95b4-ba214731d227.png"></p>
