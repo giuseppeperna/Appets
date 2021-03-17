@@ -4,7 +4,7 @@
      <h3>Appets</h3>
      <p>Solo a Milano, vicino a te</p>
      <div class="social-links">
-        <a href="https://github.com/giuseppeperna/Appets" class="twitter"><i class="fab fa-github"></i></i></a>
+        <a href="https://github.com/AleMancio89/Appets-Food-Delivery" class="twitter"><i class="fab fa-github"></i></i></a>
      </div>
      <div class="copyright">
         &copy; Copyright <strong><span>Appets</span></strong>. All Rights Reserved

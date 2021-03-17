@@ -1,29 +1,29 @@
 <p align="center"><img src="https://user-images.githubusercontent.com/71637754/111457771-e7a13a00-8718-11eb-8db4-6a9dee5b5ca3.png"></p>
 
 ## About Appets
-Appets è un progetto per una web app di food delivery che permette di ordinare cibo a domicilio nella città di Milano. <br>
-Per effettuare un ordine sulla piattaforma non è richiesta la registrazione. Inoltre, grazie ad un filtro avanzato di ricerca, ogni utente può scegliere il ristorante più adatto alle proprie esigenze.<br>
+Appets ï¿½ un progetto per una web app di food delivery che permette di ordinare cibo a domicilio nella cittï¿½ di Milano. <br>
+Per effettuare un ordine sulla piattaforma non ï¿½ richiesta la registrazione. Inoltre, grazie ad un filtro avanzato di ricerca, ogni utente puï¿½ scegliere il ristorante piï¿½ adatto alle proprie esigenze.<br>
 <br>
-Ai ristoranti che decidono di entrare a far parte del network di Appets viene messa a disposizione un'area privata, nella quale l'utente può gestire in maniera semplice ed immediata il menù, gli ordini, le statistiche sulle vendite ed i dati relativi al ristorante.
+Ai ristoranti che decidono di entrare a far parte del network di Appets viene messa a disposizione un'area privata, nella quale l'utente puï¿½ gestire in maniera semplice ed immediata il menï¿½, gli ordini, le statistiche sulle vendite ed i dati relativi al ristorante.
 
 Per il lato front-end il progetto ha utilizzato le seguenti tecnologie:
 - HTML, CSS
 - Bootstrap
 - Vue.js
 
-La parte di back-end è stata sviluppata con:
+La parte di back-end ï¿½ stata sviluppata con:
 - Laravel
 - MySql
 
-Per la gestione dei pagementi è stato utilizzato [Braintree](https://www.braintreepayments.com/).<br>
+Per la gestione dei pagementi ï¿½ stato utilizzato [Braintree](https://www.braintreepayments.com/).<br>
 Le statistiche sono state implementate con [ChartJs](https://www.chartjs.org/).
 
 ## About us
 Team 2 - Classe #20 [Boolean](https://www.boolean.careers/):
-- [Alessandro Mancinelli](https://github.com/AleMancio89).<br>
-- [Fabrizio Nicolosi](https://github.com/fabnico).<br>
-- [Enrico Olivieri](https://github.com/EnricoOlivieri).<br>
-- [Giuseppe Perna](https://github.com/giuseppeperna).<br>
+- [Alessandro Mancinelli](https://github.com/AleMancio89)<br>
+- [Fabrizio Nicolosi](https://github.com/fabnico)<br>
+- [Enrico Olivieri](https://github.com/EnricoOlivieri)<br>
+- [Giuseppe Perna](https://github.com/giuseppeperna)<br>
 
 ## Percorso utente interessato
 
@@ -35,7 +35,7 @@ Di seguito le schermate che accompagnano l'utente non registrato alla scelta del
 <h3> Scelta del ristorante </h3>
 <p align="center"><img src="https://user-images.githubusercontent.com/71637754/111464190-bcbae400-8720-11eb-9b32-64337fd92aee.png"></p>
 
-<h3> Menù ristorante </h3>
+<h3> Menï¿½ ristorante </h3>
 <p align="center"><img src="https://user-images.githubusercontent.com/71637754/111464310-e4aa4780-8720-11eb-8f8b-cc956a67724f.png"></p>
 
 <h3> Carrello </h3>
@@ -43,7 +43,7 @@ Di seguito le schermate che accompagnano l'utente non registrato alla scelta del
 
 ## Percorso utente registrato
 
-Di seguito, è possibile avere una panoramica delle diverse sezioni messe a disposizione del ristoratore che decide di iscriversi ad Appets.
+Di seguito, ï¿½ possibile avere una panoramica delle diverse sezioni messe a disposizione del ristoratore che decide di iscriversi ad Appets.
 
 <h3> Area ristoranti </h3>
 <p align="center"><img src="https://user-images.githubusercontent.com/71637754/111464972-cabd3480-8721-11eb-9a26-da51ecd859f7.png"></p>
@@ -57,7 +57,7 @@ Di seguito, è possibile avere una panoramica delle diverse sezioni messe a dispo
 <h3> Dashboard </h3>
 <p align="center"><img src="https://user-images.githubusercontent.com/71637754/111465732-b9c0f300-8722-11eb-9438-e5ad39543fd9.png"></p>
 
-<h3> Gestione Menù </h3>
+<h3> Gestione Menï¿½ </h3>
 <p align="center"><img src="https://user-images.githubusercontent.com/71637754/111465961-f856ad80-8722-11eb-9fb5-0b2c62b4bedc.png"></p>
 
 <h3> Ordini e statistiche </h3>
