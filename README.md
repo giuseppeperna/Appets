@@ -18,7 +18,7 @@ La parte di back-end è stata sviluppata con:
 Per la gestione dei pagementi è stato utilizzato [Braintree](https://www.braintreepayments.com/).<br>
 Le statistiche sono state implementate con [ChartJs](https://www.chartjs.org/).
 
-## Contributors
+## About us
 Team 2 - Classe #20 [Boolean](https://www.boolean.careers/):
 - [Alessandro Mancinelli](https://github.com/AleMancio89).<br>
 - [Fabrizio Nicolosi](https://github.com/fabnico).<br>
